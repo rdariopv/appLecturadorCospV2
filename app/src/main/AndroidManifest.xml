@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lecturador.android.applecturador">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup,icon,theme,label"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".MenuPrincipal"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListaMedidores"
+            android:label="@string/title_activity_lista_medidores"
+            android:parentActivityName=".MenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipal" />
+        </activity>
+        <activity
+            android:name=".RealizarLecturacion"
+            android:label="@string/title_activity_realizar_lecturacion"
+            android:parentActivityName=".ListaMedidores">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaMedidores" />
+        </activity>
+        <activity
+            android:name=".LecturacionBluetooth"
+            android:label="@string/title_activity_lecturacion_bluetooth" />
+        <activity
+            android:name=".AjustsActivity"
+            android:label="@string/title_activity_ajusts"
+            android:parentActivityName=".MenuPrincipal"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipal" />
+        </activity>
+        <activity
+            android:name=".DownloadActivity"
+            android:label="@string/title_activity_download"
+            android:parentActivityName=".MenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipal" />
+        </activity>
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        -->
+
+        <activity
+            android:name=".SyncActivity"
+            android:label="@string/title_activity_sync"
+            android:parentActivityName=".MenuPrincipal"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipal" />
+        </activity>
+        <activity
+            android:name=".AjustesActivity"
+            android:label="@string/title_activity_ajustes"
+            android:parentActivityName=".MenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipal" />
+        </activity>
+        <activity
+            android:name=".ReImprimir"
+            android:label="@string/title_activity_reprint"
+            android:parentActivityName=".ListaMedidores">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaMedidores" />
+
+        </activity>
+
+    </application>
+
+</manifest>

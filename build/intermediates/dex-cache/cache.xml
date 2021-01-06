@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\support-annotations-22.2.1_0cf3d10c35e3a85c12847a4ae04cc53252341eed.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\library-2.4.0_f7614839a52213726bda2c5901840d69b965348f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_f7614839a52213726bda2c5901840d69b965348f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\internal_impl-22.2.1_41da69faa959803ddc1f09bae1f87aa4a0a09e29.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\ZSDK_ANDROID_API.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="a1d4c1a515700f9b4d23ada017ae8a4d763b9453">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\2\ZSDK_ANDROID_API_80b14f320de44cdccb1b2468b60d2a18a3803290\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.1_41da69faa959803ddc1f09bae1f87aa4a0a09e29\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\ZSDK_ANDROID_API.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a1d4c1a515700f9b4d23ada017ae8a4d763b9453">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\ZSDK_ANDROID_API_80b14f320de44cdccb1b2468b60d2a18a3803290.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="635b158326a33ea6fe2bf2af9b8e18c148815ee4">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_a858056a9562c2f8193af9b4822c337dbd9db5cf\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-22.2.1_c98588f19844d001a7156aab35edcd1dd1710b09\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-22.2.1_c98588f19844d001a7156aab35edcd1dd1710b09.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\com.android.support-design-22.2.1_12df8ecc65f863699429ee7f93aba95284055107.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-22.2.1_9f646ac8dc10f27fcdff56625485e2c167a29b29\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-22.2.1_12df8ecc65f863699429ee7f93aba95284055107\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.2.1_3d101443522fa2ba8f1286f4d54391daface37d3\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-22.2.1_3d101443522fa2ba8f1286f4d54391daface37d3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.rengwuxian.materialedittext\library\2.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="288913b440a3c61c30aa171095453a605432277a">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\com.rengwuxian.materialedittext-library-2.1.4_11e4929d6b9f95bdf104f2833a001d8faa951fc5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.rengwuxian.materialedittext\library\2.1.4\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="288913b440a3c61c30aa171095453a605432277a">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.rengwuxian.materialedittext-library-2.1.4_11e4929d6b9f95bdf104f2833a001d8faa951fc5\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\joda-time-2.9.9.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="f7b520c458572890807d143670c9b24f4de90897">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\2\joda-time-2.9.9_705e79673a12ce0101db0453c4f456f8ac950838\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\gson-2.2.4_c5f9ec7eb515f91a6d3e20f7643992f2c1fd94ce.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\joda-time-2.9.9.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f7b520c458572890807d143670c9b24f4de90897">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\joda-time-2.9.9_705e79673a12ce0101db0453c4f456f8ac950838.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\gson-2.2.4.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\2\gson-2.2.4_c5f9ec7eb515f91a6d3e20f7643992f2c1fd94ce\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.weiwangcn.betterspinner\library-material\1.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="8d8c5463a1a50691e2cf66cd7ce4751c8545b584">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.weiwangcn.betterspinner-library-material-1.1.0_fd62e923436bebd1f1c9e69ec554a0011791601a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\exploded-aar\com.weiwangcn.betterspinner\library-material\1.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d8c5463a1a50691e2cf66cd7ce4751c8545b584">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\com.weiwangcn.betterspinner-library-material-1.1.0_fd62e923436bebd1f1c9e69ec554a0011791601a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-7.0.1_a5756097a450839a47bd520ba73ba7702993af61\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="3ea29cbdcea23b9e0bd73d6f246933dd6c0bad64">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_a4519873d1898e72934e6475302c7587379ac4d8\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\butterknife-7.0.1_a5756097a450839a47bd520ba73ba7702993af61.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\kxml2-2.1.8.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="5ab4094134baf41e4c2735d2df71a044fda3c36b">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\2\kxml2-2.1.8_f66fbc30939c2f2e376ff6afd1640674d6e28a78\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\kxml2-2.1.8.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5ab4094134baf41e4c2735d2df71a044fda3c36b">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\kxml2-2.1.8_f66fbc30939c2f2e376ff6afd1640674d6e28a78.jar" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\ksoap2-android-2.5.2.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="b2dba1c1872c937f0b0a5b10cb03f8e9f2c9e747">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\transforms\dex\debug\folders\1000\2\ksoap2-android-2.5.2_f811f102acc2efc9fe2e9b3e71b47afb8fcda63e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\libs\ksoap2-android-2.5.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b2dba1c1872c937f0b0a5b10cb03f8e9f2c9e747">
+        <dex dex="C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\build\intermediates\pre-dexed\release\ksoap2-android-2.5.2_f811f102acc2efc9fe2e9b3e71b47afb8fcda63e.jar" />
+    </item>
+
+</items>

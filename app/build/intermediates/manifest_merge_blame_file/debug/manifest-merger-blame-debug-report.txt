@@ -1,0 +1,244 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.lecturador.android.applecturador"
+4    android:versionCode="2"
+5    android:versionName="1.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="27" />
+9-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:6:5-67
+11-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:7:5-79
+12-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:8:5-79
+13-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:8:22-76
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:9:5-81
+14-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:9:22-78
+15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+15-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:10:5-81
+15-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:10:22-78
+16    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+16-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:11:5-74
+16-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:11:22-71
+17    <uses-permission android:name="android.permission.BLUETOOTH" />
+17-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:12:5-68
+17-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:12:22-65
+18    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+18-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:13:5-78
+18-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:13:22-75
+19    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+19-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:15:5-89
+19-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:15:22-86
+20
+21    <supports-screens
+21-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:17:5-23:40
+22        android:anyDensity="true"
+22-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:18:9-34
+23        android:largeScreens="true"
+23-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:19:9-36
+24        android:normalScreens="true"
+24-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:20:9-37
+25        android:resizeable="true"
+25-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:21:9-34
+26        android:smallScreens="true"
+26-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:22:9-36
+27        android:xlargeScreens="true" />
+27-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:23:9-37
+28
+29    <!-- Permissions required for GCM -->
+30    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+30-->[com.google.android.gms:play-services-gcm:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\7962fefd7bded15189177c9828b278e7\jetified-play-services-gcm-11.0.2\AndroidManifest.xml:20:5-81
+30-->[com.google.android.gms:play-services-gcm:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\7962fefd7bded15189177c9828b278e7\jetified-play-services-gcm-11.0.2\AndroidManifest.xml:20:22-79
+31
+32    <application
+32-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:25:5-113:19
+33        android:name="androidx.multidex.MultiDexApplication"
+34        android:allowBackup="true"
+34-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:26:9-35
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.1.0] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\7f6c41cc2a14c0fbaa8d0166c17dc544\core-1.1.0\AndroidManifest.xml:24:18-86
+36        android:debuggable="true"
+37        android:icon="@mipmap/ic_launcher"
+37-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:27:9-43
+38        android:label="@string/app_name"
+38-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:28:9-41
+39        android:testOnly="true"
+40        android:theme="@style/AppTheme" >
+40-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:29:9-40
+41        <activity
+41-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:32:9-40:20
+42            android:name="com.lecturador.android.applecturador.MenuPrincipal"
+42-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:33:13-42
+43            android:label="@string/app_name" >
+43-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:34:13-45
+44            <intent-filter>
+44-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:35:13-39:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:36:17-69
+45-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:36:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:38:17-77
+47-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:38:27-74
+48            </intent-filter>
+49        </activity>
+50        <activity
+50-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:41:9-48:20
+51            android:name="com.lecturador.android.applecturador.ListaMedidores"
+51-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:42:13-43
+52            android:label="@string/title_activity_lista_medidores"
+52-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:43:13-67
+53            android:parentActivityName="com.lecturador.android.applecturador.MenuPrincipal" >
+53-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:44:13-56
+54            <meta-data
+54-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:45:13-47:50
+55                android:name="android.support.PARENT_ACTIVITY"
+55-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:46:17-63
+56                android:value=".MenuPrincipal" />
+56-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:47:17-47
+57        </activity>
+58        <activity
+58-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:49:9-56:20
+59            android:name="com.lecturador.android.applecturador.RealizarLecturacion"
+59-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:50:13-48
+60            android:label="@string/title_activity_realizar_lecturacion"
+60-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:51:13-72
+61            android:parentActivityName="com.lecturador.android.applecturador.ListaMedidores" >
+61-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:52:13-57
+62            <meta-data
+62-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:45:13-47:50
+63                android:name="android.support.PARENT_ACTIVITY"
+63-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:46:17-63
+64                android:value=".ListaMedidores" />
+64-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:47:17-47
+65        </activity>
+66        <activity
+66-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:57:9-59:76
+67            android:name="com.lecturador.android.applecturador.LecturacionBluetooth"
+67-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:58:13-49
+68            android:label="@string/title_activity_lecturacion_bluetooth" />
+68-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:59:13-73
+69        <activity
+69-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:60:9-68:20
+70            android:name="com.lecturador.android.applecturador.AjustsActivity"
+70-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:61:13-43
+71            android:label="@string/title_activity_ajusts"
+71-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:62:13-58
+72            android:parentActivityName="com.lecturador.android.applecturador.MenuPrincipal"
+72-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:63:13-56
+73            android:theme="@style/AppTheme.NoActionBar" >
+73-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:64:13-56
+74            <meta-data
+74-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:45:13-47:50
+75                android:name="android.support.PARENT_ACTIVITY"
+75-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:46:17-63
+76                android:value=".MenuPrincipal" />
+76-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:47:17-47
+77        </activity>
+78        <activity
+78-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:69:9-76:20
+79            android:name="com.lecturador.android.applecturador.DownloadActivity"
+79-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:70:13-45
+80            android:label="@string/title_activity_download"
+80-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:71:13-60
+81            android:parentActivityName="com.lecturador.android.applecturador.MenuPrincipal" >
+81-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:72:13-56
+82            <meta-data
+82-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:45:13-47:50
+83                android:name="android.support.PARENT_ACTIVITY"
+83-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:46:17-63
+84                android:value=".MenuPrincipal" />
+84-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:47:17-47
+85        </activity>
+86        <!--
+87 ATTENTION: This was auto-generated to add Google Play services to your project for
+88     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+89
+90        <meta-data
+91            android:name="com.google.android.gms.version"
+92            android:value="@integer/google_play_services_version" />
+93        -->
+94
+95        <activity
+95-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:86:9-94:20
+96            android:name="com.lecturador.android.applecturador.SyncActivity"
+96-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:87:13-41
+97            android:label="@string/title_activity_sync"
+97-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:88:13-56
+98            android:parentActivityName="com.lecturador.android.applecturador.MenuPrincipal"
+98-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:89:13-56
+99            android:theme="@style/AppTheme.NoActionBar" >
+99-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:90:13-56
+100            <meta-data
+100-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:45:13-47:50
+101                android:name="android.support.PARENT_ACTIVITY"
+101-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:46:17-63
+102                android:value=".MenuPrincipal" />
+102-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:47:17-47
+103        </activity>
+104        <activity
+104-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:95:9-102:20
+105            android:name="com.lecturador.android.applecturador.AjustesActivity"
+105-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:96:13-44
+106            android:label="@string/title_activity_ajustes"
+106-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:97:13-59
+107            android:parentActivityName="com.lecturador.android.applecturador.MenuPrincipal" >
+107-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:98:13-56
+108            <meta-data
+108-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:45:13-47:50
+109                android:name="android.support.PARENT_ACTIVITY"
+109-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:46:17-63
+110                android:value=".MenuPrincipal" />
+110-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:47:17-47
+111        </activity>
+112        <activity
+112-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:103:9-111:20
+113            android:name="com.lecturador.android.applecturador.ReImprimir"
+113-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:104:13-39
+114            android:label="@string/title_activity_reprint"
+114-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:105:13-59
+115            android:parentActivityName="com.lecturador.android.applecturador.ListaMedidores" >
+115-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:106:13-57
+116            <meta-data
+116-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:45:13-47:50
+117                android:name="android.support.PARENT_ACTIVITY"
+117-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:46:17-63
+118                android:value=".ListaMedidores" />
+118-->C:\Users\Dario Pardo\AndroidStudioProjects\appLecturador\app\src\main\AndroidManifest.xml:47:17-47
+119        </activity>
+120
+121        <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+122        <activity
+122-->[com.google.android.gms:play-services-ads-lite:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\b182639e348062591fe6315a72456725\jetified-play-services-ads-lite-11.0.2\AndroidManifest.xml:25:9-232
+123            android:name="com.google.android.gms.ads.AdActivity"
+123-->[com.google.android.gms:play-services-ads-lite:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\b182639e348062591fe6315a72456725\jetified-play-services-ads-lite-11.0.2\AndroidManifest.xml:25:19-71
+124            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+124-->[com.google.android.gms:play-services-ads-lite:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\b182639e348062591fe6315a72456725\jetified-play-services-ads-lite-11.0.2\AndroidManifest.xml:25:72-181
+125            android:theme="@android:style/Theme.Translucent" />
+125-->[com.google.android.gms:play-services-ads-lite:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\b182639e348062591fe6315a72456725\jetified-play-services-ads-lite-11.0.2\AndroidManifest.xml:25:182-230
+126        <activity
+126-->[com.google.android.gms:play-services-base:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\6bc793ecf95f359c82c1e31fce3474bf\jetified-play-services-base-11.0.2\AndroidManifest.xml:19:9-172
+127            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+127-->[com.google.android.gms:play-services-base:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\6bc793ecf95f359c82c1e31fce3474bf\jetified-play-services-base-11.0.2\AndroidManifest.xml:19:19-85
+128            android:exported="false"
+128-->[com.google.android.gms:play-services-base:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\6bc793ecf95f359c82c1e31fce3474bf\jetified-play-services-base-11.0.2\AndroidManifest.xml:19:146-170
+129            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+129-->[com.google.android.gms:play-services-base:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\6bc793ecf95f359c82c1e31fce3474bf\jetified-play-services-base-11.0.2\AndroidManifest.xml:19:86-145
+130
+131        <meta-data
+131-->[com.google.android.gms:play-services-basement:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\64e1c3476135cde173fae4c95b811d4e\jetified-play-services-basement-11.0.2\AndroidManifest.xml:20:9-121
+132            android:name="com.google.android.gms.version"
+132-->[com.google.android.gms:play-services-basement:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\64e1c3476135cde173fae4c95b811d4e\jetified-play-services-basement-11.0.2\AndroidManifest.xml:20:20-65
+133            android:value="@integer/google_play_services_version" />
+133-->[com.google.android.gms:play-services-basement:11.0.2] C:\Users\Dario Pardo\.gradle\caches\transforms-2\files-2.1\64e1c3476135cde173fae4c95b811d4e\jetified-play-services-basement-11.0.2\AndroidManifest.xml:20:66-119
+134    </application>
+135
+136</manifest>
