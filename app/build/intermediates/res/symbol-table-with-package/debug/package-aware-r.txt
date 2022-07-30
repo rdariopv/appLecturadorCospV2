@@ -1171,6 +1171,7 @@ id bottom
 id btnAceptarFU
 id btnAjustes
 id btnBuscarPrinter
+id btnCalc
 id btnCancelar
 id btnLecturar
 id btnSendLecturacion
@@ -1377,9 +1378,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tvCodf
+id tvConP
+id tvDataConsumo
 id tvDescCodigo
 id tvDescCodigoP
-id tvDescPeriodo
 id tvDescPeriodoP
 id tvImCodSocio
 id tvImCodSocioP
@@ -1391,6 +1393,7 @@ id tvNombreSP
 id tvNtcn
 id tvNume
 id tvNumeP
+id tvTConsumo
 id tvUrlwsFU
 id tvValorLectura
 id txtAnio

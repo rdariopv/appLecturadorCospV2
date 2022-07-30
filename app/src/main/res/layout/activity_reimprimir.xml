@@ -107,7 +107,7 @@
         android:textAlignment="center"
         android:gravity="left"
         android:singleLine="true"
-        android:layout_below="@+id/tvDescPeriodo"
+        android:layout_below="@+id/tvConP"
         android:layout_toRightOf="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
         android:layout_alignRight="@+id/tvDescPeriodoP"

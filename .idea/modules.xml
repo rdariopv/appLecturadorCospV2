@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/appLecturador.iml" filepath="$PROJECT_DIR$/appLecturador.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appLecCospail.iml" filepath="$PROJECT_DIR$/.idea/modules/appLecCospail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/appLecCospail.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/appLecCospail.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/appLecCospail.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/appLecCospail.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/appLecCospail.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/appLecCospail.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/appLecCospail.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/appLecCospail.app.unitTest.iml" />
     </modules>
   </component>
 </project>

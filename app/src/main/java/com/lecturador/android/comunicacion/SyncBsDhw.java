@@ -16,14 +16,12 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 public class SyncBsDhw {
     public int liAnio;
     public int liMesf;
-    public int liZona;
-    public int liRango;
+    public int liNcnt;
 
-    public void SyncObtenerHistoricoAvisos(int piAnio, int piMes, int piZona, int rango) {
+    public void SyncObtenerHistoricoAvisos(int piAnio, int piMes, int piNcnt) {
         liAnio = piAnio;
         liMesf = piMes;
-        liZona = piZona;
-        liRango = rango;
+        liNcnt = piNcnt;
         WsDataSoap tecnica = new WsDataSoap() {
 
             @Override
@@ -40,17 +38,12 @@ public class SyncBsDhw {
                 pMes.setValue(liMesf);
                 pregunta.addProperty(pMes);
 
-                PropertyInfo pZona = new PropertyInfo();
-                pZona.setName("liZona");
-                pZona.setType(int.class);
-                pZona.setValue(liZona);
-                pregunta.addProperty(pZona);
+                PropertyInfo pNcnt = new PropertyInfo();
+                pNcnt.setName("liZona");
+                pNcnt.setType(int.class);
+                pNcnt.setValue(liNcnt);
+                pregunta.addProperty(pNcnt);
 
-                PropertyInfo pRango = new PropertyInfo();
-                pRango.setName("liRango");
-                pRango.setType(int.class);
-                pRango.setValue(liRango);
-                pregunta.addProperty(pRango);
             }
 
             @Override
@@ -90,11 +83,10 @@ public class SyncBsDhw {
 
             }
         };
-        //tecnica.setNAMESPACE("http://tempuri.org/");
+
         tecnica.setNAMESPACE("http://activebs.net/");
-        // tecnica.setSOAP_ACTION("http://tempuri.org/BSHPW_obtenerHeaderAvisos");
-        tecnica.setSOAP_ACTION("http://activebs.net/BSDPW_obtenerDetalleHistoricoAvisos");
-        tecnica.setMETHOD_NAME("BSDPW_obtenerDetalleHistoricoAvisos");
+        tecnica.setSOAP_ACTION("http://activebs.net/W9BSHPF_obtenerHistoricoAviso");
+        tecnica.setMETHOD_NAME("W9BSHPF_obtenerHistoricoAviso");
 
 
         LtCnf cnf = new LtCnf();

@@ -131,215 +131,79 @@ public class DBhelper extends SQLiteOpenHelper {
             " ltcnfGpsA boolean,  " +
             " ltcnfNpri int ); ";
 
-
     // TABLA 2 HEADER AVISO COBRANZA
     public static  String NOMTAHPW="bshpw";
     public static String COLBSHPWNHPF="bshpwNhpf";
-    public static String COLBSHPWANIO="bshpwAnio";
-    public static String COLBSHPWMESF="bshpwMesf";
-    public static String COLBSHPWFGEN="bshpwFgen";
-    public static String COLBSHPWFENT="bshpwFent";
-    public static String COLBSHPWFVTO="bshpwFvto";
-    public static String COLBSHPWFCOR="bshpwFcor";
-    public static String COLBSHPWNHPC="bshpwNhpc";
-    public static String COLBSHPWNCAT="bshpwNcat";
-    public static String COLBSHPWDCAT="bshpwDcat";
+    public static String COLBSHPWNCNT="bshpwNcnt";
     public static String COLBSHPWLANT="bshpwLant";
     public static String COLBSHPWLACT="bshpwLact";
     public static String COLBSHPWCONS="bshpwCons";
-    public static String COLBSHPWCONF="bshpwConf";
-    public static String COLBSHPWIMCO="bshpwImco";
     public static String COLBSHPWFINI="bshpwFini";
     public static String COLBSHPWFFIN="bshpwFfin";
-    public static String COLBSHPWIMPT="bshpwImpt";
-    public static String COLBSHPWICFI="bshpwIcfi";
-    public static String COLBSHPWIMOR="bshpwImor";
-    public static String COLBSHPWNMOR="bshpwNmor";
-    public static String COLBSHPWCMOR="bshpwCmor";
-    public static String COLBSHPWCORT="bshpwCort";
-    public static String COLBSHPWDESC="bshpwDesc";
-    public static String COLBSHPWCPER="bshpwCper";
-    public static String COLBSHPWNOMB="bshpwNomb";
-    public static String COLBSHPWNMED="bshpwNmed";
-    public static String COLBSHPWNUME="bshpwNume";
-    public static String COLBSHPWNCNT="bshpwNcnt";
-    public static String COLBSHPWNSER="bshpwNser";
-    public static String COLBSHPWDPTO="bshpwDpto";
-    public static String COLBSHPWNPRO="bshpwNpro";
-    public static String COLBSHPWNCIU="bshpwNciu";
-    public static String COLBSHPWDCIU="bshpwDciu";
-    public static String COLBSHPWNUVE="bshpwNuve";
-    public static String COLBSHPWDUVE="bshpwDuve";
-    public static String COLBSHPWNMZA="bshpwNmza";
-    public static String COLBSHPWDMZA="bshpwDmza";
-    public static String COLBSHPWNLOT="bshpwNlot";
-    public static String COLBSHPWDLOT="bshpwDlot";
-    public static String COLBSHPWNBAR="bshpwNbar";
-    public static String COLBSHPWDBAR="bshpwDbar";
-    public static String COLBSHPWNIMB="bshpwNimb";
-    public static String COLBSHPWDIMB="bshpwDimb";
-    public static String COLBSHPWNZON="bshpwNzon";
-    public static String COLBSHPWDZON="bshpwDzon";
-    public static String COLBSHPWNRUT="bshpwNrut";
-    public static String COLBSHPWDRUT="bshpwDrut";
-    public static String COLBSHPWCODF="bshpwCodf";
-    public static String COLBSHPWNRED="bshpwNred";
-    public static String COLBSHPWNVIA="bshpwNvia";
-    public static String COLBSHPWNROI="bshpwNroi";
     public static String COLBSHPWDIRE="bshpwDire";
-    public static String COLBSHPWCLAS="bshpwClas";
-    public static String COLBSHPWIPLV="bshpwIplv";
-    public static String COLBSHPWNFAC="bshpwNfac";
-    public static String COLBSHPWNTPC="bshpwNtpc";
-    public static String COLBSHPWNTCN="bshpwNtcn";
-    public static String COLBSHPWNDTB="bshpwNdtb";
-    public static String COLBSHPWONOF="bshpwOnof";
-    public static String COLBSHPWLMAX="bshpwLmax";
-    public static String COLBSHPWCONP="bshpwConp";
-    public static String COLBSHPWKVAT="bshpwKvat";
+    public static String COLBSHPWDNOM="bshpwDnom";
+    public static String COLBSHPWDCAT="bshpwDcat";
+    public static String COLBSHPWDCIU="bshpwDciu";
+    public static String COLBSHPWDUVE="bshpwDuve";
+    public static String COLBSHPWDMZA="bshpwDmza";
+    public static String COLBSHPWDLOT="bshpwDlot";
+    public static String COLBSHPWDBAR="bshpwDbar";
+    public static String COLBSHPWDIMB="bshpwDimb";
+    public static String COLBSHPWDZON="bshpwDzon";
+    public static String COLBSHPWDRUT="bshpwDrut";
     public static String COLBSHPWCOBS="bshpwCobs";
-    public static String COLBSHPWNLEC="bshpwNlec";
-    public static String COLBSHPWPTJC="bshpwPtjc";
-    public static String COLBSHPWSTAD="bshpwStad";
-    public static String COLBSHPWLATI="bshpwLati";
-    public static String COLBSHPWLONG="bshpwLong";
-    public static String COLBSHPWSTAT="bshpwStat";
-    public static String COLBSHPWRIDE="bshpwRide";
-    public static String [] COLSBSHPW={ COLBSHPWNHPF,COLBSHPWANIO,COLBSHPWMESF,COLBSHPWFGEN,COLBSHPWFENT,COLBSHPWFVTO,
-            COLBSHPWFCOR,COLBSHPWNHPC,COLBSHPWNCAT,COLBSHPWDCAT,COLBSHPWLANT,COLBSHPWLACT,
-            COLBSHPWCONS,COLBSHPWCONF,COLBSHPWIMCO,COLBSHPWFINI,COLBSHPWFFIN,COLBSHPWIMPT,
-            COLBSHPWICFI,COLBSHPWIMOR,COLBSHPWNMOR,COLBSHPWCMOR,COLBSHPWCORT,COLBSHPWDESC,
-            COLBSHPWCPER,COLBSHPWNOMB,COLBSHPWNMED,COLBSHPWNUME,COLBSHPWNCNT,COLBSHPWNSER,
-            COLBSHPWDPTO,COLBSHPWNPRO,COLBSHPWNCIU,COLBSHPWDCIU,COLBSHPWNUVE,COLBSHPWDUVE,
-            COLBSHPWNMZA,COLBSHPWDMZA,COLBSHPWNLOT,COLBSHPWDLOT,COLBSHPWNBAR,COLBSHPWDBAR,
-            COLBSHPWNIMB,COLBSHPWDIMB,COLBSHPWNZON,COLBSHPWDZON,COLBSHPWNRUT,COLBSHPWDRUT,
-            COLBSHPWCODF,COLBSHPWNRED,COLBSHPWNVIA,COLBSHPWNROI,COLBSHPWDIRE,COLBSHPWCLAS,
-            COLBSHPWIPLV,COLBSHPWNFAC,COLBSHPWNTPC,COLBSHPWNTCN,COLBSHPWNDTB,COLBSHPWONOF,
-            COLBSHPWLMAX,COLBSHPWCONP,COLBSHPWKVAT,COLBSHPWCOBS,COLBSHPWNLEC,COLBSHPWPTJC,
-            COLBSHPWSTAD,COLBSHPWLATI,COLBSHPWLONG,COLBSHPWSTAT,COLBSHPWRIDE};
+    public static String COLBSHPWNMOR="bshpfNmor";
+    public static String COLBSHPWIMOR="bshpfImor";
+    public static String COLBSHPWFCOR="bshpfFcor";
+
+    public static String [] COLSBSHPW={ COLBSHPWNHPF,COLBSHPWNCNT,COLBSHPWLANT,COLBSHPWLACT,COLBSHPWCONS,COLBSHPWFINI,
+            COLBSHPWFFIN,COLBSHPWDIRE,COLBSHPWDNOM,COLBSHPWDCAT,COLBSHPWDCIU,COLBSHPWDUVE,
+            COLBSHPWDMZA,COLBSHPWDLOT,COLBSHPWDBAR,COLBSHPWDIMB,COLBSHPWDZON,COLBSHPWDRUT,COLBSHPWCOBS, COLBSHPWNMOR,COLBSHPWIMOR,COLBSHPWFCOR  };
     public static String CTBSHPW=" create table bshpw (  " +
             " bshpwNhpf integer not null , " +
-            " bshpwAnio integer not null , " +
-            " bshpwMesf integer not null , " +
-            " bshpwFgen text not null , " +
-            " bshpwFent text not null , " +
-            " bshpwFvto text not null , " +
-            " bshpwFcor text not null , " +
-            " bshpwNhpc integer not null , " +
-            " bshpwNcat integer not null , " +
-            " bshpwDcat text not null , " +
+            " bshpwNcnt integer not null , " +
             " bshpwLant integer not null , " +
             " bshpwLact integer not null , " +
             " bshpwCons integer not null , " +
-            " bshpwConf integer not null , " +
-            " bshpwImco real not null , " +
             " bshpwFini text not null , " +
             " bshpwFfin text not null , " +
-            " bshpwImpt real not null , " +
-            " bshpwIcfi real not null , " +
-            " bshpwImor real not null , " +
-            " bshpwNmor integer not null , " +
-            " bshpwCmor integer not null , " +
-            " bshpwCort text not null , " +
-            " bshpwDesc text not null , " +
-            " bshpwCper integer not null , " +
-            " bshpwNomb text not null , " +
-            " bshpwNmed integer not null , " +
-            " bshpwNume text not null , " +
-            " bshpwNcnt integer not null , " +
-            " bshpwNser integer not null , " +
-            " bshpwDpto integer not null , " +
-            " bshpwNpro integer not null , " +
-            " bshpwNciu integer not null , " +
-            " bshpwDciu text not null , " +
-            " bshpwNuve integer not null , " +
-            " bshpwDuve text not null , " +
-            " bshpwNmza integer not null , " +
-            " bshpwDmza text not null , " +
-            " bshpwNlot integer not null , " +
-            " bshpwDlot text not null , " +
-            " bshpwNbar integer not null , " +
-            " bshpwDbar text not null , " +
-            " bshpwNimb integer not null , " +
-            " bshpwDimb text not null , " +
-            " bshpwNzon integer not null , " +
-            " bshpwDzon text not null , " +
-            " bshpwNrut integer not null , " +
-            " bshpwDrut text not null , " +
-            " bshpwCodf integer not null , " +
-            " bshpwNred integer not null , " +
-            " bshpwNvia integer not null , " +
-            " bshpwNroi integer not null , " +
             " bshpwDire text not null , " +
-            " bshpwClas integer not null , " +
-            " bshpwIplv integer not null , " +
-            " bshpwNfac integer not null , " +
-            " bshpwNtpc integer not null , " +
-            " bshpwNtcn integer not null , " +
-            " bshpwNdtb integer not null , " +
-            " bshpwOnof integer not null , " +
-            " bshpwLmax integer not null , " +
-            " bshpwConp integer not null , " +
-            " bshpwKvat integer not null , " +
-            " bshpwCobs integer not null , " +
-            " bshpwNlec integer not null , " +
-            " bshpwPtjc integer not null , " +
-            " bshpwStad integer not null , " +
-            " bshpwLati text not null , " +
-            " bshpwLong text not null , " +
-            " bshpwStat integer not null , " +
-            " bshpwRide integer not null ); ";
-
+            " bshpwDnom text not null , " +
+            " bshpwDcat text not null , " +
+            " bshpwDciu text not null , " +
+            " bshpwDuve text not null , " +
+            " bshpwDmza text not null , " +
+            " bshpwDlot text not null , " +
+            " bshpwDbar text not null , " +
+            " bshpwDimb text not null , " +
+            " bshpwDzon text not null , " +
+            " bshpwDrut text not null ," +
+            " bshpwCobs text not null ," +
+            "  bshpfNmor int not null ," +
+            " bshpfImor double not null , " +
+            " bshpfFcor text not null); ";
+//bshpfNmor, bshpfImor y bshpfFcor
 
     // TABLA 2 DETALLE AVISO COBRANZA
     public static  String NOMTADPW="bsdpw";
     public static String COLBSDPWNHPF="bsdpwNhpf";
     public static String COLBSDPWORDE="bsdpwOrde";
     public static String COLBSDPWNHPC="bsdpwNhpc";
-    public static String COLBSDPWDHPC="bsdpwDhpc";
-    public static String COLBSDPWNCAT="bsdpwNcat";
-    public static String COLBSDPWDCAT="bsdpwDcat";
-    public static String COLBSDPWNCTA="bsdpwNcta";
-    public static String COLBSDPWCMON="bsdpwCmon";
-    public static String COLBSDPWTCAM="bsdpwTcam";
+    public static String COLBSDPWDESC="bshpwDesc";
     public static String COLBSDPWCANT="bsdpwCant";
     public static String COLBSDPWPUNI="bsdpwPuni";
     public static String COLBSDPWIMPT="bsdpwImpt";
-    public static String COLBSDPWCREF="bsdpwCref";
-    public static String COLBSDPWFACI="bsdpwFaci";
-    public static String COLBSDPWINEX="bsdpwInex";
-    public static String COLBSDPWCPRD="bsdpwCprd";
-    public static String COLBSDPWNTPO="bsdpwNtpo";
-    public static String COLBSDPWNTPC="bsdpwNtpc";
-    public static String COLBSDPWSTAD="bsdpwStad";
-    public static String COLBSDPWSTAT="bsdpwStat";
-    public static String COLBSDPWRIDE="bsdpwRide";
-    public static String [] COLSBSDPW={ COLBSDPWNHPF,COLBSDPWORDE,COLBSDPWNHPC,COLBSDPWDHPC,COLBSDPWNCAT,COLBSDPWDCAT,
-            COLBSDPWNCTA,COLBSDPWCMON,COLBSDPWTCAM,COLBSDPWCANT,COLBSDPWPUNI,COLBSDPWIMPT,
-            COLBSDPWCREF,COLBSDPWFACI,COLBSDPWINEX,COLBSDPWCPRD,COLBSDPWNTPO,COLBSDPWNTPC,
-            COLBSDPWSTAD,COLBSDPWSTAT,COLBSDPWRIDE};
+
+    public static String [] COLSBSDPW={ COLBSDPWNHPF,COLBSDPWORDE,COLBSDPWNHPC,COLBSDPWDESC,COLBSDPWCANT,COLBSDPWPUNI,
+            COLBSDPWIMPT};
     public static String CTBSDPW="create table bsdpw (  " +
             " bsdpwNhpf integer not null , " +
             " bsdpwOrde integer not null , " +
             " bsdpwNhpc integer not null , " +
-            " bsdpwDhpc text not null ," +
-            " bsdpwNcat integer not null ," +
-            " bsdpwDcat text not null ," +
-            " bsdpwNcta text not null ," +
-            " bsdpwCmon integer not null ," +
-            " bsdpwTcam real not null ," +
-            " bsdpwCant real not null ," +
-            " bsdpwPuni real not null ," +
-            " bsdpwImpt real not null ," +
-            " bsdpwCref text not null ," +
-            " bsdpwFaci real not null ," +
-            " bsdpwInex text not null ," +
-            " bsdpwCprd integer not null ," +
-            " bsdpwNtpo integer not null ," +
-            " bsdpwNtpc integer not null ," +
-            " bsdpwStad integer not null ," +
-            " bsdpwStat integer not null ," +
-            " bsdpwRide integer not null ); ";
+            " bshpwDesc text not null ," +
+            " bsdpwCant integer not null ," +
+            " bsdpwPuni text not null ," +
+            " bsdpwImpt text not null ); ";
 
 
     // TABLA 3 :  ZONAS
@@ -465,6 +329,50 @@ public class DBhelper extends SQLiteOpenHelper {
             " bsdhwStad int not null); " ;
 
 
+    // TABLA 9 : RUTA A LECTURAR
+    public static  String NOMTABSLEC="bslec";
+    public static String COLBSLECNLEC= "bslecnlec";
+    public static String COLBSLECAACT= "bslecaact";
+    public static String COLBSLECMACT= "bslecmact";
+    public static String COLBSLECCODF= "bsleccodf";
+    public static String COLBSLECNCNT= "bslecncnt";
+    public static String COLBSLECLANT= "bsleclant";
+    public static String COLBSLECCONP= "bslecconp";
+    public static String COLBSLECMEDI= "bslecmedi";
+    public static String COLBSLECNUME= "bslecnume";
+    public static String COLBSLECDNOM= "bslecdnom";
+    public static String COLBSLECDIRE= "bslecdire";
+    public static String COLBSLECDUVE= "bslecduve";
+    public static String COLBSLECDMZA= "bslecdmza";
+    public static String COLBSLECDLOT= "bslecdlot";
+    public static String COLBSLECCOBS= "bsleccobs";
+    public static String COLBSLECSTAT= "bslecstat";
+    public static String COLBSLECLACT= "bsleclact";
+
+    public static  String [] COLSBSLEC ={COLBSLECNLEC,COLBSLECAACT,COLBSLECMACT,COLBSLECCODF,
+                                         COLBSLECNCNT,COLBSLECLANT,COLBSLECCONP,COLBSLECMEDI,
+                                         COLBSLECNUME,COLBSLECDNOM,COLBSLECDIRE,COLBSLECDUVE,
+                                         COLBSLECDMZA,COLBSLECDLOT,COLBSLECCOBS, COLBSLECSTAT,COLBSLECLACT};
+    public static String CTBSLEC=" create table bslec (  " +
+            " bslecnlec int not null , " +
+            " bslecaact int not null , " +
+            " bslecmact int not null , " +
+            " bsleccodf int not null , " +
+            " bslecncnt int not null , " +
+            " bsleclant int not null , " +
+            " bslecconp int not null , " +
+            " bslecmedi int not null , " +
+            " bslecnume text not null , " +
+            " bslecdnom text not null , " +
+            " bslecdire text not null , " +
+            " bslecduve text not null , " +
+            " bslecdmza text not null , " +
+            " bslecdlot text not null , " +
+            " bsleccobs int not null , " +
+            " bslecstat int not null , " +
+            " bsleclact int not null ); " ;
+
+
     /*
     private static String openOrCreateDatabase(){
         //Quitar comentario para guardar la db externa
@@ -507,6 +415,7 @@ public class DBhelper extends SQLiteOpenHelper {
         db.execSQL(CTBSOBW);
         db.execSQL(CTBSCCW);
         db.execSQL(CTBSDHW);
+        db.execSQL(CTBSLEC);
 
 
     }
@@ -528,6 +437,7 @@ public class DBhelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + CTBSOBW);
         db.execSQL("DROP TABLE IF EXISTS " + CTBSCCW);
         db.execSQL("DROP TABLE IF EXISTS " + CTBSDHW);
+        db.execSQL("DROP TABLE IF EXISTS " + CTBSLEC);
         onCreate(db);
     }
 

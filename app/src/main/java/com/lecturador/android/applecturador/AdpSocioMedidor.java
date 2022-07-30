@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.lecturador.android.dblecturador.BsHpw;
+import com.lecturador.android.dblecturador.BsLec;
 
 import java.util.LinkedList;
 
@@ -17,26 +18,26 @@ import java.util.LinkedList;
 public class AdpSocioMedidor extends BaseAdapter {
 
     private Context context;
-    private LinkedList<BsHpw> listHpw;
+    private LinkedList<BsLec> listLec;
 
-    public AdpSocioMedidor(Context context, LinkedList<BsHpw> listHpw) {
+    public AdpSocioMedidor(Context context, LinkedList<BsLec> listLecs) {
         this.context = context;
-        this.listHpw = listHpw;
+        this.listLec = listLecs;
     }
 
     @Override
     public int getCount() {
-        return this.listHpw.size();
+        return this.listLec.size();
     }
 
     @Override
-    public BsHpw getItem(int posicion) {
-        return this.listHpw.get(posicion);
+    public BsLec getItem(int posicion) {
+        return this.listLec.get(posicion);
     }
 
     @Override
     public long getItemId(int posicion) {
-        return this.listHpw.get(posicion).getNhpf();
+        return this.listLec.get(posicion).getNlec();
     }
 
     @Override
@@ -55,10 +56,10 @@ public class AdpSocioMedidor extends BaseAdapter {
             contenedorItem = (ContenedorItem) vItem.getTag();
         }
 
-        BsHpw itemLecturacion = this.listHpw.get(posicion);
+        BsLec itemLecturacion = this.listLec.get(posicion);
 
         contenedorItem.tvNtcn.setText(itemLecturacion.getNcnt() + "");
-        contenedorItem.tvImNombreSocio.setText(itemLecturacion.getNomb());
+        contenedorItem.tvImNombreSocio.setText(itemLecturacion.getdNom());
         contenedorItem.tvCodf.setText(itemLecturacion.getCodf()+"");
 
         return vItem;

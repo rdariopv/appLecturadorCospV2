@@ -21,6 +21,7 @@ import com.lecturador.android.comunicacion.SyncBsDhw;
 import com.lecturador.android.comunicacion.SyncBsDpw;
 import com.lecturador.android.comunicacion.SyncBsEnw;
 import com.lecturador.android.comunicacion.SyncBsHpw;
+import com.lecturador.android.comunicacion.SyncBsLec;
 import com.lecturador.android.comunicacion.SyncBsObw;
 import com.lecturador.android.comunicacion.SyncBsTaw;
 import com.lecturador.android.comunicacion.SyncBsccw;
@@ -356,7 +357,7 @@ public class SyncActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 pd.setTitle("Sincronizando");
-                pd.setMessage("ZONAS");
+                pd.setMessage("RUTAS");
                 pd.setIndeterminate(false);
                 pd.show();
 
@@ -380,7 +381,7 @@ public class SyncActivity extends AppCompatActivity {
                 String anio = enwPmt.getAnio() + "";
                 String mes = enwPmt.getMesf() + "";
                 String[] parametros = {anio, mes};
-                new DownloadTarifa().execute(parametros);
+                new DownloadObservaciones().execute();
                 // super.onPostExecute(aBoolean);
             }
 
@@ -655,7 +656,7 @@ public class SyncActivity extends AppCompatActivity {
             for (int i = 0; i <= liVcsHist; i++) {
                 //  aqui descargar los historicos
                 Log.e("SyncActivity", "anio=" + anio + "mes=" + mes + "zona=" + zona);
-                new SyncHistoricoAvisos().execute(parametros);
+              //  new SyncHistoricoAvisos().execute(parametros);
             }
 
             int nVecesDtl = Math.round(zonaActual.getCreD() / zonaActual.getRngo());
@@ -664,7 +665,7 @@ public class SyncActivity extends AppCompatActivity {
             }
             int liVecesHdr = Math.round(zonaActual.getCreh() / zonaActual.getRngo());
             for (int i = 0; i <= liVecesHdr; i++) {
-                new SyncHeaderAvisos().execute(parametros);
+              //  new SyncHeaderAvisos().execute(parametros);
             }
 
 
@@ -695,7 +696,7 @@ public class SyncActivity extends AppCompatActivity {
                 int rango = Integer.valueOf(params[3]);
                 SyncBsHpw syncHpw = new SyncBsHpw();
 
-                syncHpw.SyncObtenerHeaderAvisos(anio, mes, zona, rango);
+              //  syncHpw.SyncObtenerHeaderAvisos(anio, mes, zona, rango);
 
                 return true;
             }
@@ -759,13 +760,21 @@ public class SyncActivity extends AppCompatActivity {
 
             @Override
             protected Boolean doInBackground(String... params) {
-                int anio = Integer.valueOf(params[0]);
+               /* int anio = Integer.valueOf(params[0]);
                 int mes = Integer.valueOf(params[1]);
                 int zona = Integer.valueOf(params[2]);
                 int rango = Integer.valueOf(params[3]);
                 SyncBsDpw syncHpw = new SyncBsDpw();
 
-                syncHpw.SyncObtenerDetalleAvisos(anio, mes, zona, rango);
+               syncHpw.SyncObtenerDetalleAvisos(anio, mes, zona, rango);*/
+
+                int anio = Integer.valueOf(params[0]);
+                int mes = Integer.valueOf(params[1]);
+                int zona = Integer.valueOf(params[2]);
+                int rango = Integer.valueOf(params[3]);
+                SyncBsLec syncLec = new SyncBsLec();
+
+                syncLec.SyncObtenerHeaderAvisos(anio, mes, zona, rango);
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
@@ -812,7 +821,7 @@ public class SyncActivity extends AppCompatActivity {
                 int rango = Integer.valueOf(params[3]);
                 SyncBsDhw syncDhw = new SyncBsDhw();
 
-                syncDhw.SyncObtenerHistoricoAvisos(anio, mes, zona, rango);
+               // syncDhw.SyncObtenerHistoricoAvisos(anio, mes, zona, rango);
 
                 try {
                     Thread.sleep(2000);
@@ -923,7 +932,8 @@ public class SyncActivity extends AppCompatActivity {
             protected Boolean doInBackground(String... strings) {
                 SyncBsHpw shpw = new SyncBsHpw();
                 BsHpw hpw = new BsHpw();
-                LinkedList<BsHpw> list = hpw.listarLecturadosBsHpw();
+                LinkedList<BsHpw> list = new LinkedList<BsHpw>();
+            //    LinkedList<BsHpw> list = hpw.listarLecturadosBsHpw();
                 boolean b = false;
                 for (BsHpw hp : list) {
                     Log.e("SyncAcctivity", "enviar Hpw =" + hp.toString());
@@ -931,16 +941,17 @@ public class SyncActivity extends AppCompatActivity {
                     int lact = hp.getLact();
                     int cons = hp.getCons();
                     Date fecha = new Date();
-                    int imco = (int) hp.getImco();
+                  //  int imco = (int) hp.getImco();
                     int cobs = hp.getCobs();
-                    String latitud = hp.getLati();
-                    String longitud = hp.getLong();
+                    //String latitud = hp.getLati();
+                    //String longitud = hp.getLong();
                     int stadx = 3;
                     BsDpw dpw = new BsDpw();
                     // dpw.obtenerDpw(hp.getNhpf(), hp.getNhpc(), hp.getNcat());
                     LinkedList<BsDpw> listDtl = dpw.listarDetallesToEnviar(hp.getNhpf());
                     int nofn = 1;
-                    int result = shpw.SyncActualizarAvisoHead(liNhpf, lact, cons, fecha, imco, cobs, stadx, latitud, longitud, nofn, "appMovil");
+                    int result=1;
+                //    int result = shpw.SyncActualizarAvisoHead(liNhpf, lact, cons, fecha, imco, cobs, stadx, latitud, longitud, nofn, "appMovil");
                     // int result = shpw.SyncActualizarAvisoHead(604363, 10, 10, fecha, 100, 1, 3, 0.0 , 0.0, 1, "appMovil");
 
                     SyncBsDpw sdpw = new SyncBsDpw();
@@ -951,15 +962,16 @@ public class SyncActivity extends AppCompatActivity {
                             int cant = (int) dtl.getCant();
                             double puni = dtl.getPuni();
                             double impt = dtl.getImpt();
-                            int result1 = sdpw.SyncActualizarAvisoDetalle(liNhpf, nhpc, cant, puni, impt);
+                            int result1=1;
+                          //  int result1 = sdpw.SyncActualizarAvisoDetalle(liNhpf, nhpc, cant, puni, impt);
                             // int result1 = sdpw.SyncActualizarAvisoDetalle(604363, 7002, 20, 10.34, 20);
                             if (result1 == 1) {
                                 b = true;
-                                hp.actualizarEstado(3); // estado lecturado
+                               // hp.actualizarEstado(3); // estado lecturado
                             }
 
                         }
-                        sdpw.SyncActualizarAvisoStatxNhpf(hp.getNhpf(), 0);
+                    //   sdpw.SyncActualizarAvisoStatxNhpf(hp.getNhpf(), 0);
 
 
                     }

@@ -111,7 +111,7 @@ public class MenuPrincipal extends AppCompatActivity {
         miCnf= new LtCnf();
         boolean isCnf=miCnf.obtenerCnf(1);
         if( !isCnf){
-            miCnf.registrar(1, "http://192.168.1.50/wslectura/wsbs.asmx", 0, 0, true,0);
+            miCnf.registrar(1, "http://190.186.159.123/wsLectura/wsBS.asmx", 0, 0, true,0);
             miCnf.obtenerCnf(1);
         }
 

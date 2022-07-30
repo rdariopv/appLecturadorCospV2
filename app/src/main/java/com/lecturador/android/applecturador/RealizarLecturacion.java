@@ -21,9 +21,11 @@ import android.widget.Toast;
 
 import com.lecturador.android.comunicacion.SyncBsDpw;
 import com.lecturador.android.comunicacion.SyncBsHpw;
+import com.lecturador.android.comunicacion.SyncBsLec;
 import com.lecturador.android.dblecturador.BsDpw;
 import com.lecturador.android.dblecturador.BsEnw;
 import com.lecturador.android.dblecturador.BsHpw;
+import com.lecturador.android.dblecturador.BsLec;
 import com.lecturador.android.dblecturador.BsObw;
 import com.lecturador.android.dblecturador.BsTaw;
 import com.lecturador.android.dblecturador.LtCnf;
@@ -42,7 +44,9 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Set;
@@ -88,15 +92,18 @@ public class RealizarLecturacion extends AppCompatActivity {
 
     private TextView tvDescCodigo;
     private TextView tvNombreS;
-    private TextView tvDescPeriodo;
+    private TextView tvConP;
     private EditText etLectura;
     private EditText etNombreSocioLect;
     private Button btnSendLecturacion;
-    private BsHpw loitemLecturacion;
+    private BsLec loitemLecturacion;
+    private BsHpw loitemLect;
     private LtCnf config;
     private boolean reprint;
     private Switch swNmed;
     private TextView tvNume;
+    private TextView tvDataConsumo;
+    private Button btnCalc;
 
 
     private Spinner spObs;
@@ -104,9 +111,11 @@ public class RealizarLecturacion extends AppCompatActivity {
     public void inicializarVariables() {
         tvDescCodigo = (TextView) findViewById(R.id.tvDescCodigo);
         tvNombreS = (TextView) findViewById(R.id.tvNombreS);
-        tvDescPeriodo = (TextView) findViewById(R.id.tvDescPeriodo);
+        tvConP = (TextView) findViewById(R.id.tvConP);
         etLectura = (EditText) findViewById(R.id.etLectura);
         tvNume= (TextView) findViewById(R.id.tvNume);
+        tvDataConsumo = (TextView) findViewById(R.id.tvDataConsumo);
+        btnCalc= (Button) findViewById(R.id.btnCalc);
 
         btnSendLecturacion = (Button) findViewById(R.id.btnSendLecturacion);
         swNmed=(Switch)findViewById(R.id.swNmed);
@@ -125,7 +134,7 @@ public class RealizarLecturacion extends AppCompatActivity {
 
 
         // reprint = false;
-        loitemLecturacion = (BsHpw) getIntent().getExtras().getSerializable("item");
+        loitemLecturacion = (BsLec) getIntent().getExtras().getSerializable("item");
         // if (getIntent().getExtras().containsKey("reprint")) {
         //     reprint = (boolean) getIntent().getExtras().getSerializable("reprint");
         // }
@@ -137,9 +146,9 @@ public class RealizarLecturacion extends AppCompatActivity {
         tvDescCodigo.setText(loitemLecturacion.getCodf() + "");
         BsEnw enw = new BsEnw();
         enw.ObtenerBsEnw();
-        tvDescPeriodo.setText(enw.getAnio() + " - " + enw.getDmes());
+        tvConP.setText(loitemLecturacion.getConp()+ "");
 
-        if(loitemLecturacion.getNmed()==0){
+        if(loitemLecturacion.getMedi() ==0){
             this.swNmed.setChecked(false);
         }else{
             this.swNmed.setChecked(true);
@@ -148,7 +157,7 @@ public class RealizarLecturacion extends AppCompatActivity {
        this.swNmed.setEnabled(false);
 
         //etLectura.setText(loitemLecturacion.getLact() + "");
-        tvNombreS.setText(loitemLecturacion.getNomb());
+        tvNombreS.setText(loitemLecturacion.getdNom() );
 
         btnSendLecturacion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,13 +165,48 @@ public class RealizarLecturacion extends AppCompatActivity {
                 registrarLecturacion();
             }
         });
+
+        btnCalc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calcularConsumo();
+            }
+        });
     }
 
     private void registrarLecturacion() {
 
+        BsObw obs = (BsObw) spObs.getAdapter().getItem(spObs.getSelectedItemPosition());
+        int cobs = obs.getCodo();
+        loitemLecturacion.setCobs(cobs);
+        loitemLecturacion.guardarObservacion();
+
+        loitemLecturacion.setLact(Integer.parseInt( etLectura.getText().toString())) ;
+        loitemLecturacion.guardarLact();
+        if (config.isCnfOnly()) {
+            try{
+
+                new sincronizarConsumo().execute();
+            }catch (Exception e){}
+
+        }
+        if (config.isPrintOnline()) {
+            try{
+                Toast.makeText(getApplicationContext(),"EN PROCESO DE IMPRESION", Toast.LENGTH_LONG).show();
+                new enviarImprimir().execute();
+            }catch (Exception e){
+                //Toast.makeText(getApplicationContext(),"Verifique la impresora o dispositivos vinculados", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_LONG).show();
+            }
+
+        }
+        Toast.makeText(getApplicationContext(),"Registro Satisfactorio", Toast.LENGTH_LONG).show();
+/*
+
+
         int idMedidor = Integer.valueOf(tvDescCodigo.getText().toString());
         //  int idPeriodo = Integer.valueOf(tvDescCodigo.getText().toString());
-        int nhpf = loitemLecturacion.getNhpf();
+        int nhpf = loitemLecturacion.getNlec();
 
         BsObw obs = (BsObw) spObs.getAdapter().getItem(spObs.getSelectedItemPosition());
         int cobs = obs.getCodo();
@@ -198,15 +242,11 @@ public class RealizarLecturacion extends AppCompatActivity {
                 loitemLecturacion.setImco(importeConsumo);
                 loitemLecturacion.guardarImporteConsumo();
 
-                if(config.isCnfGpsA()){
-                    loitemLecturacion.setLati(MenuPrincipal.gps.Latitud+"");
-                    loitemLecturacion.setLong(MenuPrincipal.gps.Longitud+"");
-                    loitemLecturacion.registrarUbicacion();
-                }
+
 
                //aqui calcular alcantarilla
                 double imptAlct=  calcularAlcantarilla(loitemLecturacion.getNhpf(), importeConsumo);
-
+                
                 recuperacionInversion(loitemLecturacion.getNhpf(),importeConsumo+imptAlct);
                 // calcula descuento de ley NHPC=7050
                 Log.e("RealizarLecturacion", "inicia calcularDescuentoLey NHPF=" + loitemLecturacion.getNhpf());
@@ -243,7 +283,7 @@ public class RealizarLecturacion extends AppCompatActivity {
             loitemLecturacion.guardarLecturaActual();
             escribirAviso();
         }
-
+*/
 
     }
 
@@ -252,10 +292,10 @@ public class RealizarLecturacion extends AppCompatActivity {
     public void escribirAviso() {
         StringBuilder sb = new StringBuilder();
         MyZebra myZebra = new MyZebra();
-        sb.append(myZebra.imprimirLaPortenha(loitemLecturacion));
+        sb.append(myZebra.printZPLHorizontalZQ520_Cospail(loitemLecturacion));
         try {
             String url = Environment.getExternalStorageDirectory().getAbsolutePath();
-            File myFile = new File(url + "/avsCobranza" + loitemLecturacion.getNhpf() + ".txt");
+            File myFile = new File(url + "/avsCobranza" + loitemLecturacion.getNlec() + ".txt");
             myFile.createNewFile();
             FileOutputStream fOut = new FileOutputStream(myFile);
             OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
@@ -275,501 +315,22 @@ public class RealizarLecturacion extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public Double calcularConsumo(int nhpf) {
-        BsHpw hpw = new BsHpw();
-        hpw.obtenerBsHpw(nhpf);
-        BsDpw dpw = new BsDpw();
-        dpw.obtenerDpw(loitemLecturacion.getNhpf(), loitemLecturacion.getNhpc());
+    public int calcularConsumo() {
 
-        double consumo=0;
-        if(loitemLecturacion.getNmed()==0){
-            BsTaw taw = new BsTaw();
-            taw=taw.obtenerTarifaDesde(loitemLecturacion.getAnio(), loitemLecturacion.getMesf(), loitemLecturacion.getNhpc(), loitemLecturacion.getNcat(), 0);
-            consumo=taw.getHast();
-        }else{
-            consumo = loitemLecturacion.getLact() - loitemLecturacion.getLant();
-        }
+        String lact = etLectura.getText().toString();
+        loitemLecturacion.setLact(Integer.parseInt(lact));
+        int  liConsumo= loitemLecturacion.getLact() - loitemLecturacion.getLant();
+        tvDataConsumo.setText(liConsumo + "");
 
-        if (consumo < 0) {
-            Toast.makeText(RealizarLecturacion.this, "Consumo Negativo, Digite Nuevamente la lectura", Toast.LENGTH_LONG).show();
-        }
-        loitemLecturacion.setCons((int) consumo);
-        loitemLecturacion.guardarConsumo();
-        double importe = 0;
-        //calcConsumo(consumo);
-
-        if (consumo == 0) {
-            //consumo = 1;
-            dpw.setCant(1);
-        } else {
-            dpw.setCant(consumo);
-        }
-        dpw.registrarCantidad();
-
-        // si no tiene medidor tomar el consumo= taw.hasta
-        // si no tiene medidor lectura=0
-
-
-        Double rango = 0.0;
-        Double aux = 0.0;
-
-        BsTaw taw = new BsTaw();
-        aux = consumo;
-
-        LinkedList<BsTaw> tarifas = taw.obtenerTarifa(loitemLecturacion.getAnio(), loitemLecturacion.getMesf(),
-                loitemLecturacion.getNhpc(), loitemLecturacion.getNcat());
-        for (BsTaw tar : tarifas) {
-            int desde = tar.getDesd();
-            int hasta = tar.getHast();
-
-            //if (loitemLecturacion.getNmed() == 0) {
-            //    consumo = hasta;
-            //}
-
-            double val1 = tar.getVal1();
-            int cmon = tar.getCmon();
-            double tcam = dpw.getTcam();
-            String fiva = tar.getFiva().trim();
-            String vafa = tar.getVafa().trim();
-            if (desde == 0) { // consumo minimo
-                if (consumo <= hasta) {
-                    rango = consumo;
-                    importe = importe + AnalisisImporte(rango, val1, cmon,
-                            tcam, fiva, vafa);
-
-                    double precioUnitario = importe / dpw.getCant();
-                    dpw.setPuni(precioUnitario);
-                    dpw.registrarPrecioUnitario();
-                    dpw.setImpt(importe);
-                    dpw.registrarImporte();
-
-                    return importe;
-                } else {
-                    rango = hasta - desde + 0.0;
-                }
-            } else {
-                if (consumo >= hasta) {
-                    rango = hasta - desde + 1.0;
-                } else {
-                    rango = aux;
-                }
-            }
-            double aimpt = AnalisisImporte(rango, val1, cmon, tcam, fiva, vafa);
-            importe = importe + aimpt;
-            aux = aux - rango;
-        }
-
-        double precioUnitario = importe / dpw.getCant();
-        dpw.setPuni(precioUnitario);
-        dpw.registrarPrecioUnitario();
-        dpw.setImpt(importe);
-        dpw.registrarImporte();
-        return importe;
-    }
-
-    public double calcConsumo(double consumo) {
-        BsTaw taw = new BsTaw();
-        LinkedList<BsTaw> tarifas = taw.obtenerTarifa(loitemLecturacion.getAnio(), loitemLecturacion.getMesf(),
-                loitemLecturacion.getNhpc(), loitemLecturacion.getNcat());
-
-        BsDpw dpw = new BsDpw();
-        dpw.obtenerDpw(loitemLecturacion.getNhpf(), loitemLecturacion.getNhpc());
-
-        Double rango = 0.0;
-        Double liConAux = consumo;
-        double importe = 0.0;
-        for (BsTaw tar : tarifas) {
-            int desde = tar.getDesd();
-            int hasta = tar.getHast();
-            double val1 = tar.getVal1();
-            int cmon = tar.getCmon();
-            double tcam = dpw.getTcam();
-            String fiva = tar.getFiva().trim();
-            String vafa = tar.getVafa().trim();
-            if (desde == 0) { // consumo minimo
-                if (consumo < hasta) {
-                    rango = consumo;
-                    importe = importe + AnalisisImporte(rango, val1, cmon,
-                            tcam, fiva, vafa);
-                    return importe;
-                } else {
-                    rango = hasta - desde + 0.0;
-                }
-            } else {
-                if (consumo >= hasta) {
-                    rango = hasta - desde + 1.0;
-                } else {
-                    rango = liConAux;
-                }
-            }
-            double aimpt = AnalisisImporte(rango, val1, cmon, tcam, fiva, vafa);
-            importe = importe + aimpt;
-            liConAux = liConAux - rango;
-        }
-        return importe;
-    }
-
-    public double calcularDescuentoLey(int nhpf) {
-        BsHpw hpw = new BsHpw();
-        hpw.obtenerBsHpw(nhpf);
-        BsDpw dpw = new BsDpw();
-        dpw.obtenerDpw(hpw.getNhpf(), 7050);
-
-        double dctoLey = 0;
-        if (dpw.getNhpc() != 0) {
-            BsTaw taw = new BsTaw();
-            BsTaw tarifa = taw.obtenerTarifaDesde(hpw.getAnio(), hpw.getMesf(), 7050, hpw.getNcat(), 0);
-
-            if (tarifa.getNhpc() == 7050) {
-
-                int liMinLey = tarifa.getHast();
-
-                BsTaw tarifaMin = taw.obtenerTarifaDesde(hpw.getAnio(), hpw.getMesf(),
-                        hpw.getNhpc(), hpw.getNcat(), 0);
-                int liMinConsumo = tarifaMin.getHast();
-
-                //'1.2. si el consumo enviado es menor al minimo consumido -> queda con el valor minimo
-                if (hpw.getCons() <= liMinConsumo) {
-                    liMinLey = liMinConsumo;
-                } else {
-                    // ' si es mayor analizamos y es menor al minimo descto ley le ponemos el consumo enviado
-                    if (hpw.getCons() < liMinLey) {
-                        liMinLey = loitemLecturacion.getCons();
-                    }
-                }
-
-                double lfImpConMin = calcConsumo(liMinLey);
-                double lfRecuInv = 0;//recuperacionInversionDeLey(nhpf, lfImpConMin); // para otras empresas
-                double lfAlcan = calcularAlcantarillaDeLey(nhpf, lfImpConMin+lfRecuInv);  // para otras empresas
-
-                LinkedList<BsTaw> listTarifas = taw.obtenerTarifa(hpw.getAnio(), hpw.getMesf(), 7050, hpw.getNcat());
-
-                for (BsTaw tar : listTarifas) {
-                    int desde = tar.getDesd();
-                    int hasta = tar.getHast();
-                    double val1 = tar.getVal1();
-                    int cmon = tar.getCmon();
-                    double tcam = dpw.getTcam();
-                    String fiva = tar.getFiva().trim();
-                    String vafa = tar.getVafa().trim();
-
-                    if (liMinLey >= desde && liMinLey <= hasta) {
-
-                        char lfiva = fiva.charAt(0);
-                        char lvafa = vafa.charAt(0);
-                        if ('V' == lvafa) { // NO interesa el consumo
-                            if (cmon == 1) { // si es bolivianos
-                                dctoLey = dctoLey + val1;
-                            } else {  // es Dolares
-                                dctoLey = dctoLey + (val1 * tcam);
-                            }
-                        } else {
-                            dctoLey = dctoLey + (lfImpConMin + lfRecuInv + lfAlcan) * (val1 / 100);
-                        }
-                    }
-                }
-
-                dpw.setCant(1);
-                dpw.registrarCantidad();
-
-                double precioUnitario = dctoLey;
-                dpw.setPuni(precioUnitario);
-                dpw.registrarPrecioUnitario();
-
-                dpw.setImpt(dctoLey);
-                dpw.registrarImporte();
-            }
-
-        }
-        return dctoLey;
-    }
-
-    public double calcularAlcantarilla(int nhpf, double importeConsumo) {
-        BsHpw hpw = new BsHpw();
-        hpw.obtenerBsHpw(nhpf);
-        BsDpw dpw = new BsDpw();
-        dpw.obtenerDpw(hpw.getNhpf(), 7004);
-        double lfImporte = 0;
-        if(dpw.getNhpc()!=0){
-            double ldAlcantarilla = 0;
-
-            BsTaw taw = new BsTaw();
-            LinkedList<BsTaw> listTarifas = taw.obtenerTarifa(loitemLecturacion.getAnio(), loitemLecturacion.getMesf(), 7004, loitemLecturacion.getNcat());
-
-            for (BsTaw tar : listTarifas) {
-                int desde = tar.getDesd();
-                int hasta = tar.getHast();
-                double val1 = tar.getVal1();
-                int cmon = tar.getCmon();
-
-                String fiva = tar.getFiva().trim();
-                String vafa = tar.getVafa().trim();
-
-                if (cmon == 2) {  // en dolares convertir a bolivianos
-                    val1 = val1 * dpw.getTcam();
-                }
-
-                char lfiva = fiva.charAt(0);
-                char lvafa = vafa.charAt(0);
-                if ('F' == lfiva && 'F' == lvafa) { // NO interesa el consumo
-                    lfImporte = importeConsumo * (val1 / 100);
-                } else if ('F' == lfiva && 'V' == lvafa) { // SI interesa el consumo
-                    lfImporte = val1;
-                }
-            }
-            dpw.setPuni(lfImporte);
-            dpw.registrarPrecioUnitario();
-
-            dpw.setImpt(lfImporte);
-            dpw.registrarImporte();
-
-        }
-
-
-        return lfImporte;
+        return liConsumo;
     }
 
 
-    public double calcularCovid(int nhpf, double imptConsumoyAlcantarilla) {
-        BsHpw hpw = new BsHpw();
-        hpw.obtenerBsHpw(nhpf);
-        BsDpw dpw = new BsDpw();
-        dpw.obtenerDpw(hpw.getNhpf(), 7101);
-        double lfImporte = 0;
-        if(dpw.getNhpc()!=0){
-
-            BsTaw taw = new BsTaw();
-            LinkedList<BsTaw> listTarifas = taw.obtenerTarifa(loitemLecturacion.getAnio(),
-                    loitemLecturacion.getMesf(), 7101, loitemLecturacion.getNcat());
-
-            for (BsTaw tar : listTarifas) {
-                double val1 = tar.getVal1();
-                int cmon = tar.getCmon();
-
-                String fiva = tar.getFiva().trim();
-                String vafa = tar.getVafa().trim();
-                if (cmon == 2) {  // en dolares convertir a bolivianos
-                    val1 = val1 * dpw.getTcam();
-                }
-                char lfiva = fiva.charAt(0);
-                char lvafa = vafa.charAt(0);
-                if ('F' == lfiva && 'F' == lvafa) { // NO interesa el consumo
-                    lfImporte = imptConsumoyAlcantarilla * (val1 / 100);
-                } else if ('F' == lfiva && 'V' == lvafa) { // SI interesa el consumo
-                    lfImporte = val1;
-                }
-            }
-            dpw.setPuni(lfImporte);
-            dpw.registrarPrecioUnitario();
-            dpw.setImpt(lfImporte);
-            dpw.registrarImporte();
-
-        }
-        return lfImporte;
-    }
 
 
-    public double calcularAlcantarillaDeLey(int nhpf, double importeConsumo) {
-        BsHpw hpw = new BsHpw();
-        hpw.obtenerBsHpw(nhpf);
-        BsDpw dpw = new BsDpw();
-        dpw.obtenerDpw(hpw.getNhpf(), 7004);
-        double lfImporte = 0;
-        if(dpw.getNhpc()!=0){
-            double ldAlcantarilla = 0;
-
-            BsTaw taw = new BsTaw();
-            LinkedList<BsTaw> listTarifas = taw.obtenerTarifa(loitemLecturacion.getAnio(), loitemLecturacion.getMesf(), 7004, loitemLecturacion.getNcat());
-
-            for (BsTaw tar : listTarifas) {
-                int desde = tar.getDesd();
-                int hasta = tar.getHast();
-                double val1 = tar.getVal1();
-                int cmon = tar.getCmon();
-
-                String fiva = tar.getFiva().trim();
-                String vafa = tar.getVafa().trim();
-
-                if (cmon == 2) {  // en dolares convertir a bolivianos
-                    val1 = val1 * dpw.getTcam();
-                }
-
-                char lfiva = fiva.charAt(0);
-                char lvafa = vafa.charAt(0);
-                if ('F' == lfiva && 'F' == lvafa) { // NO interesa el consumo
-                    lfImporte = importeConsumo * (val1 / 100);
-                } else if ('F' == lfiva && 'V' == lvafa) { // SI interesa el consumo
-                    lfImporte = val1;
-                }
-            }
-        }
 
 
-        return lfImporte;
-    }
 
-
-    public double recuperacionInversion(int nhpf, double importeConsumo){
-
-        BsHpw hpw = new BsHpw();
-        hpw.obtenerBsHpw(nhpf);
-        BsDpw dpw = new BsDpw();
-        dpw.obtenerDpw(hpw.getNhpf(), 7080);
-         if(dpw.getNhpc()!=0){
-             BsTaw taw = new BsTaw();
-             LinkedList<BsTaw> listTarifas = taw.obtenerTarifa(loitemLecturacion.getAnio(), loitemLecturacion.getMesf(), 7080, loitemLecturacion.getNcat());
-
-             double lfImporte = 0;
-
-             for (BsTaw tar : listTarifas) {
-                 int desde = tar.getDesd();
-                 int hasta = tar.getHast();
-                 double val1 = tar.getVal1();
-                 int cmon = tar.getCmon();
-
-                 String fiva = tar.getFiva().trim();
-                 String vafa = tar.getVafa().trim();
-
-                 if (cmon == 2) {  // en dolares convertir a bolivianos
-                     val1 = val1 * dpw.getTcam();
-                 }
-
-                 char lfiva = fiva.charAt(0);
-                 char lvafa = vafa.charAt(0);
-                 if ('F' == lfiva && 'F' == lvafa) { // NO interesa el consumo
-                     lfImporte =  importeConsumo * (val1 / 100);
-                 }
-
-                 if ('F' == lfiva && 'V' == lvafa) { // SI interesa el consumo
-                     lfImporte = val1;
-                 }
-                 if ('V' == lfiva && 'V' == lvafa) { // SI interesa el consumo
-                     lfImporte =hpw.getCons()* val1;
-                 }
-             }
-             dpw.setPuni(lfImporte);
-             dpw.registrarPrecioUnitario();
-
-             dpw.setImpt(lfImporte);
-             dpw.registrarImporte();
-
-         }
-
-        return 0;
-    }
-
-    public double recuperacionInversionDeLey(int nhpf, double importeConsumo){
-
-        BsHpw hpw = new BsHpw();
-        hpw.obtenerBsHpw(nhpf);
-        BsDpw dpw = new BsDpw();
-        dpw.obtenerDpw(hpw.getNhpf(), 7080);
-        double lfImporte = 0;
-        if(dpw.getNhpc()!=0){
-            BsTaw taw = new BsTaw();
-            LinkedList<BsTaw> listTarifas = taw.obtenerTarifa(loitemLecturacion.getAnio(), loitemLecturacion.getMesf(), 7080, loitemLecturacion.getNcat());
-
-            for (BsTaw tar : listTarifas) {
-                int desde = tar.getDesd();
-                int hasta = tar.getHast();
-                double val1 = tar.getVal1();
-                int cmon = tar.getCmon();
-
-                String fiva = tar.getFiva().trim();
-                String vafa = tar.getVafa().trim();
-
-                if (cmon == 2) {  // en dolares convertir a bolivianos
-                    val1 = val1 * dpw.getTcam();
-                }
-
-                char lfiva = fiva.charAt(0);
-                char lvafa = vafa.charAt(0);
-                if ('F' == lfiva && 'F' == lvafa) { // NO interesa el consumo
-                    lfImporte =  importeConsumo * (val1 / 100);
-                }
-
-                if ('F' == lfiva && 'V' == lvafa) { // SI interesa el consumo
-                    lfImporte = val1;
-                }
-                if ('V' == lfiva && 'V' == lvafa) { // SI interesa el consumo
-                    lfImporte =hpw.getCons()* val1;
-                }
-            }
-
-
-        }
-
-        return lfImporte;
-    }
-
-
-    public void registrarOtrosConceptos() {
-
-        BsDpw detalle = new BsDpw();
-
-        LinkedList<BsDpw> listDtl = detalle.obtenerOtrosDetalles(loitemLecturacion.getNhpf(), loitemLecturacion.getNcat());
-        for (BsDpw dpw : listDtl) {
-
-            dpw.setCant(1);
-            dpw.registrarCantidad();
-
-            double lfImporte = calcularOtrosImportes(dpw.getNhpc(), dpw.getTcam(), loitemLecturacion.getCons());
-            dpw.setImpt(lfImporte);
-            dpw.registrarImporte();
-
-            double precioUnitario = lfImporte;
-            dpw.setPuni(precioUnitario);
-            dpw.registrarPrecioUnitario();
-        }
-    }
-
-    public double calcularOtrosImportes(int liNhpc, double lfTcam, double lfConsumo) {
-
-        BsTaw taw = new BsTaw();
-        LinkedList<BsTaw> listTarifas = taw.obtenerTarifa(loitemLecturacion.getAnio(), loitemLecturacion.getMesf(), liNhpc, loitemLecturacion.getNcat());
-
-        double lfImporte = 0;
-
-        for (BsTaw tar : listTarifas) {
-            int desde = tar.getDesd();
-            int hasta = tar.getHast();
-            double val1 = tar.getVal1();
-            int cmon = tar.getCmon();
-
-            String fiva = tar.getFiva().trim();
-            String vafa = tar.getVafa().trim();
-
-            if (cmon == 2) {  // en dolares convertir a bolivianos
-                val1 = val1 * lfTcam;
-            }
-
-            char lfiva = fiva.charAt(0);
-            char lvafa = vafa.charAt(0);
-            if ('F' == lfiva && 'F' == lvafa) { // NO interesa el consumo
-                lfImporte = lfConsumo * (val1 / 100);
-            } else if ('F' == lfiva && 'V' == lvafa) { // SI interesa el consumo
-                lfImporte = val1;
-            }
-        }
-
-        return lfImporte;
-    }
-
-    public Double AnalisisImporte(Double consumo, Double valor, int cmon, Double tcam, String fiva, String vafa) {
-        Double importe = -1.0;
-        if (cmon == 2) {  // en dolares convertir a bolivianos
-            valor = valor * tcam;
-        }
-
-        char lfiva = fiva.charAt(0);
-        char lvafa = vafa.charAt(0);
-        if ('F' == lfiva && 'V' == lvafa) { // NO interesa el consumo
-            importe = valor;
-        } else if ('V' == lfiva && 'V' == lvafa) { // SI interesa el consumo
-            importe = consumo * valor;
-        }
-        return importe;
-    }
 
     public void lanzarLecturacionBluetooth() {
         Intent intent = new Intent(this, LecturacionBluetooth.class);
@@ -892,7 +453,6 @@ public class RealizarLecturacion extends AppCompatActivity {
     @Override
     public void onStop() {
         super.onStop();
-
     }
 
     public class enviarImprimir extends AsyncTask<String, Integer, Boolean> {
@@ -953,37 +513,43 @@ public class RealizarLecturacion extends AppCompatActivity {
                     // configLabel = "^XA^FO17,16^GB379,371,8^FS^FT65,255^A0N,135,134^FDZPL NO PROGRAMADO^FS^XZ".getBytes();
                     // configLabel = etToPrint.getText().toString().getBytes();
 
-                    if (cnf.getCnfNpri() == 1) {
+                    if (cnf.getCnfNpri() == 0) {
                         MyZebra myZebra = new MyZebra();
-                        StringBuilder sb = myZebra.printZPLVertical1(loitemLecturacion);
+                        StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail(loitemLecturacion);
                         configLabel = sb.toString().getBytes();
                     }
-                    if (cnf.getCnfNpri() == 2) {
-                        MyZebra myZebra = new MyZebra();
-                        StringBuilder sb = myZebra.printZPLHorizontalZQ520(loitemLecturacion);
-                        configLabel = sb.toString().getBytes();
-                    }
-                    if (cnf.getCnfNpri() == 3) {
-                        MyZebra myZebra = new MyZebra();
-                        StringBuilder sb = myZebra.printZPLVertical2(loitemLecturacion);
-                        configLabel = sb.toString().getBytes();
-                    }
+                   // if (cnf.getCnfNpri() == 2) {
+                   //     MyZebra myZebra = new MyZebra();
+                   //     StringBuilder sb = myZebra.printZPLHorizontalZQ520(loitemLect);
+                   //     configLabel = sb.toString().getBytes();
+                   // }
+                   // if (cnf.getCnfNpri() == 3) {
+                   //     MyZebra myZebra = new MyZebra();
+                   //     StringBuilder sb = myZebra.printZPLVertical2(loitemLect);
+                   //     configLabel = sb.toString().getBytes();
+                   // }
 
-                    if (cnf.getCnfNpri() == 4) {
-                        MyZebra myZebra = new MyZebra();
-                        StringBuilder sb = myZebra.printZPLHorizontalZQ320(loitemLecturacion) ;
-                        configLabel = sb.toString().getBytes();
-                    }
+                   // if (cnf.getCnfNpri() == 4) {
+                   //     MyZebra myZebra = new MyZebra();
+                   //     StringBuilder sb = myZebra.printZPLHorizontalZQ320(loitemLect) ;
+                   //     configLabel = sb.toString().getBytes();
+                   // }
+
+                   // if (cnf.getCnfNpri() == 5) {
+                   //     MyZebra myZebra = new MyZebra();
+                   //     StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail(loitemLecturacion) ;
+                   //     configLabel = sb.toString().getBytes();
+                   // }
                     //  StringBuilder sb = myZebra.printZPL(loitemLecturacion);
 
 
                 } else if (printerLanguage == PrinterLanguage.CPCL) {
                     //  String cpclConfigLabel = "! 0 200 200 406 1\r\n" + "ON-FEED IGNORE\r\n" + "BOX 20 20 380 380 8\r\n" + "T 0 6 137 177 " + etToPrint.getText().toString() + "\r\n" + "PRINT\r\n";
-                    if(cnf.getCnfNpri()==0){
-                        MyZebra myZebra = new MyZebra();
-                        StringBuilder sb = myZebra.imprimirLaPortenha(loitemLecturacion);
-                        configLabel = sb.toString().getBytes();
-                    }
+                   // if(cnf.getCnfNpri()==0){
+                   //     MyZebra myZebra = new MyZebra();
+                   //     StringBuilder sb = myZebra.imprimirLaPortenha(loitemLect);
+                   //     configLabel = sb.toString().getBytes();
+                   // }
 
                 }
             }
@@ -999,35 +565,27 @@ public class RealizarLecturacion extends AppCompatActivity {
 
     //region Sinronizacion en linea
     public class sincronizarConsumo extends AsyncTask<String, Integer, Boolean> {
+        ProgressDialog pd = new ProgressDialog(RealizarLecturacion.this);
+
         @Override
         protected void onPreExecute() {
     //        super.onPreExecute();
+
+            pd.setTitle("Enviando Datos");
+            pd.setMessage("enviando datos de lectura");
+
+            pd.setIndeterminate(false);
+            pd.show();
         }
 
         @Override
         protected Boolean doInBackground(String... strings) {
             SyncBsHpw shpw = new SyncBsHpw();
-            int liNhpf = loitemLecturacion.getNhpf();
-            int lact = loitemLecturacion.getLact();
-            int cons = loitemLecturacion.getCons();
-            Date fecha = new Date();
-            int imco = Integer.valueOf(loitemLecturacion.getImco() + "");
-            int cobs = loitemLecturacion.getCobs();
-            int stad = loitemLecturacion.getStad();
-            String latitud= loitemLecturacion.getLati();
-            String longitud= loitemLecturacion.getLong();
-            BsDpw dpw = new BsDpw();
-            dpw.obtenerDpw(loitemLecturacion.getNhpf(), loitemLecturacion.getNhpc());
-            int nofn = 1;
-            int result = shpw.SyncActualizarAvisoHead(liNhpf, lact, cons, fecha, imco, cobs, stad,latitud, longitud, nofn, "appMovil");
-            if (result == 1) {
-                SyncBsDpw sdpw = new SyncBsDpw();
-                int result2 = sdpw.SyncActualizarAvisoDetalle(loitemLecturacion.getNhpf(), loitemLecturacion.getNhpc(),
-                        (int) dpw.getCant(), dpw.getPuni(), (int) dpw.getImpt());
-                if (result2 == 1) {
-                    loitemLecturacion.actualizarEstado(3); // estado lecturado
-                }
-            }
+            SyncBsLec slec = new SyncBsLec();
+
+
+
+            slec.SyncEnviarLecturacion(loitemLecturacion.getNlec(),loitemLecturacion.getLact(),loitemLecturacion.getCobs(),new Date(),MenuPrincipal.gps.Latitud,MenuPrincipal.gps.Longitud,1,"appMovil");
 
             return null;
         }
@@ -1035,6 +593,13 @@ public class RealizarLecturacion extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean aBoolean) {
 //            super.onPostExecute(aBoolean);
+            new sincronizarHeaderAviso().execute();
+            new sincronizarDetalleAviso().execute();
+            new sincronizarHistoricoAviso().execute();
+
+            pd.dismiss();
+
+
         }
 
         @Override
@@ -1042,6 +607,96 @@ public class RealizarLecturacion extends AppCompatActivity {
   //          super.onCancelled(aBoolean);
         }
 
+
+
+        public class sincronizarHeaderAviso extends AsyncTask<String, Integer, Boolean> {
+            @Override
+            protected void onPreExecute() {
+                //        super.onPreExecute();
+            }
+
+            @Override
+            protected Boolean doInBackground(String... strings) {
+                SyncBsHpw shpw = new SyncBsHpw();
+
+                BsEnw enw= new BsEnw();
+                enw.ObtenerBsEnw();
+                shpw.SyncObtenerHeaderAvisos(enw.getAnio(),enw.getMesf(),loitemLecturacion.getNcnt());
+                return null;  
+            }
+
+            @Override
+            protected void onPostExecute(Boolean aBoolean) {
+//            super.onPostExecute(aBoolean);
+
+            }
+
+            @Override
+            protected void onCancelled(Boolean aBoolean) {
+                //          super.onCancelled(aBoolean);
+            }
+
+        }
+
+        public class sincronizarDetalleAviso extends AsyncTask<String, Integer, Boolean> {
+            @Override
+            protected void onPreExecute() {
+                //        super.onPreExecute();
+            }
+
+            @Override
+            protected Boolean doInBackground(String... strings) {
+
+                BsEnw enw= new BsEnw();
+                enw.ObtenerBsEnw();
+                SyncBsDpw sDpw=new SyncBsDpw();
+                sDpw.SyncObtenerDetalleAvisos(enw.getAnio(), enw.getMesf(),loitemLecturacion.getNcnt());
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Boolean aBoolean) {
+//            super.onPostExecute(aBoolean);
+
+            }
+
+            @Override
+            protected void onCancelled(Boolean aBoolean) {
+                //          super.onCancelled(aBoolean);
+            }
+
+        }
+
+        public class sincronizarHistoricoAviso extends AsyncTask<String, Integer, Boolean> {
+            @Override
+            protected void onPreExecute() {
+                //        super.onPreExecute();
+                ProgressDialog pd = new ProgressDialog(RealizarLecturacion.this);
+            }
+
+            @Override
+            protected Boolean doInBackground(String... strings) {
+                SyncBsHpw shpw = new SyncBsHpw();
+                SyncBsLec slec = new SyncBsLec();
+
+
+                slec.SyncEnviarLecturacion(loitemLecturacion.getNlec(),loitemLecturacion.getLact(),loitemLecturacion.getCobs(),new Date(),MenuPrincipal.gps.Latitud,MenuPrincipal.gps.Longitud,1,"AppMovil");
+
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Boolean aBoolean) {
+//            super.onPostExecute(aBoolean);
+
+            }
+
+            @Override
+            protected void onCancelled(Boolean aBoolean) {
+                //          super.onCancelled(aBoolean);
+            }
+
+        }
     }
     //endregion
 }

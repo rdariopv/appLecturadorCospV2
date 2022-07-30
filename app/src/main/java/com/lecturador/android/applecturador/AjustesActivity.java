@@ -41,7 +41,7 @@ public class AjustesActivity extends AppCompatActivity {
         spPrinter=(Spinner) findViewById(R.id.spPrinter);
 
 
-        String[] test=new String[]{"Vertical1 HP ","Vertical2 HG", "Horizontal ZQ520","Vertical3 HG", "Horizontal HM ZQ320"};
+        String[] test=new String[]{"Horizontal ZQ520"};
         ArrayAdapter<String> adpPrinter= new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,test);
         spPrinter.setAdapter(adpPrinter);
         LtCnf cnf = new LtCnf();

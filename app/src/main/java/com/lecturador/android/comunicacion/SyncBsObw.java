@@ -53,8 +53,8 @@ public class SyncBsObw {
             }
         };
         tecnica.setNAMESPACE("http://activebs.net/");
-        tecnica.setSOAP_ACTION("http://activebs.net/BSOBW_obtenerObservacion");
-        tecnica.setMETHOD_NAME("BSOBW_obtenerObservacion");
+        tecnica.setSOAP_ACTION("http://activebs.net/W3BSCON_obtenerObservacion");
+        tecnica.setMETHOD_NAME("W3BSCON_obtenerObservacion");
 
         LtCnf cnf = new LtCnf();
         cnf.obtenerCnf(1);

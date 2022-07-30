@@ -74,7 +74,7 @@ public class ReImprimir extends AppCompatActivity {
         lHpwPrint = (BsHpw) getIntent().getExtras().getSerializable("item");
         etLecturaP.setText(lHpwPrint.getLact() + "");
         etLecturaP.setEnabled(false);
-
+/*
 
         BsObw obw = new BsObw();
         LinkedList<BsObw> listObw = obw.listarBsObw();
@@ -104,7 +104,7 @@ public class ReImprimir extends AppCompatActivity {
 
 
         //etLectura.setText(loitemLecturacion.getLact() + "");
-        tvNombreSP.setText(lHpwPrint.getNomb());
+        tvNombreSP.setText(lHpwPrint.getDnom());
 
         btnSendPrint.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +112,7 @@ public class ReImprimir extends AppCompatActivity {
                 imprimirLecturacion();
             }
         });
-
+*/
     }
 
     public void imprimirLecturacion() {
@@ -266,7 +266,7 @@ public class ReImprimir extends AppCompatActivity {
             if(existe){
                 if (printerLanguage == PrinterLanguage.ZPL) {
                    // configLabel = "^XA^FO17,16^GB379,371,8^FS^FT65,255^A0N,135,134^FDZPL NO PROGRAMADO^FS^XZ".getBytes();
-
+/*
                     if (cnf.getCnfNpri() == 1) {
                         MyZebra myZebra = new MyZebra();
                         StringBuilder sb = myZebra.printZPLVertical1(lHpwPrint);
@@ -296,7 +296,7 @@ public class ReImprimir extends AppCompatActivity {
                         MyZebra myZebra = new MyZebra();
                         StringBuilder sb = myZebra.imprimirLaPortenha(lHpwPrint);
                         configLabel = sb.toString().getBytes();
-                    }
+                    }*/
 
                 }
             }

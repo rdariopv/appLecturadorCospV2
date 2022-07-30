@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.lecturador.android.dblecturador.BsHpw;
+import com.lecturador.android.dblecturador.BsLec;
 import com.lecturador.android.dblecturador.LtCnf;
 
 import androidx.appcompat.app.AlertDialog;
@@ -57,34 +58,34 @@ public class ListaMedidores extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        this.adpListHpw.notifyDataSetChanged();
+        this.adpListLec.notifyDataSetChanged();
         super.onPause();
     }
 
     // private AdapterLecturaciones adapterLecturaciones;
-    private AdpSocioMedidor adpListHpw;
+    private AdpSocioMedidor adpListLec;
     private ListView lvLecturaciones;
 
     public void inicializarVariables()
     {
-        BsHpw hpw = new BsHpw();
+        BsLec lec = new BsLec();
        // this.adapterLecturaciones= new AdapterLecturaciones(this);
-        this.adpListHpw= new AdpSocioMedidor(this,hpw.listarNoLecturadosBsHpw());
+        this.adpListLec = new AdpSocioMedidor(this,lec.listarNoLecturadosBsLec());
         lvLecturaciones= (ListView)findViewById(R.id.lvLecturaciones);
-        lvLecturaciones.setAdapter(this.adpListHpw);
+        lvLecturaciones.setAdapter(this.adpListLec);
 
         lvLecturaciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long idLecturacion) {
                 Toast.makeText(getApplicationContext(),"se presiono el item con posc="+posicion+"  con id= "+idLecturacion+" ",Toast.LENGTH_LONG).show();
               //  ItemLecturacion item = adapterLecturaciones.getItem(posicion);
-                BsHpw item = adpListHpw.getItem(posicion);
+                BsLec item = adpListLec.getItem(posicion);
                 lanzarRealizarLecturacion(item);
             }
         });
     }
 
-    public void lanzarRealizarLecturacion(BsHpw itemLecturacion)
+    public void lanzarRealizarLecturacion(BsLec itemLecturacion)
     {
        // finish();
         Intent intent= new Intent(this,RealizarLecturacion.class);
@@ -124,13 +125,14 @@ public class ListaMedidores extends AppCompatActivity {
     public void buscarCliente(int NroContrato){
         Intent intent= new Intent(this,ReImprimir.class);
         BsHpw itemLecturacion= new BsHpw();
-        boolean existe= itemLecturacion.obtenerBsHpwByNroContrato(NroContrato);
-       if (existe) {
+      //  boolean existe= itemLecturacion.obtenerBsHpwByNroContrato(NroContrato);
+        Snackbar.make(findViewById(android.R.id.content),"EN DESARROLLO.",Snackbar.LENGTH_LONG).show();
+      /* if (existe) {
            intent.putExtra("item", itemLecturacion);
            startActivity(intent);
        }else{
            Snackbar.make(findViewById(android.R.id.content),"SOCIO NO ENCONTRADO.",Snackbar.LENGTH_LONG).show();
-       }
+       }*/
 
     }
 

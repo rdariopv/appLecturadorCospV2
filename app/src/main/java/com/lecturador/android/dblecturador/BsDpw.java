@@ -11,50 +11,32 @@ import java.util.List;
  * Created by Dario Pardo on 4/19/2017.
  */
 public class BsDpw {
+
+// bsdpfNhpf
+// bsdpfOrde
+// bsdpfNhpc
+// bshpcDesc
+// bsdpfCant
+// bsdpfPuni
+// bsdpfImpt
     private int Nhpf;
     private int Orde;
     private int Nhpc;
-    private String Dhpc;
-    private int Ncat;
-    private String Dcat;
-    private String Ncta;
-    private int Cmon;
-    private double Tcam;
+    private String Desc;
     private double Cant;
     private double Puni;
     private double Impt;
-    private String Cref;
-    private double Faci;
-    private String Inex;
-    private int Cprd;
-    private int Ntpo;
-    private int Ntpc;
-    private int Stad;
-    private int Stat;
-    private int Ride;
+
 
     public BsDpw() {
         this.Nhpf=0;
         this.Orde=0;
         this.Nhpc=0;
-        this.Dhpc="";
-        this.Ncat=0;
-        this.Dcat="";
-        this.Ncta="";
-        this.Cmon=0;
-        this.Tcam=0;
+        this.setDesc("");
         this.Cant=0;
         this.Puni=0;
         this.Impt=0;
-        this.Cref="";
-        this.Faci=0;
-        this.Inex="";
-        this.Cprd=0;
-        this.Ntpo=0;
-        this.Ntpc=0;
-        this.Stad=0;
-        this.Stat=0;
-        this.Ride=0;
+
     }
 
     public int getNhpf() {
@@ -81,54 +63,6 @@ public class BsDpw {
         Nhpc = nhpc;
     }
 
-    public String getDhpc() {
-        return Dhpc;
-    }
-
-    public void setDhpc(String dhpc) {
-        Dhpc = dhpc;
-    }
-
-    public int getNcat() {
-        return Ncat;
-    }
-
-    public void setNcat(int ncat) {
-        Ncat = ncat;
-    }
-
-    public String getDcat() {
-        return Dcat;
-    }
-
-    public void setDcat(String dcat) {
-        Dcat = dcat;
-    }
-
-    public String getNcta() {
-        return Ncta;
-    }
-
-    public void setNcta(String ncta) {
-        Ncta = ncta;
-    }
-
-    public int getCmon() {
-        return Cmon;
-    }
-
-    public void setCmon(int cmon) {
-        Cmon = cmon;
-    }
-
-    public double getTcam() {
-        return Tcam;
-    }
-
-    public void setTcam(double tcam) {
-        Tcam = tcam;
-    }
-
     public double getCant() {
         return Cant;
     }
@@ -153,102 +87,28 @@ public class BsDpw {
         Impt = impt;
     }
 
-    public String getCref() {
-        return Cref;
-    }
-
-    public void setCref(String cref) {
-        Cref = cref;
-    }
-
-    public double getFaci() {
-        return Faci;
-    }
-
-    public void setFaci(double faci) {
-        Faci = faci;
-    }
-
-    public String getInex() {
-        return Inex;
-    }
-
-    public void setInex(String inex) {
-        Inex = inex;
-    }
-
-    public int getCprd() {
-        return Cprd;
-    }
-
-    public void setCprd(int cprd) {
-        Cprd = cprd;
-    }
-
-    public int getNtpo() {
-        return Ntpo;
-    }
-
-    public void setNtpo(int ntpo) {
-        Ntpo = ntpo;
-    }
-
-    public int getNtpc() {
-        return Ntpc;
-    }
-
-    public void setNtpc(int ntpc) {
-        Ntpc = ntpc;
-    }
-
-    public int getStad() {
-        return Stad;
-    }
-
-    public void setStad(int stad) {
-        Stad = stad;
-    }
-
-    public int getStat() {
-        return Stat;
-    }
-
-    public void setStat(int stat) {
-        Stat = stat;
-    }
-
-    public int getRide() {
-        return Ride;
-    }
-
-    public void setRide(int ride) {
-        Ride = ride;
-    }
 
     public void insertarBsDpw() {
+
+
+// bsdpfNhpf
+// bsdpfOrde
+// bsdpfNhpc
+// bshpcDesc
+// bsdpfCant
+// bsdpfPuni
+// bsdpfImpt
+
         DBmanager.AbrirBD();
         List<Object> datos = new ArrayList<Object>();
         datos.add(this.Nhpf);
         datos.add(this.Orde);
         datos.add(this.Nhpc);
-        datos.add(this.Dhpc);
-        datos.add(this.Ncat);
-        datos.add(this.Dcat);
-        datos.add(this.Ncta);
-        datos.add(this.Cmon);
-        datos.add(this.Tcam);
+        datos.add(this.Desc);
         datos.add(this.Cant);
         datos.add(this.Puni);
         datos.add(this.Impt);
-        datos.add(this.Cref);
-        datos.add(this.Faci);
-        datos.add(this.Inex);
-        datos.add(this.Cprd);
-        datos.add(this.Ntpo);
-        datos.add(this.Ntpc);
-        datos.add(this.Stad);
-        datos.add(this.Stat);
-        datos.add(this.Ride);
+
         DBmanager.insertarTupla(DBhelper.NOMTADPW, DBhelper.COLSBSDPW, datos);
         DBmanager.CerrarBD();
     }
@@ -258,31 +118,18 @@ public class BsDpw {
 
 
         DBmanager.AbrirBD();
-        String condicion = DBhelper.COLBSDPWNHPF +" = "+ nhpf +" and "+ DBhelper.COLBSDPWNHPC +" = "+ nhpc + "";
+        String condicion = DBhelper.COLBSDHWNHPF +" = "+ nhpf + "";
 
         Cursor cursor = DBmanager.buscarTuplas(DBhelper.NOMTADPW, DBhelper.COLSBSDPW, condicion, null);
         if (cursor.moveToNext()) {
             this.setNhpf(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNHPF))));
             this.setOrde(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWORDE))));
             this.setNhpc(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNHPC))));
-            this.setDhpc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDHPC)));
-            this.setNcat(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNCAT))));
-            this.setDcat(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDCAT)));
-            this.setNcta(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNCTA)));
-            this.setCmon(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCMON))));
-            this.setTcam(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWTCAM))));
+            this.setDesc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDESC)));
             this.setCant(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCANT))));
             this.setPuni(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWPUNI))));
             this.setImpt(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWIMPT))));
-            this.setCref(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCREF)));
-            this.setFaci(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWFACI))));
-            this.setInex(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWINEX)));
-            this.setCprd(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCPRD))));
-            this.setNtpo(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNTPO))));
-            this.setNtpc(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNTPC))));
-            this.setStad(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWSTAD))));
-            this.setStat(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWSTAT))));
-            this.setRide(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWRIDE))));
+
 
 
             Log.e("BSdpw", "obtenerDpw se OBTIENE un REGISTRO ");
@@ -290,7 +137,7 @@ public class BsDpw {
 
     }
 
-
+/*
     public LinkedList<BsDpw> obtenerOtrosDetalles(int nhpf, int ncat  ){
 
        LinkedList<BsDpw> list= listarDetalles(nhpf);
@@ -338,12 +185,12 @@ public class BsDpw {
         return listDpws;
 
     }
-
+*/
     public LinkedList<BsDpw> listarDetallesToEnviar(int nhpf  ){
 
 
         DBmanager.AbrirBD();
-        String condicion = DBhelper.COLBSDPWNHPF +" = "+ nhpf +" and  "+ DBhelper.COLBSDPWSTAD + " = 1 ";
+        String condicion = DBhelper.COLBSDPWNHPF +" = "+ nhpf ;
 
         Cursor cursor = DBmanager.buscarTuplas(DBhelper.NOMTADPW, DBhelper.COLSBSDPW, condicion, null);
         LinkedList<BsDpw> listDpws = new LinkedList<BsDpw>();
@@ -352,24 +199,11 @@ public class BsDpw {
             dpw.setNhpf(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNHPF))));
             dpw.setOrde(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWORDE))));
             dpw.setNhpc(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNHPC))));
-            dpw.setDhpc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDHPC)));
-            dpw.setNcat(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNCAT))));
-            dpw.setDcat(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDCAT)));
-            dpw.setNcta(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNCTA)));
-            dpw.setCmon(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCMON))));
-            dpw.setTcam(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWTCAM))));
+            dpw.setDesc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDESC)));
             dpw.setCant(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCANT))));
             dpw.setPuni(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWPUNI))));
             dpw.setImpt(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWIMPT))));
-            dpw.setCref(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCREF)));
-            dpw.setFaci(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWFACI))));
-            dpw.setInex(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWINEX)));
-            dpw.setCprd(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCPRD))));
-            dpw.setNtpo(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNTPO))));
-            dpw.setNtpc(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNTPC))));
-            dpw.setStad(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWSTAD))));
-            dpw.setStat(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWSTAT))));
-            dpw.setRide(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWRIDE))));
+
 
 
             Log.e("BSdpw", "listarDetalles se adiciona un REGISTRO ");
@@ -392,24 +226,11 @@ public class BsDpw {
             dpw.setNhpf(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNHPF))));
             dpw.setOrde(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWORDE))));
             dpw.setNhpc(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNHPC))));
-            dpw.setDhpc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDHPC)));
-            dpw.setNcat(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNCAT))));
-            dpw.setDcat(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDCAT)));
-            dpw.setNcta(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNCTA)));
-            dpw.setCmon(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCMON))));
-            dpw.setTcam(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWTCAM))));
+            dpw.setDesc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCANT)));
             dpw.setCant(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCANT))));
             dpw.setPuni(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWPUNI))));
             dpw.setImpt(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWIMPT))));
-            dpw.setCref(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCREF)));
-            dpw.setFaci(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWFACI))));
-            dpw.setInex(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWINEX)));
-            dpw.setCprd(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCPRD))));
-            dpw.setNtpo(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNTPO))));
-            dpw.setNtpc(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNTPC))));
-            dpw.setStad(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWSTAD))));
-            dpw.setStat(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWSTAT))));
-            dpw.setRide(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWRIDE))));
+
 
 
             Log.e("BSdpw", "listarDetalles se adiciona un REGISTRO ");
@@ -460,27 +281,21 @@ public class BsDpw {
     @Override
     public String toString() {
         return "BsDpw{" +
-                "Nhpf=" + Nhpf +
+                "  Nhpf=" + Nhpf +
                 ", Orde=" + Orde +
                 ", Nhpc=" + Nhpc +
-                ", Dhpc='" + Dhpc + '\'' +
-                ", Ncat=" + Ncat +
-                ", Dcat='" + Dcat + '\'' +
-                ", Ncta='" + Ncta + '\'' +
-                ", Cmon=" + Cmon +
-                ", Tcam=" + Tcam +
+                ", Desc='" + Desc + '\'' +
                 ", Cant=" + Cant +
-                ", Puni=" + Puni +
-                ", Impt=" + Impt +
-                ", Cref='" + Cref + '\'' +
-                ", Faci=" + Faci +
-                ", Inex='" + Inex + '\'' +
-                ", Cprd=" + Cprd +
-                ", Ntpo=" + Ntpo +
-                ", Ntpc=" + Ntpc +
-                ", Stad=" + Stad +
-                ", Stat=" + Stat +
-                ", Ride=" + Ride +
+                ", Puni='" + Puni + '\'' +
+                ", Impt='" + Impt + '\'' +
                 '}';
+    }
+
+    public String getDesc() {
+        return Desc;
+    }
+
+    public void setDesc(String desc) {
+        Desc = desc;
     }
 }

@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.lecturador.android.comunicacion.SyncBsDpw;
 import com.lecturador.android.comunicacion.SyncBsHpw;
+import com.lecturador.android.comunicacion.SyncBsLec;
 import com.lecturador.android.dblecturador.BsEnw;
 import com.lecturador.android.dblecturador.LtZon;
 
@@ -149,7 +150,7 @@ public class DownloadActivity extends AppCompatActivity {
             int rango = Integer.valueOf(params[3]);
             SyncBsHpw syncHpw = new SyncBsHpw();
 
-            syncHpw.SyncObtenerHeaderAvisos(anio, mes, zona, rango);
+            //syncHpw.SyncObtenerHeaderAvisos(anio, mes, zona, rango);
 
             return true;
         }
@@ -192,9 +193,9 @@ public class DownloadActivity extends AppCompatActivity {
             int mes = Integer.valueOf(params[1]);
             int zona = Integer.valueOf(params[2]);
             int rango = Integer.valueOf(params[3]);
-            SyncBsDpw syncHpw = new SyncBsDpw();
+            SyncBsLec syncLec = new SyncBsLec();
 
-            syncHpw.SyncObtenerDetalleAvisos(anio, mes, zona, rango);
+            syncLec.SyncObtenerHeaderAvisos(anio, mes, zona, rango);
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -207,7 +208,7 @@ public class DownloadActivity extends AppCompatActivity {
         protected void onPostExecute(Boolean aBoolean) {
             //   super.onPostExecute(aBoolean);
             pd.dismiss();
-            new SyncHeaderAvisos().execute(parametros);
+          //  new SyncHeaderAvisos().execute(parametros);
 
         }
 

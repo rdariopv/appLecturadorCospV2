@@ -29,7 +29,7 @@ public class SyncLtZon {
         WsDataSoap tecnica = new WsDataSoap() {
 
             @Override
-            public void adicionarParametro(SoapObject pregunta,  SoapSerializationEnvelope sobre) {
+            public void adicionarParametro(SoapObject pregunta, SoapSerializationEnvelope sobre) {
                 PropertyInfo pAnio = new PropertyInfo();
                 pAnio.setName("liAnio");
                 pAnio.setType(int.class);
@@ -55,7 +55,7 @@ public class SyncLtZon {
                 for (int i = 0; i < newDataset.getPropertyCount(); i++) {
                     SoapObject objZona = (SoapObject) newDataset.getProperty(i);
 
-                    LtZon zon= new LtZon();
+                    LtZon zon = new LtZon();
                     zon.setNzon(Integer.valueOf(objZona.getProperty(0).toString()));
                     zon.setDzon(objZona.getProperty(1).toString());
                     zon.setRngo(Integer.valueOf(objZona.getProperty(2).toString()));
@@ -74,8 +74,8 @@ public class SyncLtZon {
             }
         };
         tecnica.setNAMESPACE("http://activebs.net/");
-        tecnica.setSOAP_ACTION("http://activebs.net/BSZON_obtenerZonas");
-        tecnica.setMETHOD_NAME("BSZON_obtenerZonas");
+        tecnica.setSOAP_ACTION("http://activebs.net/W2BSRUT_ObtenerRutas");
+        tecnica.setMETHOD_NAME("W2BSRUT_ObtenerRutas");
 
 
         LtCnf cnf = new LtCnf();
@@ -84,5 +84,4 @@ public class SyncLtZon {
         WsConsumerSoap consumo = new WsConsumerSoap(tecnica);
         consumo.consumirMetodoServicio();
     }
-
 }

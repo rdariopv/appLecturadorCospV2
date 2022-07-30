@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Dario Pardo\\AndroidStudioProjects\\appLecturador\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\Dario Pardo\\AndroidStudioProjects\\appLecCospail\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Dario Pardo\\AndroidStudioProjects\\appLecturador\\app\\src\\main\\res\\values-v21\\styles.xml",
+                    "source": "C:\\Users\\Dario Pardo\\AndroidStudioProjects\\appLecCospail\\app\\src\\main\\res\\values-v21\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

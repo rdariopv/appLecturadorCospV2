@@ -65,8 +65,8 @@ public class SyncBsEnw {
 
         };
         tecnica.setNAMESPACE("http://activebs.net/");
-        tecnica.setSOAP_ACTION("http://activebs.net/BSEMW_obtenerDatEmpresa");
-        tecnica.setMETHOD_NAME("BSEMW_obtenerDatEmpresa");
+        tecnica.setSOAP_ACTION("http://activebs.net/W1BSPFM_obtenerDatEmpresa");
+        tecnica.setMETHOD_NAME("W1BSPFM_obtenerDatEmpresa");
 
 
         LtCnf cnf = new LtCnf();
