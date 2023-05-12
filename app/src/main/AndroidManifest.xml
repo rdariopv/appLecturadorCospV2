@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.lecturador.android.applecturador">
+    package="com.lecturadorv2.android.applecturador">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <supports-screens
@@ -24,11 +23,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_mesure"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        tools:replace="android:allowBackup,icon,theme,label"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:allowBackup,icon,theme,label">
+        <activity
+            android:name=".EditLectura"
+            android:exported="false"
+            android:label="@string/title_activity_edit_lectura"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MenuPrincipal"
             android:label="@string/app_name">
@@ -44,7 +48,7 @@
             android:parentActivityName=".MenuPrincipal">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuPrincipal" />
+                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
         </activity>
         <activity
             android:name=".RealizarLecturacion"
@@ -52,7 +56,7 @@
             android:parentActivityName=".ListaMedidores">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ListaMedidores" />
+                android:value="com.lecturadorv2.android.applecturador.ListaMedidores" />
         </activity>
         <activity
             android:name=".LecturacionBluetooth"
@@ -64,7 +68,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuPrincipal" />
+                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
         </activity>
         <activity
             android:name=".DownloadActivity"
@@ -72,7 +76,7 @@
             android:parentActivityName=".MenuPrincipal">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuPrincipal" />
+                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
         </activity>
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -82,7 +86,6 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         -->
-
         <activity
             android:name=".SyncActivity"
             android:label="@string/title_activity_sync"
@@ -90,7 +93,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuPrincipal" />
+                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
         </activity>
         <activity
             android:name=".AjustesActivity"
@@ -98,7 +101,7 @@
             android:parentActivityName=".MenuPrincipal">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuPrincipal" />
+                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
         </activity>
         <activity
             android:name=".ReImprimir"
@@ -106,10 +109,8 @@
             android:parentActivityName=".ListaMedidores">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ListaMedidores" />
-
+                android:value="com.lecturadorv2.android.applecturador.ListaMedidores" />
         </activity>
-
     </application>
 
 </manifest>
