@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_editlectura.xml" value="0.13134057971014493" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_menu_principal.xml" value="0.18802083333333333" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_realizarlecturacion.xml" value="0.18802083333333333" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_reimprimir.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/content_edit_lectura.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/menu/menu_listamedidores.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/menu/menu_mprincipal.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

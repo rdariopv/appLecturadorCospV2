@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.lecturador.android.applecturador.SyncActivity">
+    tools:context="com.lecturadorv2.android.applecturador.SyncActivity">
     <item
         android:id="@+id/menu1syncact"
         android:orderInCategory="100"
