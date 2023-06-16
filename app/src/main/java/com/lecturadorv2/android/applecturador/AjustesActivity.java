@@ -1,6 +1,7 @@
 package com.lecturadorv2.android.applecturador;
 
-import androidx.appcompat.app.AppCompatActivity;
+//import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,7 @@ public class AjustesActivity extends AppCompatActivity {
     private Switch swPrint;
     private Switch swGpsA;
     private Spinner spPrinter;
+    private EditText etIDprinter;
     public void inicializarVariables() {
 
 
@@ -39,6 +41,7 @@ public class AjustesActivity extends AppCompatActivity {
         swPrint= (Switch)findViewById(R.id.swPrint) ;
         swGpsA= (Switch)findViewById(R.id.swGpsA) ;
         spPrinter=(Spinner) findViewById(R.id.spPrinter);
+        etIDprinter=(EditText)findViewById(R.id.etIdPrinter);
 
 
         String[] test=new String[]{"Horizontal ZQ520"};
@@ -86,13 +89,13 @@ public class AjustesActivity extends AppCompatActivity {
             if (url == "") {
                 Toast.makeText(this, "Ingrese la URL del servicio WEB", Toast.LENGTH_SHORT).show();
             }
-
+            String idPrinter = this.etIDprinter.getText().toString();
             int printer =spPrinter.getSelectedItemPosition();
             Log.e("AjustesACtivity","la impresora seleccionada es ="+printer);
 
             LtCnf cnf = new LtCnf();
 
-            cnf.registrar(1, url,online,printOnline , GpsA, printer);
+            cnf.registrar(1, url,online,printOnline , GpsA, printer, idPrinter);
             Toast.makeText(this, "Se Registro AJUSTES Correctamente", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();

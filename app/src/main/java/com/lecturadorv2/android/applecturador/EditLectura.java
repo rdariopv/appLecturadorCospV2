@@ -6,10 +6,9 @@ import android.bluetooth.BluetoothDevice;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
+import android.support.design.widget.Snackbar;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -249,7 +248,7 @@ public class EditLectura extends AppCompatActivity {
             }
             Toast.makeText(getApplicationContext(), "Registro Satisfactorio", Toast.LENGTH_LONG).show();
         } else {
-            Snackbar.make(getWindow().getDecorView(), (CharSequence) "digite la Lectura", BaseTransientBottomBar.LENGTH_LONG).show();
+            Snackbar.make(getWindow().getDecorView(), (CharSequence) "digite la Lectura",  Snackbar.LENGTH_LONG).show();
         }
     }
 
@@ -331,7 +330,7 @@ public class EditLectura extends AppCompatActivity {
                 new sincronizarDetalleAviso().execute(new String[0]);
                 return;
             }
-            Snackbar.make(EditLectura.this.getWindow().getDecorView(), (CharSequence) "sin Datos de impresion", BaseTransientBottomBar.LENGTH_LONG).show();
+            Snackbar.make(EditLectura.this.getWindow().getDecorView(), (CharSequence) "sin Datos de impresion", Snackbar.LENGTH_LONG).show();
         }
 
         /* access modifiers changed from: protected */

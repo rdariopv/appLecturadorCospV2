@@ -7,11 +7,19 @@
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/drawable/edittext_bottom_bg.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/drawable/edittext_top_bg.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/drawable/lytitulo.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_ajustes.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_ajusts.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_download.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_editlectura.xml" value="0.13134057971014493" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_listamedidores.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_menu_principal.xml" value="0.18802083333333333" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_realizarlecturacion.xml" value="0.18802083333333333" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_reimprimir.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_sync.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/content_edit_lectura.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/fragment_descargar.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/menu/menu_listamedidores.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/menu/menu_mprincipal.xml" value="0.20416666666666666" />
       </map>

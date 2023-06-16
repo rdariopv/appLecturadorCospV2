@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 30
    // buildToolsVersion "22.0.1"
 
     defaultConfig {
@@ -13,7 +13,7 @@ android {
         minSdkVersion 16
        //targetSdkVersion 27
         versionCode 2
-        multiDexEnabled true
+      //  multiDexEnabled true
         versionName "1.1"
 
     }
@@ -46,27 +46,14 @@ dependencies {
     api files('libs/ksoap2-android-assembly-2.6.2.jar')
     api files('libs/ZSDK_ANDROID_API.jar')
     api files('libs/kxml2-2.1.8.jar')
-
-    api 'com.android.support:appcompat-v7:27.0.0'
-    api 'com.android.support:design:27.0.0'
-    api 'com.android.support:support-v4:27.0.0'
-
-    api 'androidx.appcompat:appcompat:1.1.0'
-    api 'com.google.android.material:material:1.0.0'
-    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'com.android.support:appcompat-v7:28.0.0'
+    api 'com.android.support:design:28.0.0'
+    api 'com.android.support:support-v4:28.0.0'
     api 'com.jakewharton:butterknife:8.7.0'
-
-
     api 'com.weiwangcn.betterspinner:library-material:1.1.0'
     api 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation 'org.kie.modules:org-apache-commons-math:6.5.0.Final'
- //   implementation 'com.google.android.gms:play-services-ads:11.0.2'
- //   implementation 'com.google.android.gms:play-services-gcm:11.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-  //  implementation 'androidx.navigation:navigation-fragment:2.5.1'
-    implementation 'androidx.navigation:navigation-ui:2.5.1'
-    implementation 'com.android.support:multidex:1.0.3'
-    implementation 'androidx.navigation:navigation-fragment:2.5.1'
-
-
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0'
 }

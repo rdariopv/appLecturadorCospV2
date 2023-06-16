@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -111,9 +111,9 @@ public class MenuPrincipal extends AppCompatActivity {
         btnLecturar = (Button) findViewById(R.id.btnLecturar);
         btnAjustes = (Button) findViewById(R.id.btnAjustes);
         miCnf= new LtCnf();
-        boolean isCnf=miCnf.obtenerCnf(1);
+       boolean isCnf=miCnf.obtenerCnf(1);
         if( !isCnf){
-            miCnf.registrar(1, "http://190.186.159.123/wsLectura/wsBS.asmx", 0, 0, true,0);
+             miCnf.registrar(1, "http://190.186.159.123/wsLectura/wsBS.asmx", 0, 0, true,0,"");
             miCnf.obtenerCnf(1);
         }
 
@@ -352,17 +352,17 @@ public class MenuPrincipal extends AppCompatActivity {
         Log.e("request code", "el request code ="+requestCode);
         DBmanager.CrearBD(this);
         Log.e("MenuPrincipal", "se lanzo el dialogo de permisos");
-        for(int index=0; index<=permissions.length - 1;index++){
-            if (grantResults[index] != PackageManager.PERMISSION_GRANTED) {
-                if(permissions[index].trim()==Manifest.permission.WRITE_EXTERNAL_STORAGE){
-
-                }
-                if(permissions[index].trim()==Manifest.permission.ACCESS_FINE_LOCATION){
-                    //asi es como se inicia un servicio desde una actividad
-
-                }
-            }
-        }
+        //for(int index=0; index<=permissions.length - 1;index++){
+           // if (grantResults[index] != PackageManager.PERMISSION_GRANTED) {
+           //    if(permissions[index].trim()==Manifest.permission.WRITE_EXTERNAL_STORAGE){
+//
+           //     }
+           //     if(permissions[index].trim()==Manifest.permission.ACCESS_FINE_LOCATION){
+       //  //           //asi es como se inicia un servicio desde una actividad
+////
+           //    }
+           //}
+       // }
 
     }
 

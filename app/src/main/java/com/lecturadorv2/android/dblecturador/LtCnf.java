@@ -76,6 +76,8 @@ public class LtCnf {
         CnfNpri = cnfNpri;
     }
 
+
+
     @Override
     public String toString() {
         return "LtCnf{" +
@@ -88,7 +90,7 @@ public class LtCnf {
                 '}';
     }
 
-    public void insertarCnf(int Nitm, String urlWs, int SyncOnLine, int printOnline, boolean GpsA , int Nropri) {
+    public void insertarCnf(int Nitm, String urlWs, int SyncOnLine, int printOnline, boolean GpsA , int Nropri,String idprinter) {
         DBmanager.AbrirBD();
         List<Object> datos = new ArrayList<Object>();
         datos.add(Nitm);
@@ -97,27 +99,29 @@ public class LtCnf {
         datos.add(printOnline);
         datos.add(GpsA);
         datos.add(Nropri);
+        datos.add(idprinter);
         DBmanager.insertarTupla(DBhelper.NOMTACNF, DBhelper.COLSCNF, datos);
         DBmanager.CerrarBD();
     }
 
-    public void registrar(int Nitm, String urlWebService, int SyncOnline, int printOnline, boolean GpsA, int Nropri) {
+    public void registrar(int Nitm, String urlWebService, int SyncOnline, int printOnline, boolean GpsA, int Nropri, String idprinter) {
         boolean exite = obtenerCnf(Nitm);
         if (exite) {
-            String[] columnas = { DBhelper.COLCNFWURL,DBhelper.COLCNFONLY , DBhelper.COLCNFPRIN,DBhelper.COLCNFGPSA, DBhelper.COLCNFNPRI};
+            String[] columnas = { DBhelper.COLCNFWURL,DBhelper.COLCNFONLY , DBhelper.COLCNFPRIN,DBhelper.COLCNFGPSA, DBhelper.COLCNFNPRI, DBhelper.COLCNFIDPR};
             List datos = new ArrayList();
             datos.add(urlWebService);
             datos.add(SyncOnline);
             datos.add(printOnline);
             datos.add(GpsA);
             datos.add(Nropri);
+            datos.add(idprinter);
             String condicion = DBhelper.COLCNFNITM + "=" + Nitm;
             DBmanager.AbrirBD();
             DBmanager.modificarTupla(DBhelper.NOMTACNF, columnas, datos, condicion);
             DBmanager.CerrarBD();
             Log.e("NLtCnf", "Modificar Configuracion  =" + this.toString());
         } else {
-            insertarCnf(Nitm, urlWebService, SyncOnline,printOnline, GpsA , Nropri);
+            insertarCnf(Nitm, urlWebService, SyncOnline,printOnline, GpsA , Nropri, idprinter);
             Log.e("NLtCnf", "insertar Configuracion  =" + this.toString());
         }
 

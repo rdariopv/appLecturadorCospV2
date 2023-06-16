@@ -30,15 +30,15 @@ import com.zebra.sdk.printer.ZebraPrinterFactory;
 import java.util.ArrayList;
 import java.util.Set;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import android.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+//import androidx.viewpager.widget.PagerAdapter;
+import android.support.v4.view.ViewPager;
 
 public class AjustsActivity extends AppCompatActivity {
 
@@ -190,7 +190,7 @@ public class AjustsActivity extends AppCompatActivity {
 
                 LtCnf cnf = new LtCnf();
 
-                cnf.registrar(1, url,online,printOnline, GpsA ,0);
+                cnf.registrar(1, url,online,printOnline, GpsA ,0,"");
                 Toast.makeText(getActivity(), "Se Registro la Url Correctamente", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 e.printStackTrace();

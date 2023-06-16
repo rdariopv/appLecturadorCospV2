@@ -82,7 +82,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:id="@+id/spPrinter" />
-
+        <TextView android:textAppearance="?android:attr/textAppearanceSmall" android:textStyle="bold" android:id="@+id/textView8" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="ID de impresora"/>
+        <EditText android:layout_gravity="center_horizontal" android:id="@+id/etIdPrinter" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginBottom="10dp" android:text="B0:91:22:7F:BC:9D"/>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

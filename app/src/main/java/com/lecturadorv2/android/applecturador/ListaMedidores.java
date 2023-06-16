@@ -12,13 +12,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
+import android.support.design.widget.Snackbar;
 import com.lecturadorv2.android.dblecturador.BsHpw;
 import com.lecturadorv2.android.dblecturador.BsLec;
 import com.lecturadorv2.android.dblecturador.LtCnf;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 
 //import android.support.v7.app.ActionBarActivity;
 

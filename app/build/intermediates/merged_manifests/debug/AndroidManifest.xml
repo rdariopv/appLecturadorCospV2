@@ -27,9 +27,8 @@
         android:xlargeScreens="true" />
 
     <application
-        android:name="androidx.multidex.MultiDexApplication"
         android:allowBackup="true"
-        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_mesure"
         android:label="@string/app_name"
@@ -41,7 +40,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.lecturadorv2.android.applecturador.MenuPrincipal"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -117,13 +117,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.lecturadorv2.android.applecturador.ListaMedidores" />
         </activity>
-
-        <uses-library
-            android:name="androidx.window.extensions"
-            android:required="false" />
-        <uses-library
-            android:name="androidx.window.sidecar"
-            android:required="false" />
     </application>
 
 </manifest>
