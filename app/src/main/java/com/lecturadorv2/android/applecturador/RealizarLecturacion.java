@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -19,6 +20,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lecturadorv2.android.comunicacion.SyncBsDhw;
 import com.lecturadorv2.android.comunicacion.SyncBsDpw;
 import com.lecturadorv2.android.comunicacion.SyncBsHpw;
 import com.lecturadorv2.android.comunicacion.SyncBsLec;
@@ -101,6 +103,8 @@ public class RealizarLecturacion extends AppCompatActivity {
     private TextView tvNume;
     private TextView tvDataConsumo;
     private Button btnCalc;
+    private boolean consumoElevado;
+    private boolean consumoNegativo;
 
 
     private Spinner spObs;
@@ -178,26 +182,41 @@ public class RealizarLecturacion extends AppCompatActivity {
         loitemLecturacion.setCobs(cobs);
         loitemLecturacion.guardarObservacion();
 
-        loitemLecturacion.setLact(Integer.parseInt( etLectura.getText().toString())) ;
-        loitemLecturacion.guardarLact();
-        if (config.isCnfOnly()) {
-            try{
+        int poscision = this.spObs.getSelectedItemPosition();
+        String lsLectura = this.etLectura.getText().toString().trim();
 
-                new sincronizarConsumo().execute();
-            }catch (Exception e){}
-
+        if(this.consumoElevado && poscision==0 ){
+            Toast.makeText(getApplicationContext(), "Seleccione otra observación", Toast.LENGTH_LONG).show();
         }
-        if (config.isPrintOnline()) {
-            try{
-                Toast.makeText(getApplicationContext(),"EN PROCESO DE IMPRESION", Toast.LENGTH_LONG).show();
-                new enviarImprimir().execute();
-            }catch (Exception e){
-                //Toast.makeText(getApplicationContext(),"Verifique la impresora o dispositivos vinculados", Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_LONG).show();
-            }
-
+        if(this.consumoNegativo && poscision==0){
+            Toast.makeText(getApplicationContext(), "Seleccione otra observación", Toast.LENGTH_LONG).show();
         }
-        Toast.makeText(getApplicationContext(),"Registro Satisfactorio", Toast.LENGTH_LONG).show();
+
+        if(!lsLectura.isEmpty()){
+                loitemLecturacion.setLact(Integer.parseInt( etLectura.getText().toString())) ;
+                loitemLecturacion.guardarLact();
+                if (config.isCnfOnly()) {
+                    try{
+
+                        new sincronizarConsumo().execute();
+                    }catch (Exception e){
+                    }
+                    Toast.makeText(getApplicationContext(),"Registro Satisfactorio", Toast.LENGTH_LONG).show();
+                }
+        }else{
+            Snackbar.make(getWindow().getDecorView(), (CharSequence) "digite la Lectura", Snackbar.LENGTH_LONG).show();
+        }
+       // if (config.isPrintOnline()) {
+       //    try{
+       //         Toast.makeText(getApplicationContext(),"EN PROCESO DE IMPRESION", Toast.LENGTH_LONG).show();
+       //         new enviarImprimir().execute();
+       //     }catch (Exception e){
+       //         //Toast.makeText(getApplicationContext(),"Verifique la impresora o dispositivos vinculados", Toast.LENGTH_LONG).show();
+       //         Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_LONG).show();
+       //     }
+//
+       // }
+
     }
 
 
@@ -378,8 +397,10 @@ public class RealizarLecturacion extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(String... strings) {
 
-            bluetoothAddress = getPairedPrinters().get(0).getAddress();
+          //  bluetoothAddress = getPairedPrinters().get(0).getAddress();
            // BluetoothDevice bt= getPairedPrinters().get(0);
+            bluetoothAddress= config.getCnfIdpr();
+
           try{
               BluetoothConnection conn = new BluetoothConnection(bluetoothAddress);
               connectAndPrint(conn);
@@ -476,22 +497,21 @@ public class RealizarLecturacion extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
     //        super.onPreExecute();
-
             pd.setTitle("Enviando Datos");
             pd.setMessage("enviando datos de lectura");
-
             pd.setIndeterminate(false);
             pd.show();
         }
 
         @Override
         protected Boolean doInBackground(String... strings) {
-            SyncBsHpw shpw = new SyncBsHpw();
+
             SyncBsLec slec = new SyncBsLec();
-
-
-
-            slec.SyncEnviarLecturacion(loitemLecturacion.getNlec(),loitemLecturacion.getLact(),loitemLecturacion.getCobs(),new Date(),MenuPrincipal.gps.Latitud,MenuPrincipal.gps.Longitud,1,"appMovil");
+            try{
+                slec.SyncEnviarLecturacion(loitemLecturacion.getNlec(),loitemLecturacion.getLact(),loitemLecturacion.getCobs(),new Date(),MenuPrincipal.gps.Latitud,MenuPrincipal.gps.Longitud,1,"appMovil");
+            } catch (Exception e) {
+                RealizarLecturacion.this.displayToast(e.getMessage());
+            }
 
             return null;
         }
@@ -500,8 +520,8 @@ public class RealizarLecturacion extends AppCompatActivity {
         protected void onPostExecute(Boolean aBoolean) {
 //            super.onPostExecute(aBoolean);
             new sincronizarHeaderAviso().execute();
-            new sincronizarDetalleAviso().execute();
-            new sincronizarHistoricoAviso().execute();
+            //new sincronizarDetalleAviso().execute();
+         //   new sincronizarHistoricoAviso().execute();
 
             pd.dismiss();
 
@@ -516,24 +536,42 @@ public class RealizarLecturacion extends AppCompatActivity {
 
 
         public class sincronizarHeaderAviso extends AsyncTask<String, Integer, Boolean> {
+            ProgressDialog pd = new ProgressDialog(RealizarLecturacion.this);
             @Override
             protected void onPreExecute() {
                 //        super.onPreExecute();
+                this.pd.setTitle("Enviando Datos");
+                this.pd.setMessage("Descargando Header lectura");
+                this.pd.setIndeterminate(false);
+                this.pd.show();
             }
 
             @Override
             protected Boolean doInBackground(String... strings) {
                 SyncBsHpw shpw = new SyncBsHpw();
-
                 BsEnw enw= new BsEnw();
                 enw.ObtenerBsEnw();
-                shpw.SyncObtenerHeaderAvisos(enw.getAnio(),enw.getMesf(),loitemLecturacion.getNcnt());
-                return null;  
+                loitemLecturacion.obtenerBsLec(loitemLecturacion.getNlec());
+                if(loitemLecturacion.getRspO()==1){
+                    shpw.SyncObtenerHeaderAvisos(enw.getAnio(),enw.getMesf(),loitemLecturacion.getNcnt());
+
+                }else{
+                    this.pd.setMessage("sin Datos de impresion");
+                }
+
+                return null;
             }
 
             @Override
             protected void onPostExecute(Boolean aBoolean) {
 //            super.onPostExecute(aBoolean);
+                this.pd.dismiss();
+                if(loitemLecturacion.getRspO()==1){
+                    new sincronizarDetalleAviso().execute();
+                }else{
+                    RealizarLecturacion.this.displayToast("No exiten datos para impresion");
+                }
+
 
             }
 
@@ -545,9 +583,15 @@ public class RealizarLecturacion extends AppCompatActivity {
         }
 
         public class sincronizarDetalleAviso extends AsyncTask<String, Integer, Boolean> {
+            ProgressDialog pd = new ProgressDialog(RealizarLecturacion.this);
+
             @Override
             protected void onPreExecute() {
                 //        super.onPreExecute();
+                this.pd.setTitle("Enviando Datos");
+                this.pd.setMessage("Descargando Header lectura");
+                this.pd.setIndeterminate(false);
+                this.pd.show();
             }
 
             @Override
@@ -556,13 +600,20 @@ public class RealizarLecturacion extends AppCompatActivity {
                 BsEnw enw= new BsEnw();
                 enw.ObtenerBsEnw();
                 SyncBsDpw sDpw=new SyncBsDpw();
-                sDpw.SyncObtenerDetalleAvisos(enw.getAnio(), enw.getMesf(),loitemLecturacion.getNcnt());
+                if(loitemLecturacion.getRspO()==1){
+                    sDpw.SyncObtenerDetalleAvisos(enw.getAnio(), enw.getMesf(),loitemLecturacion.getNcnt());
+                    return null;
+                }
+                this.pd.setMessage("sin Datos de impresion");
+
                 return null;
             }
 
             @Override
             protected void onPostExecute(Boolean aBoolean) {
 //            super.onPostExecute(aBoolean);
+                this.pd.dismiss();
+                new sincronizarHistoricoAviso().execute();
 
             }
 
@@ -574,19 +625,22 @@ public class RealizarLecturacion extends AppCompatActivity {
         }
 
         public class sincronizarHistoricoAviso extends AsyncTask<String, Integer, Boolean> {
+            ProgressDialog pd = new ProgressDialog(RealizarLecturacion.this);
             @Override
             protected void onPreExecute() {
                 //        super.onPreExecute();
-                ProgressDialog pd = new ProgressDialog(RealizarLecturacion.this);
+                this.pd.setTitle("Enviando Datos");
+                this.pd.setMessage("Descargando Historico de lectura");
+                this.pd.setIndeterminate(false);
+                this.pd.show();
             }
 
             @Override
             protected Boolean doInBackground(String... strings) {
-                SyncBsHpw shpw = new SyncBsHpw();
-                SyncBsLec slec = new SyncBsLec();
-
-
-                slec.SyncEnviarLecturacion(loitemLecturacion.getNlec(),loitemLecturacion.getLact(),loitemLecturacion.getCobs(),new Date(),MenuPrincipal.gps.Latitud,MenuPrincipal.gps.Longitud,1,"AppMovil");
+                SyncBsDhw sdhw = new SyncBsDhw();
+                BsEnw enw = new BsEnw();
+                enw.ObtenerBsEnw();
+                sdhw.SyncObtenerHistoricoAvisos(enw.getAnio(), enw.getMesf(), RealizarLecturacion.this.loitemLecturacion.getNcnt());
 
                 return null;
             }
@@ -594,6 +648,15 @@ public class RealizarLecturacion extends AppCompatActivity {
             @Override
             protected void onPostExecute(Boolean aBoolean) {
 //            super.onPostExecute(aBoolean);
+                this.pd.dismiss();
+                if (RealizarLecturacion.this.config.isPrintOnline()) {
+                    try {
+                        Toast.makeText(RealizarLecturacion.this.getApplicationContext(), "EN PROCESO DE IMPRESION", Toast.LENGTH_LONG).show();
+                        new enviarImprimir().execute();
+                    } catch (Exception e) {
+                        Toast.makeText(RealizarLecturacion.this.getApplicationContext(), e.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+                }
 
             }
 

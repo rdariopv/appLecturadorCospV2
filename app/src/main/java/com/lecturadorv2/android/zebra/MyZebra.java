@@ -592,7 +592,7 @@ public class MyZebra {
 
 
         BsHpw hpw= new BsHpw();
-        //hpw.obtenerBsHpw(lec.);
+        hpw.obtenerBsHpwbyNcnt(lec.getNcnt());
 
 
 

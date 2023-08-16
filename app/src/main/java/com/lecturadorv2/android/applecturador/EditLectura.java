@@ -75,7 +75,7 @@ public class EditLectura extends AppCompatActivity {
     public BsLec loitemLecturacion;
     ZebraPrinter printer = null;
     private boolean reprint;
-    private Spinner spObs;
+    private Spinner spObsE;
     private Switch swNmed;
     private TextView tvAlert;
     private TextView tvConP;
@@ -89,7 +89,7 @@ public class EditLectura extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_editlectura);
         // binding = ActivityEditlecturaBinding.inflate(getLayoutInflater());
         // setContentView(binding.getRoot());
 
@@ -118,17 +118,17 @@ public class EditLectura extends AppCompatActivity {
 
 
     public void inicializarVariables() {
-        this.tvDescCodigo = (TextView) findViewById(R.id.tvDescCodigoP);
-        this.tvNombreS = (TextView) findViewById(R.id.tvNombreSP);
-        this.tvConP = (TextView) findViewById(R.id.tvConP);
-        this.etLectura = (EditText) findViewById(R.id.etLecturaP);
-        this.tvNume = (TextView) findViewById(R.id.tvNumeP);
-        this.tvDataConsumo = (TextView) findViewById(R.id.tvDataConsumoP);
+        this.tvDescCodigo = (TextView) findViewById(R.id.tvDescCodigoE);
+        this.tvNombreS = (TextView) findViewById(R.id.tvNombreSE);
+        this.tvConP = (TextView) findViewById(R.id.tvConE);
+        this.etLectura = (EditText) findViewById(R.id.etLecturaE);
+        this.tvNume = (TextView) findViewById(R.id.tvNumeE);
+        this.tvDataConsumo = (TextView) findViewById(R.id.tvDataConsumoE);
         this.btnSendReprint = (Button) findViewById(R.id.btnSendReprint);
         this.btnSendLecturacion = (Button) findViewById(R.id.btnSendReprint);
-        this.swNmed = (Switch) findViewById(R.id.swNmedP);
-        this.tvAlert = (TextView) findViewById(R.id.tvAlertP);
-        this.tvDCodf = (TextView) findViewById(R.id.tvDCodfP);
+        this.swNmed = (Switch) findViewById(R.id.swNmedE);
+        this.tvAlert = (TextView) findViewById(R.id.tvAlertE);
+        this.tvDCodf = (TextView) findViewById(R.id.tvDCodfE);
         LinkedList<BsObw> listObw = new BsObw().listarBsObw();
         LtCnf ltCnf = new LtCnf();
 
@@ -139,12 +139,25 @@ public class EditLectura extends AppCompatActivity {
         this.config = ltCnf2;
         ltCnf2.obtenerCnf(1);
         this.loitemLecturacion = (BsLec) getIntent().getExtras().getSerializable("item");
-        Spinner spinner = (Spinner) findViewById(R.id.spObsP);
-        this.spObs = spinner;
-        spinner.setAdapter(adpObw);
-        this.spObs.setSelection(adpObw.getIndexbyId(this.loitemLecturacion.getCobs()));
-        TextView textView = this.tvDescCodigo;
-        textView.setText(this.loitemLecturacion.getCodf() + "");
+
+
+
+
+
+
+        this.spObsE = (Spinner) findViewById(R.id.spObsE);
+       int indexCobs= adpObw.getIndexbyId(this.loitemLecturacion.getCobs());
+        this.spObsE.setAdapter(adpObw);
+        if(indexCobs<0){
+            this.spObsE.setSelection(0);
+        }else{
+            this.spObsE.setSelection(indexCobs);
+        }
+
+
+
+
+        this.tvDescCodigo.setText(this.loitemLecturacion.getCodf() + "");
         new BsEnw().ObtenerBsEnw();
         if (this.loitemLecturacion.getMedi() == 0) {
             this.swNmed.setChecked(false);
@@ -158,16 +171,14 @@ public class EditLectura extends AppCompatActivity {
         bsHpw.obtenerBsHpw(this.loitemLecturacion.getNcnt());
         this.tvNombreS.setText(this.loitemLecturacion.getdNom());
         this.tvAlert.setText("");
-        TextView textView2 = this.tvDCodf;
-        textView2.setText(this.loitemLecturacion.getNcnt() + "");
-        EditText editText = this.etLectura;
-        editText.setText(this.loitemLecturacion.getLact() + "");
+
+        this.tvDCodf.setText(this.loitemLecturacion.getNcnt() + "");
+        this.etLectura.setText(this.loitemLecturacion.getLact() + "");
         this.etLectura.setEnabled(true);
-        TextView textView3 = this.tvDataConsumo;
-        textView3.setText((this.loitemLecturacion.getLact() - this.loitemLecturacion.getLant()) + "");
+        this.tvDataConsumo.setText((this.loitemLecturacion.getLact() - this.loitemLecturacion.getLant()) + "");
         if (this.loitemLecturacion.getCobs() != 0) {
             this.etLectura.setEnabled(false);
-            this.spObs.setEnabled(false);
+            this.spObsE.setEnabled(false);
         }
         this.etLectura.addTextChangedListener(new TextWatcher() {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -229,9 +240,9 @@ public class EditLectura extends AppCompatActivity {
     }
 
     public void registrarLecturacion() {
-        this.loitemLecturacion.setCobs(((BsObw) this.spObs.getAdapter().getItem(this.spObs.getSelectedItemPosition())).getCodo());
+        this.loitemLecturacion.setCobs(((BsObw) this.spObsE.getAdapter().getItem(this.spObsE.getSelectedItemPosition())).getCodo());
         this.loitemLecturacion.guardarObservacion();
-        int poscision = this.spObs.getSelectedItemPosition();
+        int poscision = this.spObsE.getSelectedItemPosition();
         String lsLectura = this.etLectura.getText().toString().trim();
         if (this.consumoElevado && poscision == 0) {
             Toast.makeText(getApplicationContext(), "Seleccione otra observación", Toast.LENGTH_LONG).show();
@@ -337,7 +348,6 @@ public class EditLectura extends AppCompatActivity {
         public void onCancelled(Boolean aBoolean) {
         }
     }
-
     public class enviarImprimir extends AsyncTask<String, Integer, Boolean> {
 
         /* renamed from: pd */
@@ -372,7 +382,6 @@ public class EditLectura extends AppCompatActivity {
             this.pd.dismiss();
         }
     }
-
     private boolean isBluetoothPrinter(BluetoothDevice bluetoothDevice) {
         return bluetoothDevice.getBluetoothClass().getMajorDeviceClass() == BluetoothClass.Device.Major.IMAGING
                 || bluetoothDevice.getBluetoothClass().getMajorDeviceClass() == BluetoothClass.Device.Major.UNCATEGORIZED;

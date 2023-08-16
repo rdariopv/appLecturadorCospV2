@@ -135,7 +135,9 @@ public class DBhelper extends SQLiteOpenHelper {
 
     // TABLA 2 HEADER AVISO COBRANZA
     public static  String NOMTAHPW="bshpw";
-    public static String COLBSHPWANIO = "bshpwAnio";
+
+//---------------------------------------------------
+public static String COLBSHPWANIO = "bshpwAnio";
     public static String COLBSHPWCOBS = "bshpwCobs";
     public static String COLBSHPWCODF = "bshpwCodf";
     public static String COLBSHPWCONS = "bshpwCons";
@@ -163,33 +165,46 @@ public class DBhelper extends SQLiteOpenHelper {
     public static String COLBSHPWNCNT = "bshpwNcnt";
     public static String COLBSHPWNHPF = "bshpwNhpf";
     public static String COLBSHPWNMOR = "bshpwNmor";
+    public static String [] COLSBSHPW={ COLBSHPWNHPF,COLBSHPWNCNT,COLBSHPWLANT,COLBSHPWLACT,
+            COLBSHPWCONS,COLBSHPWFINI,COLBSHPWFFIN,COLBSHPWDIRE,COLBSHPWDNOM,COLBSHPWDCAT,
+            COLBSHPWDCIU,COLBSHPWDUVE,COLBSHPWDMZA,COLBSHPWDLOT,COLBSHPWDBAR,COLBSHPWDIMB,
+            COLBSHPWDZON,COLBSHPWDRUT,COLBSHPWCOBS, COLBSHPWNMOR,COLBSHPWIMOR,COLBSHPWFCOR,
+            COLBSHPWIMPT, COLBSHPWCODF, COLBSHPWANIO, COLBSHPWDMES,COLBSHPWDIAS, COLBSHPWFVTO};
+    public static String CTBSHPW = " create table bshpw (   " +
+            " bshpwNhpf integer not null ,  " +
+            " bshpwNcnt integer not null ,  " +
+            " bshpwLant integer not null ,  " +
+            " bshpwLact integer not null ,  " +
+            " bshpwCons integer not null ,  " +
+            " bshpwFini text not null ,  " +
+            " bshpwFfin text not null ,  " +
+            " bshpwDire text not null ,  " +
+            " bshpwDnom text not null ,  " +
+            " bshpwDcat text not null ,  " +
+            " bshpwDciu text not null ,  " +
+            " bshpwDuve text not null ,  " +
+            " bshpwDmza text not null ,  " +
+            " bshpwDlot text not null ,  " +
+            " bshpwDbar text not null ,  " +
+            " bshpwDimb text not null ,  " +
+            " bshpwDzon text not null ,  " +
+            " bshpwDrut text not null , " +
+            " bshpwCobs text not null , " +
+            " bshpwNmor integer not null , " +
+            " bshpwImor double not null ,  " +
+            " bshpwFcor text not null ,  " +
+            " bshpwImpt double not null , " +
+            " bshpwCodf integer not null , " +
+            " bshpwAnio integer not null , " +
+            " bshpwDmes integer not null , " +
+            " bshpwDias integer not null , " +
+            " bshpwFvto text not null ); ";
 
-    public static String [] COLSBSHPW={ COLBSHPWNHPF,COLBSHPWNCNT,COLBSHPWLANT,COLBSHPWLACT,COLBSHPWCONS,COLBSHPWFINI,
-            COLBSHPWFFIN,COLBSHPWDIRE,COLBSHPWDNOM,COLBSHPWDCAT,COLBSHPWDCIU,COLBSHPWDUVE,
-            COLBSHPWDMZA,COLBSHPWDLOT,COLBSHPWDBAR,COLBSHPWDIMB,COLBSHPWDZON,COLBSHPWDRUT,COLBSHPWCOBS, COLBSHPWNMOR,COLBSHPWIMOR,COLBSHPWFCOR  };
-    public static String CTBSHPW=" create table bshpw (  " +
-            " bshpwNhpf integer not null , " +
-            " bshpwNcnt integer not null , " +
-            " bshpwLant integer not null , " +
-            " bshpwLact integer not null , " +
-            " bshpwCons integer not null , " +
-            " bshpwFini text not null , " +
-            " bshpwFfin text not null , " +
-            " bshpwDire text not null , " +
-            " bshpwDnom text not null , " +
-            " bshpwDcat text not null , " +
-            " bshpwDciu text not null , " +
-            " bshpwDuve text not null , " +
-            " bshpwDmza text not null , " +
-            " bshpwDlot text not null , " +
-            " bshpwDbar text not null , " +
-            " bshpwDimb text not null , " +
-            " bshpwDzon text not null , " +
-            " bshpwDrut text not null ," +
-            " bshpwCobs text not null ," +
-            "  bshpfNmor int not null ," +
-            " bshpfImor double not null , " +
-            " bshpfFcor text not null); ";
+   // public static String[] COLSBSHPW = {"bshpwNhpf", "bshpwNcnt", "bshpwLant", "bshpwLact", "bshpwCons",
+   //         "bshpwFini", "bshpwFfin", "bshpwDire", "bshpwDnom", "bshpwDcat", "bshpwDciu", "bshpwDuve",
+   //         "bshpwDmza", "bshpwDlot", "bshpwDbar", "bshpwDimb", "bshpwDzon", "bshpwDrut", "bshpwCobs",
+   //         "bshpwNmor", "bshpwImor", "bshpwFcor", "bshpwImpt", "bshpwCodf", "bshpwAnio", "bshpwDmes",
+   //         "bshpwDias", "bshpwFvto"};
 //bshpfNmor, bshpfImor y bshpfFcor
 
     // TABLA 2 DETALLE AVISO COBRANZA
@@ -202,7 +217,8 @@ public class DBhelper extends SQLiteOpenHelper {
     public static String COLBSDPWPUNI="bsdpwPuni";
     public static String COLBSDPWIMPT="bsdpwImpt";
 
-    public static String [] COLSBSDPW={ COLBSDPWNHPF,COLBSDPWORDE,COLBSDPWNHPC,COLBSDPWDESC,COLBSDPWCANT,COLBSDPWPUNI,
+    public static String [] COLSBSDPW={ COLBSDPWNHPF,COLBSDPWORDE,COLBSDPWNHPC,COLBSDPWDESC,COLBSDPWCANT,
+            COLBSDPWPUNI,
             COLBSDPWIMPT};
     public static String CTBSDPW="create table bsdpw (  " +
             " bsdpwNhpf integer not null , " +

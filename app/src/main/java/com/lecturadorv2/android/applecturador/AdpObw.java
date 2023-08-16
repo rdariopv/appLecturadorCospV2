@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.lecturadorv2.android.dblecturador.BsObw;
@@ -96,10 +97,10 @@ public class AdpObw extends BaseAdapter implements Filterable {
                     results.count = resultsData.size();
                     results.values = resultsData;
                 }
-
+//
                 return results;
             }
-
+//
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
                 listObs = (LinkedList<BsObw>) results.values;

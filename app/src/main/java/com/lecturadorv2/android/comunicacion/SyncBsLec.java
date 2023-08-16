@@ -80,16 +80,18 @@ public class SyncBsLec {
                         lec.setNcnt(Integer.valueOf(objLec.getProperty(04).toString()));
                         lec.setLant(Integer.valueOf(objLec.getProperty(05).toString()));
                         lec.setConp(Integer.valueOf(objLec.getProperty(06).toString()));
-                        lec.setMedi(Integer.valueOf(objLec.getProperty(07).toString()));
-                        lec.setNume(objLec.getProperty(8).toString());
-                        lec.setdNom(objLec.getProperty(9).toString());
-                        lec.setDire(objLec.getProperty(10).toString());
-                        lec.setDUve(objLec.getProperty(11).toString());
-                        lec.setDMza(objLec.getProperty(12).toString());
-                        lec.setDlot(objLec.getProperty(13).toString());
+                        lec.setConr(Integer.valueOf(objLec.getProperty(07).toString()));
+                        lec.setMedi(Integer.valueOf(objLec.getProperty(8).toString()));
+                        lec.setNume(objLec.getProperty(9).toString());
+                        lec.setdNom(objLec.getProperty(10).toString());
+                        lec.setDire(objLec.getProperty(11).toString());
+                        lec.setDUve(objLec.getProperty(12).toString());
+                        lec.setDMza(objLec.getProperty(13).toString());
+                        lec.setDlot(objLec.getProperty(14).toString());
                         lec.setCobs(0);
                         lec.setStat(0);
                         lec.setLact(0);
+                        lec.setRspO(0);
 
 
                         Log.e("SyncBsLec", "hasta aqui se convirtio a obj local");
@@ -188,6 +190,7 @@ public class SyncBsLec {
       <liNofn>int</liNofn>
       <lsAppName>string</lsAppName>
     </W6BSLEC_UpdateNewLectura>*/
+        sNlec= piNlec;
 
         WsDataSoap tecnica = new WsDataSoap() {
 
@@ -258,7 +261,9 @@ public class SyncBsLec {
                 if (result[0] > 0) {
                     Log.e("SyncBsLec", " se actualizo estado correctamente  result[0]= "+ result[0]);
                     BsLec lec= new BsLec();
-                    //lec.obtenerBsLec(sNlec);
+                    lec.obtenerBsLec(sNlec);
+                    lec.setRspO(result[0]);
+                    lec.guardarRespuestaOnline();
 
                 } else {
                     Log.e("SyncBsLec", " ERROR AL ACTUALIZAR ESTADO ");

@@ -33,6 +33,7 @@ public class BsLec implements Serializable {
         private int    Ncnt;
         private int    Lant;
         private int    Conp;
+
         private int    Medi;
         private String Nume;
         private String dNom;
@@ -356,7 +357,7 @@ public class BsLec implements Serializable {
         DBmanager.AbrirBD();
         List<Object> datos = new ArrayList<>();
         datos.add(Integer.valueOf(this.RspO));
-        DBmanager.modificarTupla(DBhelper.NOMTABSLEC, new String[]{DBhelper.COLBSLECRSPO}, datos, DBhelper.COLBSLECNLEC + " = " + getNlec() + " ");
+        DBmanager.modificarTupla(DBhelper.NOMTABSLEC, new String[]{DBhelper.COLBSLECRSPO}, datos, DBhelper.COLBSLECNLEC + " = " + Nlec+ " ");
         DBmanager.CerrarBD();
     }
 

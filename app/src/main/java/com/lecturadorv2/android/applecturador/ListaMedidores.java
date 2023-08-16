@@ -1,9 +1,11 @@
 package com.lecturadorv2.android.applecturador;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,7 +52,8 @@ public class ListaMedidores extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.reimprimir) {
-            lanzarDialogBusquedaCliente();
+            otroDialogo();
+            //lanzarDialogBusquedaCliente();
             //Toast.makeText(this,"En desarrollo",Toast.LENGTH_LONG ).show();
         }
         return super.onOptionsItemSelected(item);
@@ -135,5 +138,53 @@ public class ListaMedidores extends AppCompatActivity {
        }*/
 
     }
+    public void otroDialogo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+
+        LayoutInflater inflater =(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View textEntryView = inflater.inflate(R.layout.dialog_search, null);
+        final EditText etCodf = (EditText) textEntryView.findViewById(R.id.etNcnt);
+        final EditText etNcnt = (EditText) textEntryView.findViewById(R.id.etCodf);
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle((CharSequence) "Editar lectura cliente:").setView(textEntryView).setPositiveButton((CharSequence) "Aceptar", (DialogInterface.OnClickListener) new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String Ncnt1 = etNcnt.getText().toString();
+                String Codf1 = etCodf.getText().toString();
+                int liNcnt = 0;
+                int liCodf = 0;
+                if (!Ncnt1.isEmpty()) {
+                    liNcnt = Integer.valueOf(Ncnt1).intValue();
+                } else if (!Codf1.isEmpty()) {
+                    liCodf = Integer.valueOf(Codf1).intValue();
+                }
+                buscarOtroCliente(liNcnt, liCodf);
+            }
+        }).setNegativeButton((CharSequence) "Cancelar", (DialogInterface.OnClickListener) new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                dialog.dismiss();
+            }
+        });
+        alert.show();
+    }
+    public void buscarOtroCliente(int liNcnt, int liCodf) {
+        Intent intent = new Intent(this, EditLectura.class);
+        BsLec itemLecturacion = new BsLec();
+        boolean existe = false;
+        if (liNcnt != 0) {
+            existe = itemLecturacion.obtenerBsLecByCodFijo(liNcnt);
+        } else if (liCodf != 0) {
+            existe = itemLecturacion.obtenerBsLecByCodUbicacion(liCodf);
+        }
+        if (existe) {
+            intent.putExtra("item", itemLecturacion);
+            startActivity(intent);
+           // return;
+        }else{
+            Snackbar.make(findViewById(android.R.id.content), (CharSequence) "SOCIO NO ENCONTRADO.", Snackbar.LENGTH_LONG).show();
+        }
+
+    }
+
 
 }

@@ -87,6 +87,7 @@ public class LtCnf {
                 ", CnfOnly=" + CnfOnly +
                 ", CnPrint=" + CnPrint +
                 ", CnfNpri=" + CnfNpri +
+                ", CnfIdpr=" + CnfIdpr +
                 '}';
     }
 

@@ -55,6 +55,7 @@ public class AjustesActivity extends AppCompatActivity {
             swPrint.setChecked(cnf.isPrintOnline());
             swGpsA.setChecked(cnf.isCnfGpsA());
             spPrinter.setSelection(cnf.getCnfNpri());
+            etIDprinter.setText(cnf.getCnfIdpr().toString());
 
 
         }
