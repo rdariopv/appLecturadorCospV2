@@ -731,6 +731,7 @@ public class MyZebra {
         sb.append("^FO"+x1+",430^A0R,0,20^FD "+impt+" ^FS ");
         sb.append("^FO"+x1+",570^A0R,0,20^FD IMPAGA ^FS ");
         x1=x1-30;
+
         y=0;
 
         for (BsDhw h:lldhw) {
