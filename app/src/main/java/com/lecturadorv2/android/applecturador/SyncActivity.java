@@ -211,6 +211,7 @@ public class SyncActivity extends AppCompatActivity {
             DBmanager.LimpiarTabla(DBhelper.NOMTATAW);
             DBmanager.LimpiarTabla(DBhelper.NOMTABSCCW);
             DBmanager.LimpiarTabla(DBhelper.NOMTABSDHW);
+            DBmanager.LimpiarTabla(DBhelper.NOMTABSLEC);
             DBmanager.CerrarBD();
             Toast.makeText(this.getWindow().getContext(), "Se ha limpiado la Base de datos CORRECTAMENTE", Toast.LENGTH_LONG).show();
         } catch (Exception e) {

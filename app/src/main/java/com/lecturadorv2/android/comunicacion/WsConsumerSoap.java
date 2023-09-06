@@ -66,11 +66,11 @@ public class WsConsumerSoap {
           //  String s= sobre.getResponse().toString();
             Log.e("WsConsumerSoap", "consumirMetodoServicioPrimitivo: respuesta =" + respuesta.toString());
             datos.leerDatosPrimitivos(respuesta);
-
         }catch(SoapFault e){
-            //e.printStackTrace();
-            SoapObject obj =(SoapObject) sobre.bodyIn;
+            e.printStackTrace();
+            SoapFault obj =(SoapFault) sobre.bodyIn;
             String result = obj.toString();
+
             Log.e("WsConsumerSoap", "consumirMetodoServicioPrimitivo: ERROR =" + result);
         } catch (XmlPullParserException e) {
             e.printStackTrace();

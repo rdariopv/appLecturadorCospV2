@@ -680,7 +680,11 @@ public class MyZebra {
         sb.append("^FO"+xlon+",940^A0R,0,25^FD "+imor+"^FS ");
         sb.append("^FO"+xlon+",1180^A0R,0,25^FD "+String.valueOf(hpw.getNmor())+"^FS ");
 
-        sb.append("^FO"+xlon+",1470^A0R,0,25^FD "+lsFcor+"^FS ");
+        if(!lsFcor.equals("01/01/1900"))
+        {
+            sb.append("^FO"+xlon+",1470^A0R,0,25^FD "+lsFcor+"^FS ");
+        }
+
 
         //sb.append("^FO350,620^A0R,0,36^FD itm1^FS ");
         //sb.append("^FO390,750^A0R,0,25^FD DATOS DE LA FACTURA^FS ");

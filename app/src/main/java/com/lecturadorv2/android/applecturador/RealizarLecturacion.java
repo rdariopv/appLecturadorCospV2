@@ -359,7 +359,7 @@ public class RealizarLecturacion extends AppCompatActivity {
             @Override
             public void run() {
                 Toast toast;
-                toast = Toast.makeText(RealizarLecturacion.this, message, Toast.LENGTH_LONG);
+                toast = Toast.makeText(getApplication(), message, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);
                 toast.show();
             }
@@ -510,7 +510,7 @@ public class RealizarLecturacion extends AppCompatActivity {
             try{
                 slec.SyncEnviarLecturacion(loitemLecturacion.getNlec(),loitemLecturacion.getLact(),loitemLecturacion.getCobs(),new Date(),MenuPrincipal.gps.Latitud,MenuPrincipal.gps.Longitud,1,"appMovil");
             } catch (Exception e) {
-                RealizarLecturacion.this.displayToast(e.getMessage());
+                displayToast(e.getMessage());
             }
 
             return null;
