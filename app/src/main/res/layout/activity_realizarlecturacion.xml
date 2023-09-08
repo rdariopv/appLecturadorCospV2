@@ -33,10 +33,24 @@
         android:gravity="left"
         android:padding="5dp"
         android:singleLine="true"
-        android:text="Codigo Ubicacion:"
+        android:text="Cod. Ubi.:"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDCodf"
+        android:layout_width="81dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_marginLeft="212dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@+id/tvImCodSocio"
+        android:gravity="left"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -62,6 +76,19 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/tvCodF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="216dp"
+        android:gravity="left"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:text="Cod. Fijo:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/tvTConsumo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,23 +98,35 @@
         android:text="Consumo Actual :"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/tvAlert"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="196dp"
+        android:padding="5dp"
+        android:textColor="#f44336"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <EditText
+        android:id="@+id/etLectura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etLectura"
-        android:hint=""
         android:layout_below="@+id/textView5"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:inputType="number"
-        android:textColor="#ff29132c"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="40dp"
-        android:padding="7dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" >
+        android:gravity="center"
+        android:hint=""
+        android:inputType="number"
+        android:padding="7dp"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ff29132c"
+        android:textSize="40dp">
+
         <requestFocus></requestFocus>
     </EditText>
 
@@ -134,22 +173,34 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="77dp" />
 
-    <TextView
+
+   <!-- <TextView
         android:id="@+id/tvDescCodigo"
         android:layout_width="255dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView3"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="-3dp"
         android:layout_toEndOf="@+id/tvImCodSocio"
         android:layout_toRightOf="@+id/tvImCodSocio"
         android:gravity="left"
         android:padding="5dp"
         android:singleLine="true"
         android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceSmall" />!-->
+    <TextView
+        android:id="@+id/tvDescCodigo"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@+id/tvImCodSocio"
+        android:gravity="left"
+        android:padding="5dp"
+        android:singleLine="true"
         android:textAppearance="?android:attr/textAppearanceSmall" />
-
 
     <TextView
         android:id="@+id/tvNombreS"
@@ -198,7 +249,7 @@
         android:weightSum="1">
 
 
-        <Button
+        <!--  <Button
             android:id="@+id/btnCancelar"
             android:layout_width="145dp"
             android:layout_height="wrap_content"
@@ -206,17 +257,31 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_weight="0.80"
-            android:text="CANCELAR" />
+            android:text="CANCELAR" /> !-->
 
         <Button
             android:id="@+id/btnSendLecturacion"
-            android:layout_width="145dp"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spObs"
-            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/spObsP"
             android:layout_alignParentRight="true"
             android:layout_weight="0.24"
-            android:text="REGISTRAR" />
+            android:text="GRABAR" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right|center_vertical|center_horizontal|center|end"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/ic_button_next2_background"
+            android:contentDescription="@string/descbtnxt"
+            android:onClick="irSiguiente"
+            android:src="@mipmap/ic_button_next2" />
+
 
     </LinearLayout>
 
@@ -252,15 +317,16 @@
 
     <Button
         android:id="@+id/btnCalc"
-        android:layout_width="145dp"
+        android:layout_width="104dp"
         android:layout_height="44dp"
         android:layout_below="@+id/spObs"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="241dp"
-        android:layout_marginLeft="241dp"
-        android:layout_marginTop="-96dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="-66dp"
+        android:layout_toEndOf="@+id/tvDataConsumo"
+        android:layout_toRightOf="@+id/tvDataConsumo"
         android:layout_weight="0.80"
         android:text="CALCULAR" />
+
 
 </RelativeLayout>

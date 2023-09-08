@@ -14,7 +14,7 @@
     <string name="title_activity_ajustes">Ajustes</string>
     <string name="title_activity_download">Descargar Datos</string>
     <string name="title_activity_reprint">Re Imprimir</string>
-
+    <string name="descbtnxt">Siguiente</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sAnio">Año</string>

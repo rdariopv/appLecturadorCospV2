@@ -92,6 +92,7 @@ public class RealizarLecturacion extends AppCompatActivity {
     private TextView tvDescCodigo;
     private TextView tvNombreS;
     private TextView tvConP;
+    private TextView tvDCodF;
     private EditText etLectura;
     private EditText etNombreSocioLect;
     private Button btnSendLecturacion;
@@ -105,6 +106,7 @@ public class RealizarLecturacion extends AppCompatActivity {
     private Button btnCalc;
     private boolean consumoElevado;
     private boolean consumoNegativo;
+    private TextView tvAlert;
 
 
     private Spinner spObs;
@@ -117,9 +119,10 @@ public class RealizarLecturacion extends AppCompatActivity {
         tvNume= (TextView) findViewById(R.id.tvNume);
         tvDataConsumo = (TextView) findViewById(R.id.tvDataConsumo);
         btnCalc= (Button) findViewById(R.id.btnCalc);
-
+        tvDCodF=(TextView)findViewById(R.id.tvDCodf);
         btnSendLecturacion = (Button) findViewById(R.id.btnSendLecturacion);
         swNmed=(Switch)findViewById(R.id.swNmed);
+        this.tvAlert = (TextView) findViewById(R.id.tvAlert);
 
         BsObw obw = new BsObw();
         LinkedList<BsObw> listObw = obw.listarBsObw();
@@ -145,6 +148,7 @@ public class RealizarLecturacion extends AppCompatActivity {
         // }
 
         tvDescCodigo.setText(loitemLecturacion.getCodf() + "");
+        tvDCodF.setText(loitemLecturacion.getNcnt()+"");
         BsEnw enw = new BsEnw();
         enw.ObtenerBsEnw();
         tvConP.setText(loitemLecturacion.getConp()+ "");
@@ -219,6 +223,37 @@ public class RealizarLecturacion extends AppCompatActivity {
 
     }
 
+    public void irSiguiente(View v) {
+        this.loitemLecturacion = this.loitemLecturacion.listarNoLecturadosBsLec().getFirst();
+        TextView textView = this.tvDescCodigo;
+        textView.setText(this.loitemLecturacion.getCodf() + "");
+        TextView textView2 = this.tvConP;
+        textView2.setText(this.loitemLecturacion.getConp() + "");
+        if (this.loitemLecturacion.getMedi() == 0) {
+            this.swNmed.setChecked(false);
+        } else {
+            this.swNmed.setChecked(true);
+            this.tvNume.setText(this.loitemLecturacion.getNume().trim());
+        }
+        this.swNmed.setEnabled(false);
+        this.etLectura.setText("");
+        this.tvNombreS.setText(this.loitemLecturacion.getdNom());
+        this.tvAlert.setText("");
+
+        this.tvDCodF.setText(this.loitemLecturacion.getNcnt() + "");
+        this.tvDataConsumo.setText("");
+        Toast.makeText(getApplicationContext(), "ir a siguiente", Toast.LENGTH_LONG).show();
+        lanzarNuevoItem();
+    }
+
+    public void lanzarNuevoItem() {
+        this.loitemLecturacion = this.loitemLecturacion.listarNoLecturadosBsLec().getFirst();
+        finish();
+        Intent intent = new Intent(this, RealizarLecturacion.class);
+        intent.putExtra("item", this.loitemLecturacion);
+        intent.setFlags(intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+    }
 
 
     public void escribirAviso() {
@@ -249,12 +284,33 @@ public class RealizarLecturacion extends AppCompatActivity {
 
     public int calcularConsumo() {
 
-        String lact = etLectura.getText().toString();
-        loitemLecturacion.setLact(Integer.parseInt(lact));
-        int  liConsumo= loitemLecturacion.getLact() - loitemLecturacion.getLant();
-        tvDataConsumo.setText(liConsumo + "");
-
+        //String lact = etLectura.getText().toString();
+        //loitemLecturacion.setLact(Integer.parseInt(lact));
+        //int  liConsumo= loitemLecturacion.getLact() - loitemLecturacion.getLant();
+        //tvDataConsumo.setText(liConsumo + "");
+//
+        //return liConsumo;
+        this.tvAlert.setText("");
+        this.loitemLecturacion.setLact(Integer.parseInt(this.etLectura.getText().toString()));
+        int liConsumo = this.loitemLecturacion.getLact() - this.loitemLecturacion.getLant();
+        if (liConsumo >= 0) {
+            if (liConsumo > this.loitemLecturacion.getConr()) {
+                this.tvAlert.setText("CONSUMO ELEVADO ");
+                this.consumoElevado = true;
+            } else {
+                this.consumoElevado = false;
+            }
+            this.consumoNegativo = false;
+        } else {
+            this.consumoElevado = false;
+            this.consumoNegativo = true;
+            this.tvAlert.setText("CONSUMO NEGATIVO");
+        }
+        TextView textView = this.tvDataConsumo;
+        textView.setText(liConsumo + "");
         return liConsumo;
+
+
     }
 
     public void lanzarLecturacionBluetooth() {
@@ -389,6 +445,8 @@ public class RealizarLecturacion extends AppCompatActivity {
             pd.setTitle("Imprimiendo");
             pd.setMessage("Enviando datos para imprimir");
             // pd.setProgress(0);
+
+            escribirAviso();
             pd.setIndeterminate(false);
             pd.show();
             // super.onPreExecute();
@@ -414,6 +472,7 @@ public class RealizarLecturacion extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean aBoolean) {
             pd.dismiss();
+            lanzarNuevoItem();
             // super.onPostExecute(aBoolean);
         }
     }
@@ -570,6 +629,7 @@ public class RealizarLecturacion extends AppCompatActivity {
                     new sincronizarDetalleAviso().execute();
                 }else{
                     RealizarLecturacion.this.displayToast("No exiten datos para impresion");
+                    lanzarNuevoItem();
                 }
 
 
@@ -589,7 +649,7 @@ public class RealizarLecturacion extends AppCompatActivity {
             protected void onPreExecute() {
                 //        super.onPreExecute();
                 this.pd.setTitle("Enviando Datos");
-                this.pd.setMessage("Descargando Header lectura");
+                this.pd.setMessage("Descargando Detalle lectura");
                 this.pd.setIndeterminate(false);
                 this.pd.show();
             }
@@ -657,6 +717,11 @@ public class RealizarLecturacion extends AppCompatActivity {
                         Toast.makeText(RealizarLecturacion.this.getApplicationContext(), e.getMessage(),Toast.LENGTH_LONG).show();
                     }
                 }
+                else{
+
+                    lanzarNuevoItem();
+                }
+
 
             }
 

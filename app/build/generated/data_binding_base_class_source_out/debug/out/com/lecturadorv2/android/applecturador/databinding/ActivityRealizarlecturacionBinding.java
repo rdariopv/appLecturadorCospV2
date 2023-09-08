@@ -3,6 +3,7 @@ package com.lecturadorv2.android.applecturador.databinding;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,13 +28,13 @@ public final class ActivityRealizarlecturacionBinding implements ViewBinding {
   public final Button btnCalc;
 
   @NonNull
-  public final Button btnCancelar;
-
-  @NonNull
   public final Button btnSendLecturacion;
 
   @NonNull
   public final EditText etLectura;
+
+  @NonNull
+  public final FloatingActionButton fab;
 
   @NonNull
   public final Spinner spObs;
@@ -54,7 +55,16 @@ public final class ActivityRealizarlecturacionBinding implements ViewBinding {
   public final TextView textView6;
 
   @NonNull
+  public final TextView tvAlert;
+
+  @NonNull
+  public final TextView tvCodF;
+
+  @NonNull
   public final TextView tvConP;
+
+  @NonNull
+  public final TextView tvDCodf;
 
   @NonNull
   public final TextView tvDataConsumo;
@@ -75,24 +85,28 @@ public final class ActivityRealizarlecturacionBinding implements ViewBinding {
   public final TextView tvTConsumo;
 
   private ActivityRealizarlecturacionBinding(@NonNull RelativeLayout rootView,
-      @NonNull Button btnCalc, @NonNull Button btnCancelar, @NonNull Button btnSendLecturacion,
-      @NonNull EditText etLectura, @NonNull Spinner spObs, @NonNull Switch swNmed,
+      @NonNull Button btnCalc, @NonNull Button btnSendLecturacion, @NonNull EditText etLectura,
+      @NonNull FloatingActionButton fab, @NonNull Spinner spObs, @NonNull Switch swNmed,
       @NonNull TextView textView3, @NonNull TextView textView4, @NonNull TextView textView5,
-      @NonNull TextView textView6, @NonNull TextView tvConP, @NonNull TextView tvDataConsumo,
+      @NonNull TextView textView6, @NonNull TextView tvAlert, @NonNull TextView tvCodF,
+      @NonNull TextView tvConP, @NonNull TextView tvDCodf, @NonNull TextView tvDataConsumo,
       @NonNull TextView tvDescCodigo, @NonNull TextView tvImCodSocio, @NonNull TextView tvNombreS,
       @NonNull TextView tvNume, @NonNull TextView tvTConsumo) {
     this.rootView = rootView;
     this.btnCalc = btnCalc;
-    this.btnCancelar = btnCancelar;
     this.btnSendLecturacion = btnSendLecturacion;
     this.etLectura = etLectura;
+    this.fab = fab;
     this.spObs = spObs;
     this.swNmed = swNmed;
     this.textView3 = textView3;
     this.textView4 = textView4;
     this.textView5 = textView5;
     this.textView6 = textView6;
+    this.tvAlert = tvAlert;
+    this.tvCodF = tvCodF;
     this.tvConP = tvConP;
+    this.tvDCodf = tvDCodf;
     this.tvDataConsumo = tvDataConsumo;
     this.tvDescCodigo = tvDescCodigo;
     this.tvImCodSocio = tvImCodSocio;
@@ -134,12 +148,6 @@ public final class ActivityRealizarlecturacionBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnCancelar;
-      Button btnCancelar = ViewBindings.findChildViewById(rootView, id);
-      if (btnCancelar == null) {
-        break missingId;
-      }
-
       id = R.id.btnSendLecturacion;
       Button btnSendLecturacion = ViewBindings.findChildViewById(rootView, id);
       if (btnSendLecturacion == null) {
@@ -149,6 +157,12 @@ public final class ActivityRealizarlecturacionBinding implements ViewBinding {
       id = R.id.etLectura;
       EditText etLectura = ViewBindings.findChildViewById(rootView, id);
       if (etLectura == null) {
+        break missingId;
+      }
+
+      id = R.id.fab;
+      FloatingActionButton fab = ViewBindings.findChildViewById(rootView, id);
+      if (fab == null) {
         break missingId;
       }
 
@@ -188,9 +202,27 @@ public final class ActivityRealizarlecturacionBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvAlert;
+      TextView tvAlert = ViewBindings.findChildViewById(rootView, id);
+      if (tvAlert == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCodF;
+      TextView tvCodF = ViewBindings.findChildViewById(rootView, id);
+      if (tvCodF == null) {
+        break missingId;
+      }
+
       id = R.id.tvConP;
       TextView tvConP = ViewBindings.findChildViewById(rootView, id);
       if (tvConP == null) {
+        break missingId;
+      }
+
+      id = R.id.tvDCodf;
+      TextView tvDCodf = ViewBindings.findChildViewById(rootView, id);
+      if (tvDCodf == null) {
         break missingId;
       }
 
@@ -230,9 +262,10 @@ public final class ActivityRealizarlecturacionBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRealizarlecturacionBinding((RelativeLayout) rootView, btnCalc, btnCancelar,
-          btnSendLecturacion, etLectura, spObs, swNmed, textView3, textView4, textView5, textView6,
-          tvConP, tvDataConsumo, tvDescCodigo, tvImCodSocio, tvNombreS, tvNume, tvTConsumo);
+      return new ActivityRealizarlecturacionBinding((RelativeLayout) rootView, btnCalc,
+          btnSendLecturacion, etLectura, fab, spObs, swNmed, textView3, textView4, textView5,
+          textView6, tvAlert, tvCodF, tvConP, tvDCodf, tvDataConsumo, tvDescCodigo, tvImCodSocio,
+          tvNombreS, tvNume, tvTConsumo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

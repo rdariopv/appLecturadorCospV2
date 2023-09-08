@@ -811,6 +811,8 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_button_next2_background
+color ic_button_next_background
 color ic_mesure_background
 color material_blue_grey_800
 color material_blue_grey_900
@@ -1201,6 +1203,8 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable edittext_bottom_bg
 drawable edittext_top_bg
+drawable ic_button_next_f
+drawable ic_button_next_foreground
 drawable ic_expand_more_black_18dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1359,6 +1363,7 @@ id etUrlFU
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1559,12 +1564,14 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvAlert
 id tvAlertE
 id tvCdof
 id tvCodF
 id tvCodf
 id tvConE
 id tvConP
+id tvDCodf
 id tvDCodfE
 id tvDataConsumo
 id tvDataConsumoE
@@ -1716,6 +1723,10 @@ menu menu_realizarlecturacion
 menu menu_sync
 mipmap ajustes1
 mipmap email
+mipmap ic_button_next
+mipmap ic_button_next2
+mipmap ic_button_next2_round
+mipmap ic_button_next_round
 mipmap ic_desc
 mipmap ic_launcher
 mipmap ic_mesure
@@ -1768,6 +1779,7 @@ string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
+string descbtnxt
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string first_fragment_label

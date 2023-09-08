@@ -6,6 +6,8 @@
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/drawable/button_default_bg.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/drawable/edittext_bottom_bg.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/drawable/edittext_top_bg.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/drawable/ic_button_next_f.xml" value="0.1235" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/drawable/ic_button_next_foreground.xml" value="0.1235" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/drawable/lytitulo.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_ajustes.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_ajusts.xml" value="0.1" />
@@ -13,7 +15,7 @@
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_editlectura.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_listamedidores.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_menu_principal.xml" value="0.25" />
-        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_realizarlecturacion.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_realizarlecturacion.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_reimprimir.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_sync.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/content_edit_lectura.xml" value="0.1" />
@@ -26,6 +28,8 @@
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/itemobs.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/menu/menu_listamedidores.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/menu/menu_mprincipal.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/mipmap-anydpi-v26/ic_button_next2.xml" value="0.146" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/mipmap-anydpi-v26/ic_button_next2_round.xml" value="0.1235" />
       </map>
     </option>
   </component>
