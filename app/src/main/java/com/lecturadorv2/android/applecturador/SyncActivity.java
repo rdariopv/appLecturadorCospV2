@@ -1,5 +1,6 @@
 package com.lecturadorv2.android.applecturador;
 
+import android.animation.ObjectAnimator;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
@@ -15,8 +16,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import android.support.design.widget.TabLayout;
-import android.support.design.widget.TextInputLayout;
+//import android.support.design.widget.TabLayout;
+//import android.support.design.widget.TextInputLayout;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.textfield.TextInputLayout;
 
 import com.lecturadorv2.android.comunicacion.SyncBsDhw;
 import com.lecturadorv2.android.comunicacion.SyncBsDpw;
@@ -43,15 +47,24 @@ import com.lecturadorv2.android.dblecturador.LtZon;
 import java.util.Date;
 import java.util.LinkedList;
 
-import android.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+//import android.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
+//import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+//import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+//import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
+//import android.support.v4.app.FragmentManager;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+//import android.support.v4.app.FragmentPagerAdapter;
+//import android.support.v4.app.FragmentStatePagerAdapter;
+//import android.support.v4.view.PagerAdapter;
+//import android.support.v4.view.ViewPager;
 
 public class SyncActivity extends AppCompatActivity {
 
@@ -63,7 +76,7 @@ public class SyncActivity extends AppCompatActivity {
      * may be best to switch to a
      * {@link FragmentStatePagerAdapter}.
      */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private CustomSectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -86,7 +99,7 @@ public class SyncActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new CustomSectionsPagerAdapter(getSupportFragmentManager());
 
 
         // Set up the ViewPager with the sections adapter.
@@ -94,31 +107,27 @@ public class SyncActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabsS);
-        tabLayout.setupWithViewPager(mViewPager);
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+       // tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+               // Toast.makeText(getApplicationContext(), tab.getPosition() + ":onTabSelected", Toast.LENGTH_LONG).show();
+                if(mSectionsPagerAdapter!=null){
+                   // mSectionsPagerAdapter.notifyDataSetChanged();
+
+                }
+                mViewPager.setCurrentItem(tab.getPosition());
+
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
+        });
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-      //tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-      //    @Override
-      //    public void onTabSelected(TabLayout.Tab tab) {
-      //        mSectionsPagerAdapter.notifyDataSetChanged();
-      //        mViewPager.setCurrentItem(tab.getPosition());
-      //    }
-
-      //    @Override
-      //    public void onTabUnselected(TabLayout.Tab tab) {
-      //        mSectionsPagerAdapter.notifyDataSetChanged();
-      //        mViewPager.setCurrentItem(tab.getPosition());
-      //    }
-
-      //    @Override
-      //    public void onTabReselected(TabLayout.Tab tab) {
-      //        mSectionsPagerAdapter.notifyDataSetChanged();
-      //        mViewPager.setCurrentItem(tab.getPosition());
-      //    }
-      //});
-
-
+        tabLayout.setupWithViewPager(mViewPager);
 
 
 
@@ -174,8 +183,6 @@ public class SyncActivity extends AppCompatActivity {
         return conecta;
 
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -218,7 +225,6 @@ public class SyncActivity extends AppCompatActivity {
             Toast.makeText(this.getWindow().getContext(), "Se ha producido un error al limpiar la Base de datos", Toast.LENGTH_LONG).show();
         }
     }
-
     public void lanzarDialogoLimpiarBD() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this.getWindow().getContext());
         builder.setTitle("LECTURADOR");
@@ -240,7 +246,6 @@ public class SyncActivity extends AppCompatActivity {
         builder.create();
         builder.show();
     }
-
     public boolean conexion = false;
 
     public static class ParametrosFragment extends Fragment {
@@ -1001,9 +1006,9 @@ public class SyncActivity extends AppCompatActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public class CustomSectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        public CustomSectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
@@ -1022,6 +1027,7 @@ public class SyncActivity extends AppCompatActivity {
                     Log.e("getItem","SubirFragment.newInstance()" );
                     return SubirFragment.newInstance();
             }
+          //  notifyDataSetChanged();
             return null;
         }
 
@@ -1033,9 +1039,11 @@ public class SyncActivity extends AppCompatActivity {
 
        @Override
        public int getItemPosition(Object object) {
-           if (object instanceof DescargarFragment) {
-               ((DescargarFragment) object).updateView();
-           }
+          // if (object instanceof DescargarFragment) {
+          //     ((DescargarFragment) object).updateView();
+          // }
+
+          // notifyDataSetChanged();
            return POSITION_NONE;
        }
 

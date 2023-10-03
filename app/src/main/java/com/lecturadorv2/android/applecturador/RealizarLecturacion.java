@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.design.widget.Snackbar;
+import com.google.android.material.snackbar.Snackbar;
+//import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -123,26 +125,19 @@ public class RealizarLecturacion extends AppCompatActivity {
         btnSendLecturacion = (Button) findViewById(R.id.btnSendLecturacion);
         swNmed=(Switch)findViewById(R.id.swNmed);
         this.tvAlert = (TextView) findViewById(R.id.tvAlert);
-
         BsObw obw = new BsObw();
         LinkedList<BsObw> listObw = obw.listarBsObw();
-
         config = new LtCnf();
         config.obtenerCnf(1);
-
         AdpObw adpObw = new AdpObw(this, listObw);
-
         spObs = (Spinner) findViewById(R.id.spObs);
         spObs.setAdapter(adpObw);
         spObs.setSelection(0);
-
-
         // reprint = false;
         loitemLecturacion = (BsLec) getIntent().getExtras().getSerializable("item");
         // if (getIntent().getExtras().containsKey("reprint")) {
         //     reprint = (boolean) getIntent().getExtras().getSerializable("reprint");
         // }
-//
         // if (reprint) {
         //     etLectura.setText(loitemLecturacion.getLact() + "");
         // }
@@ -709,6 +704,7 @@ public class RealizarLecturacion extends AppCompatActivity {
             protected void onPostExecute(Boolean aBoolean) {
 //            super.onPostExecute(aBoolean);
                 this.pd.dismiss();
+                escribirAviso();
                 if (RealizarLecturacion.this.config.isPrintOnline()) {
                     try {
                         Toast.makeText(RealizarLecturacion.this.getApplicationContext(), "EN PROCESO DE IMPRESION", Toast.LENGTH_LONG).show();

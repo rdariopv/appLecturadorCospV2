@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -95,4 +95,35 @@
          </LinearLayout>
 
      </LinearLayout>
- </RelativeLayout>
+ </RelativeLayout> -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:weightSum="1" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilAnio" android:layout_width="match_parent" android:layout_height="65dp" android:layout_margin="10dp">
+            <EditText android:id="@+id/txtAnio" android:layout_width="match_parent" android:layout_height="55dp" android:hint="@string/sAnio" android:ems="10" android:singleLine="true" android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilMes" android:layout_width="match_parent" android:layout_height="65dp" android:layout_margin="10dp">
+            <EditText android:id="@+id/txtMes" android:layout_width="match_parent" android:layout_height="55dp" android:hint="Mes" android:ems="10" android:singleLine="true" android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView android:id="@+id/tvMesf" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="New Text"/>
+        <TextView android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/textView2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Seleccione Zona"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnSincronizar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="bottom"
+                    android:text="Descargar Datos" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

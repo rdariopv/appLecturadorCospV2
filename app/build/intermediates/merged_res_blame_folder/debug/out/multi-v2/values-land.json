@@ -4,7 +4,26 @@
             "outputFile": "com.lecturadorv2.android.applecturador.app-mergeDebugResources-18:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\f3fb8e121effd5569417956c58bf8b53\\transformed\\appcompat-v7-28.0.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\e375de9e77ba2908e568ef73f461621b\\transformed\\material-1.1.0-alpha04\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "10",
+                        "endOffsets": "222"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "306",
+                        "endLines": "9",
+                        "endColumns": "10",
+                        "endOffsets": "473"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\3c9be549a48b342277e2b30ac73eddd1\\transformed\\appcompat-1.2.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -28,25 +47,6 @@
                         "startOffsets": "264",
                         "endColumns": "41",
                         "endOffsets": "301"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\e57b8deae8cc809a860e57a840f35fc2\\transformed\\design-28.0.0\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "10",
-                        "endOffsets": "222"
-                    },
-                    "to": {
-                        "startLines": "6",
-                        "startColumns": "4",
-                        "startOffsets": "306",
-                        "endLines": "9",
-                        "endColumns": "10",
-                        "endOffsets": "473"
                     }
                 }
             ]

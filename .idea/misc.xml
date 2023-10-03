@@ -14,14 +14,15 @@
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_download.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_editlectura.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_listamedidores.xml" value="0.1" />
-        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_menu_principal.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_menu_principal.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_realizarlecturacion.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_reimprimir.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/activity_sync.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/content_edit_lectura.xml" value="0.1" />
-        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/dialog_search.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/dialog_search.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/fragment_descargar.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/fragment_parametros.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/itemmedidor.xml" value="0.67" />
         <entry key="..\:/AndroidProjects/appLecCospail/app/src/main/res/layout/itemmes.xml" value="0.1" />
@@ -42,7 +43,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1" />
+        <option name="scale" value="0.22" />
       </ProjectState>
     </option>
   </component>

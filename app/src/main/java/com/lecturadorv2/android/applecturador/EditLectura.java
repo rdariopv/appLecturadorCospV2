@@ -5,11 +5,11 @@ import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import com.google.android.material.snackbar.Snackbar;
+//import android.support.design.widget.Snackbar;
 
-import android.support.design.widget.Snackbar;
-
-import android.support.v7.app.AppCompatActivity;
-
+//import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -195,11 +195,9 @@ public class EditLectura extends AppCompatActivity {
         });
         this.btnSendReprint.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if (EditLectura.this.loitemLecturacion.getCobs() != 0) {
-                    EditLectura.this.imprimirLecturacion();
-                } else {
-                    EditLectura.this.registrarLecturacion();
-                }
+                EditLectura.this.registrarLecturacion();
+                EditLectura.this.imprimirLecturacion();
+                //if (EditLectura.this.loitemLecturacion.getCobs() != 0) {} else {}
             }
         });
     }
@@ -318,15 +316,15 @@ public class EditLectura extends AppCompatActivity {
         /* access modifiers changed from: protected */
         public Boolean doInBackground(String... strings) {
             SyncBsHpw shpw = new SyncBsHpw();
-            BsEnw enw = new BsEnw();
+            BsEnw enw= new BsEnw();
             enw.ObtenerBsEnw();
-            EditLectura.this.loitemLecturacion.obtenerBsLec(EditLectura.this.loitemLecturacion.getNlec());
-            if (EditLectura.this.loitemLecturacion.getRspO() >= 1) {
-                new BsHpw().eliminarHeader(EditLectura.this.loitemLecturacion.getNcnt());
-                shpw.SyncObtenerHeaderAvisos(enw.getAnio(), enw.getMesf(), EditLectura.this.loitemLecturacion.getNcnt());
-                return null;
+            loitemLecturacion.obtenerBsLec(loitemLecturacion.getNlec());
+            if(loitemLecturacion.getRspO()==1){
+                shpw.SyncObtenerHeaderAvisos(enw.getAnio(),enw.getMesf(),loitemLecturacion.getNcnt());
+
+            }else{
+                this.pd.setMessage("sin Datos de impresion");
             }
-            this.pd.setMessage("sin Datos de impresion");
             return null;
         }
 
@@ -335,13 +333,22 @@ public class EditLectura extends AppCompatActivity {
             this.pd.dismiss();
             EditLectura.this.loitemLect.obtenerBsHpwbyNcnt(EditLectura.this.loitemLecturacion.getNcnt());
             BsDpw dpw = new BsDpw();
-            LinkedList<BsDpw> listarDetalles = dpw.listarDetalles(EditLectura.this.loitemLect.getNhpf());
-            if (EditLectura.this.loitemLecturacion.getRspO() >= 1) {
-                dpw.eliminarDetalle(EditLectura.this.loitemLect.getNhpf());
-                new sincronizarDetalleAviso().execute(new String[0]);
-                return;
+
+            this.pd.dismiss();
+            if(loitemLecturacion.getRspO()==1){
+                dpw.eliminarDetalle(loitemLect.getNhpf());
+                new sincronizarDetalleAviso().execute();
+
+            }else{
+                Snackbar.make(EditLectura.this.getWindow().getDecorView(), (CharSequence) "sin Datos de impresion", Snackbar.LENGTH_LONG).show();
             }
-            Snackbar.make(EditLectura.this.getWindow().getDecorView(), (CharSequence) "sin Datos de impresion", Snackbar.LENGTH_LONG).show();
+           // LinkedList<BsDpw> listarDetalles = dpw.listarDetalles(EditLectura.this.loitemLect.getNhpf());
+           // if (EditLectura.this.loitemLecturacion.getRspO() >= 1) {
+           //     dpw.eliminarDetalle(EditLectura.this.loitemLect.getNhpf());
+           //     new sincronizarDetalleAviso().execute(new String[0]);
+           //     return;
+           // }
+
         }
 
         /* access modifiers changed from: protected */
@@ -503,7 +510,7 @@ public class EditLectura extends AppCompatActivity {
             hpw.obtenerBsHpwbyNcnt(EditLectura.this.loitemLecturacion.getNcnt());
             LinkedList<BsDhw> listarBsDhw = new BsDhw().listarBsDhw(hpw.getNcnt());
             if (EditLectura.this.loitemLecturacion.getRspO() >= 1) {
-                new sincronizarHistoricoAviso().execute(new String[0]);
+                new sincronizarHistoricoAviso().execute();
             }
         }
 
@@ -544,7 +551,7 @@ public class EditLectura extends AppCompatActivity {
             if (EditLectura.this.config.isPrintOnline()) {
                 try {
                     Toast.makeText(EditLectura.this.getApplicationContext(), "EN PROCESO DE IMPRESION", Toast.LENGTH_LONG).show();
-                    new enviarImprimir().execute(new String[0]);
+                    new enviarImprimir().execute();
                 } catch (Exception e) {
                     Toast.makeText(EditLectura.this.getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                 }

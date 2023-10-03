@@ -268,7 +268,7 @@
             android:layout_weight="0.24"
             android:text="GRABAR" />
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -280,7 +280,8 @@
             android:background="@color/ic_button_next2_background"
             android:contentDescription="@string/descbtnxt"
             android:onClick="irSiguiente"
-            android:src="@mipmap/ic_button_next2" />
+            android:src="@mipmap/ic_button_next2"
+            app:backgroundTint="@color/ic_button_next2_background" />
 
 
     </LinearLayout>

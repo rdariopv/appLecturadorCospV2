@@ -4,47 +4,48 @@ ADDED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:2:1
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:2:1-117:12
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:2:1-117:12
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:2:1-117:12
-MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\aa1865937c8a659974efe8c9c17f3434\transformed\navigation-ui-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:design:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e57b8deae8cc809a860e57a840f35fc2\transformed\design-28.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5221e42d40515668b425dc70bbe59f50\transformed\library-material-1.1.0\AndroidManifest.xml:2:1-16:12
-MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\Windows 10\.gradle\caches\transforms-3\714f8bc17ce8d0631dd993524da30fb8\transformed\library-2.1.4\AndroidManifest.xml:2:1-10:12
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\Windows 10\.gradle\caches\transforms-3\873bc7c8a67ebe44879c1aac310b75f0\transformed\constraint-layout-2.0.4\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\f3fb8e121effd5569417956c58bf8b53\transformed\appcompat-v7-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7cfd9feb5340c04958134695281452bd\transformed\support-v4-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.jakewharton:butterknife:8.7.0] C:\Users\Windows 10\.gradle\caches\transforms-3\00281a182b568c0ec1ca7a8ead1768a6\transformed\butterknife-8.7.0\AndroidManifest.xml:2:1-7:12
-MERGED from [com.android.databinding:viewbinding:7.2.1] C:\Users\Windows 10\.gradle\caches\transforms-3\0c2ecd34728315ae25c7765aa892e7c8\transformed\viewbinding-7.2.1\AndroidManifest.xml:17:1-24:12
-MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\aea22ca97fc2f780f764e9af02cb587c\transformed\navigation-fragment-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e0dab39167f3e1a4ab434e87b8b8bee3\transformed\support-fragment-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bd035a22c125656b1fcfa9d051297c88\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\73551648446282fbea3bbf11c19ceee9\transformed\recyclerview-v7-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\d69cad5ec2a8d4cb9ab588bdb2960b7e\transformed\support-core-ui-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.navigation:navigation-runtime:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\03e23dc49020de748fdbae87f67a405a\transformed\navigation-runtime-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c0f2b8717457b7f01ee537a1f8a02008\transformed\support-core-utils-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\48a23c6a8bec27ce3f6200b786bc5552\transformed\support-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\a7d6840fa05ca6ecbcb1b1451ee9d837\transformed\transition-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\61fa22aabd6401a9ec6266d056aa2233\transformed\support-media-compat-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\dab90f0912f26f5bc9749d0335e4bfdb\transformed\loader-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c7b97fc45426c75a56eab89275373ce9\transformed\viewpager-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\0b9fc8d9f154c86a7fc179511600af22\transformed\coordinatorlayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bc42360d3a527f633a51e00382014a82\transformed\drawerlayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9a8f324c6d3a3453f46d4d01f839ba25\transformed\slidingpanelayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9adef1f65e67e89881bcfd82c3b26533\transformed\customview-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\2efc5084c4295090a041782ed0df4d87\transformed\swiperefreshlayout-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\93eb37501d08a6fab15663f5534fb4f4\transformed\asynclayoutinflater-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.navigation:navigation-common:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\1104833402daf9b6bbfa6a5dd5502a3a\transformed\navigation-common-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\00ae0264ea64350c0d34b5626db64f0b\transformed\support-compat-28.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\17fd1b09b258104a406c0968e3b7ec1b\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\d3642b5022a0dbc0ef3e0298260601fd\transformed\cursoradapter-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\8658275de89683eb0581bd9b220f34d3\transformed\cardview-v7-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\67992255f92bd46c5ab0078520404024\transformed\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9c81705c32a2ed158e7715f40d6cb76e\transformed\documentfile-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\dbe0c2dcd2be04384fb170e4edca5692\transformed\localbroadcastmanager-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\cc26758fb87d4cf1bebb0bafef441acc\transformed\print-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\93c8429278a12da6714a7a5b9782d4b1\transformed\viewmodel-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\3b0f433de77c4d8b21527f5801118f6e\transformed\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\20d06fff5812a1e52d46d66e0703d2c3\transformed\livedata-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\ac97d792d8facf5ba84e5095d2b5730f\transformed\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\34b59695826e65b185fc8ca6d4c6c836\transformed\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-ui:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5809b92547b674bddc34b6f14249c76c\transformed\navigation-ui-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.1.0-alpha04] C:\Users\Windows 10\.gradle\caches\transforms-3\e375de9e77ba2908e568ef73f461621b\transformed\material-1.1.0-alpha04\AndroidManifest.xml:17:1-24:12
+MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\056da069e02bdb04e73aebb0009f3ee1\transformed\jetified-library-material-1.1.0\AndroidManifest.xml:2:1-16:12
+MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\Windows 10\.gradle\caches\transforms-3\101088732eff050022d1bf6e0a40e43d\transformed\jetified-library-2.1.4\AndroidManifest.xml:2:1-10:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Windows 10\.gradle\caches\transforms-3\3c9be549a48b342277e2b30ac73eddd1\transformed\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.jakewharton:butterknife:8.7.0] C:\Users\Windows 10\.gradle\caches\transforms-3\b23fcaf6516d2179a45aeaf562687fd6\transformed\jetified-butterknife-8.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.databinding:viewbinding:7.2.1] C:\Users\Windows 10\.gradle\caches\transforms-3\91064bfcf3d834d346489b916c2e9ee8\transformed\jetified-viewbinding-7.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Windows 10\.gradle\caches\transforms-3\ed17b228528a4ae462a20d34a093e396\transformed\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.navigation:navigation-fragment:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\95f0fc62687e2c255a14d25716a64615\transformed\navigation-fragment-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\a0f487a4babc02e94edd80c903b84cb8\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\8a6303413022a75475e0d43fea7dc5ec\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\8b7f4841b0744a21f7ca71455108b61c\transformed\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c55ea1888249d2ba07b4574ab6321824\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\28987daf94618d12a626039a1bcb819f\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\ca79818c4a605ca76bfc8806cb420868\transformed\navigation-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9b680f4524c73cf4651435f7b7ab96a9\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-alpha01] C:\Users\Windows 10\.gradle\caches\transforms-3\477c128fe18792c1e1990fd595d5cf61\transformed\recyclerview-1.1.0-alpha01\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.1] C:\Users\Windows 10\.gradle\caches\transforms-3\19f412f19628a4127006eb16191d3b99\transformed\transition-1.0.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e1b23a5846fa69c62ae6c2763eaeb253\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\672c698f430ef3053188faf174992e0a\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\167a7615f5c326be626c34db5c113190\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\a9f454f90017dca7389400a6976be6d0\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\93521ba5430a710ae5aacd1d479aaa8d\transformed\jetified-activity-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\22af41d6efc01e2b1f6684642bfbf4e6\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\2ffd33c42ee9142780d270ad93a06b80\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5dc7619c10ef7678503baa0c7d18529c\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7f38362bc79cae2826970a4e78d0cb43\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\2ff6a81a94f2952e44433816270575ac\transformed\navigation-common-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.3.0] C:\Users\Windows 10\.gradle\caches\transforms-3\896b25fe84370671285b593d57833c78\transformed\core-1.3.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\b62f021449e53cd8f85a380c2a59df94\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7c7a8c29ecce42e20d903e3a51f8df85\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7a9302cdc738d5878422b7f9a3256788\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\f11a2796b54455e05ab8603854e4e469\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c91ee04b2e3e2b4e3408d247f58d785c\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\daafd13ed6472e5d90ee94a442cae491\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bd2b858bc6569916fd0b165974e7ef03\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\b4e3184513846956a105ce73ffb96443\transformed\lifecycle-runtime-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bb55fbb59653e49ebc5c4e77d7473543\transformed\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\eb53156be058313a9e646f5fe2f81b63\transformed\jetified-savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\50d1210be62fa0ff51eb398d1f0c84bc\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\be65a5e1808a5e2d45730c2d80164a89\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\81f39f6b10eaffbd9990198b840796f5\transformed\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:2:1-117:12
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:2:1-117:12
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:2:1-117:12
@@ -116,28 +117,28 @@ ADDED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:16:
 		ADDED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:17:9-34
 application
 ADDED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:24:5-115:19
-MERGED from [com.android.support:design:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e57b8deae8cc809a860e57a840f35fc2\transformed\design-28.0.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e57b8deae8cc809a860e57a840f35fc2\transformed\design-28.0.0\AndroidManifest.xml:22:5-20
-MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5221e42d40515668b425dc70bbe59f50\transformed\library-material-1.1.0\AndroidManifest.xml:11:5-14:19
-MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5221e42d40515668b425dc70bbe59f50\transformed\library-material-1.1.0\AndroidManifest.xml:11:5-14:19
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\Windows 10\.gradle\caches\transforms-3\873bc7c8a67ebe44879c1aac310b75f0\transformed\constraint-layout-2.0.4\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\Windows 10\.gradle\caches\transforms-3\873bc7c8a67ebe44879c1aac310b75f0\transformed\constraint-layout-2.0.4\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\00ae0264ea64350c0d34b5626db64f0b\transformed\support-compat-28.0.0\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\00ae0264ea64350c0d34b5626db64f0b\transformed\support-compat-28.0.0\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\17fd1b09b258104a406c0968e3b7ec1b\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\17fd1b09b258104a406c0968e3b7ec1b\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.material:material:1.1.0-alpha04] C:\Users\Windows 10\.gradle\caches\transforms-3\e375de9e77ba2908e568ef73f461621b\transformed\material-1.1.0-alpha04\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0-alpha04] C:\Users\Windows 10\.gradle\caches\transforms-3\e375de9e77ba2908e568ef73f461621b\transformed\material-1.1.0-alpha04\AndroidManifest.xml:22:5-20
+MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\056da069e02bdb04e73aebb0009f3ee1\transformed\jetified-library-material-1.1.0\AndroidManifest.xml:11:5-14:19
+MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\056da069e02bdb04e73aebb0009f3ee1\transformed\jetified-library-material-1.1.0\AndroidManifest.xml:11:5-14:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Windows 10\.gradle\caches\transforms-3\ed17b228528a4ae462a20d34a093e396\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Windows 10\.gradle\caches\transforms-3\ed17b228528a4ae462a20d34a093e396\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.3.0] C:\Users\Windows 10\.gradle\caches\transforms-3\896b25fe84370671285b593d57833c78\transformed\core-1.3.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.0] C:\Users\Windows 10\.gradle\caches\transforms-3\896b25fe84370671285b593d57833c78\transformed\core-1.3.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7a9302cdc738d5878422b7f9a3256788\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7a9302cdc738d5878422b7f9a3256788\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\00ae0264ea64350c0d34b5626db64f0b\transformed\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+		ADDED from [androidx.core:core:1.3.0] C:\Users\Windows 10\.gradle\caches\transforms-3\896b25fe84370671285b593d57833c78\transformed\core-1.3.0\AndroidManifest.xml:24:18-86
 	android:label
 		ADDED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:27:9-41
-		REJECTED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5221e42d40515668b425dc70bbe59f50\transformed\library-material-1.1.0\AndroidManifest.xml:13:9-41
+		REJECTED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\056da069e02bdb04e73aebb0009f3ee1\transformed\jetified-library-material-1.1.0\AndroidManifest.xml:13:9-41
 	tools:ignore
 		ADDED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:29:9-48
 	android:icon
 		ADDED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:26:9-41
 	android:allowBackup
 		ADDED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:25:9-35
-		REJECTED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5221e42d40515668b425dc70bbe59f50\transformed\library-material-1.1.0\AndroidManifest.xml:12:9-35
+		REJECTED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\056da069e02bdb04e73aebb0009f3ee1\transformed\jetified-library-material-1.1.0\AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:28:9-40
 	tools:replace
@@ -246,88 +247,90 @@ uses-sdk
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml
-MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\aa1865937c8a659974efe8c9c17f3434\transformed\navigation-ui-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\aa1865937c8a659974efe8c9c17f3434\transformed\navigation-ui-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e57b8deae8cc809a860e57a840f35fc2\transformed\design-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e57b8deae8cc809a860e57a840f35fc2\transformed\design-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5221e42d40515668b425dc70bbe59f50\transformed\library-material-1.1.0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5221e42d40515668b425dc70bbe59f50\transformed\library-material-1.1.0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\Windows 10\.gradle\caches\transforms-3\714f8bc17ce8d0631dd993524da30fb8\transformed\library-2.1.4\AndroidManifest.xml:6:5-8:41
-MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\Windows 10\.gradle\caches\transforms-3\714f8bc17ce8d0631dd993524da30fb8\transformed\library-2.1.4\AndroidManifest.xml:6:5-8:41
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\Windows 10\.gradle\caches\transforms-3\873bc7c8a67ebe44879c1aac310b75f0\transformed\constraint-layout-2.0.4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:2.0.4] C:\Users\Windows 10\.gradle\caches\transforms-3\873bc7c8a67ebe44879c1aac310b75f0\transformed\constraint-layout-2.0.4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\f3fb8e121effd5569417956c58bf8b53\transformed\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\f3fb8e121effd5569417956c58bf8b53\transformed\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7cfd9feb5340c04958134695281452bd\transformed\support-v4-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7cfd9feb5340c04958134695281452bd\transformed\support-v4-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.jakewharton:butterknife:8.7.0] C:\Users\Windows 10\.gradle\caches\transforms-3\00281a182b568c0ec1ca7a8ead1768a6\transformed\butterknife-8.7.0\AndroidManifest.xml:5:5-43
-MERGED from [com.jakewharton:butterknife:8.7.0] C:\Users\Windows 10\.gradle\caches\transforms-3\00281a182b568c0ec1ca7a8ead1768a6\transformed\butterknife-8.7.0\AndroidManifest.xml:5:5-43
-MERGED from [com.android.databinding:viewbinding:7.2.1] C:\Users\Windows 10\.gradle\caches\transforms-3\0c2ecd34728315ae25c7765aa892e7c8\transformed\viewbinding-7.2.1\AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.databinding:viewbinding:7.2.1] C:\Users\Windows 10\.gradle\caches\transforms-3\0c2ecd34728315ae25c7765aa892e7c8\transformed\viewbinding-7.2.1\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\aea22ca97fc2f780f764e9af02cb587c\transformed\navigation-fragment-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\aea22ca97fc2f780f764e9af02cb587c\transformed\navigation-fragment-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e0dab39167f3e1a4ab434e87b8b8bee3\transformed\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e0dab39167f3e1a4ab434e87b8b8bee3\transformed\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bd035a22c125656b1fcfa9d051297c88\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bd035a22c125656b1fcfa9d051297c88\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\73551648446282fbea3bbf11c19ceee9\transformed\recyclerview-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\73551648446282fbea3bbf11c19ceee9\transformed\recyclerview-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\d69cad5ec2a8d4cb9ab588bdb2960b7e\transformed\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\d69cad5ec2a8d4cb9ab588bdb2960b7e\transformed\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-runtime:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\03e23dc49020de748fdbae87f67a405a\transformed\navigation-runtime-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-runtime:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\03e23dc49020de748fdbae87f67a405a\transformed\navigation-runtime-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c0f2b8717457b7f01ee537a1f8a02008\transformed\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c0f2b8717457b7f01ee537a1f8a02008\transformed\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\48a23c6a8bec27ce3f6200b786bc5552\transformed\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\48a23c6a8bec27ce3f6200b786bc5552\transformed\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\a7d6840fa05ca6ecbcb1b1451ee9d837\transformed\transition-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\a7d6840fa05ca6ecbcb1b1451ee9d837\transformed\transition-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\61fa22aabd6401a9ec6266d056aa2233\transformed\support-media-compat-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\61fa22aabd6401a9ec6266d056aa2233\transformed\support-media-compat-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\dab90f0912f26f5bc9749d0335e4bfdb\transformed\loader-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\dab90f0912f26f5bc9749d0335e4bfdb\transformed\loader-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c7b97fc45426c75a56eab89275373ce9\transformed\viewpager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c7b97fc45426c75a56eab89275373ce9\transformed\viewpager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\0b9fc8d9f154c86a7fc179511600af22\transformed\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\0b9fc8d9f154c86a7fc179511600af22\transformed\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bc42360d3a527f633a51e00382014a82\transformed\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bc42360d3a527f633a51e00382014a82\transformed\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9a8f324c6d3a3453f46d4d01f839ba25\transformed\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9a8f324c6d3a3453f46d4d01f839ba25\transformed\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9adef1f65e67e89881bcfd82c3b26533\transformed\customview-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9adef1f65e67e89881bcfd82c3b26533\transformed\customview-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\2efc5084c4295090a041782ed0df4d87\transformed\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\2efc5084c4295090a041782ed0df4d87\transformed\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\93eb37501d08a6fab15663f5534fb4f4\transformed\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\93eb37501d08a6fab15663f5534fb4f4\transformed\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-common:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\1104833402daf9b6bbfa6a5dd5502a3a\transformed\navigation-common-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.navigation:navigation-common:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\1104833402daf9b6bbfa6a5dd5502a3a\transformed\navigation-common-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\00ae0264ea64350c0d34b5626db64f0b\transformed\support-compat-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\00ae0264ea64350c0d34b5626db64f0b\transformed\support-compat-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\17fd1b09b258104a406c0968e3b7ec1b\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\17fd1b09b258104a406c0968e3b7ec1b\transformed\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\d3642b5022a0dbc0ef3e0298260601fd\transformed\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\d3642b5022a0dbc0ef3e0298260601fd\transformed\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\8658275de89683eb0581bd9b220f34d3\transformed\cardview-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\8658275de89683eb0581bd9b220f34d3\transformed\cardview-v7-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\67992255f92bd46c5ab0078520404024\transformed\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\67992255f92bd46c5ab0078520404024\transformed\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9c81705c32a2ed158e7715f40d6cb76e\transformed\documentfile-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9c81705c32a2ed158e7715f40d6cb76e\transformed\documentfile-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\dbe0c2dcd2be04384fb170e4edca5692\transformed\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\dbe0c2dcd2be04384fb170e4edca5692\transformed\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\cc26758fb87d4cf1bebb0bafef441acc\transformed\print-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\cc26758fb87d4cf1bebb0bafef441acc\transformed\print-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\93c8429278a12da6714a7a5b9782d4b1\transformed\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\93c8429278a12da6714a7a5b9782d4b1\transformed\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\3b0f433de77c4d8b21527f5801118f6e\transformed\interpolator-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\3b0f433de77c4d8b21527f5801118f6e\transformed\interpolator-28.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\20d06fff5812a1e52d46d66e0703d2c3\transformed\livedata-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\20d06fff5812a1e52d46d66e0703d2c3\transformed\livedata-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\ac97d792d8facf5ba84e5095d2b5730f\transformed\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\ac97d792d8facf5ba84e5095d2b5730f\transformed\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\34b59695826e65b185fc8ca6d4c6c836\transformed\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Windows 10\.gradle\caches\transforms-3\34b59695826e65b185fc8ca6d4c6c836\transformed\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5809b92547b674bddc34b6f14249c76c\transformed\navigation-ui-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5809b92547b674bddc34b6f14249c76c\transformed\navigation-ui-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0-alpha04] C:\Users\Windows 10\.gradle\caches\transforms-3\e375de9e77ba2908e568ef73f461621b\transformed\material-1.1.0-alpha04\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0-alpha04] C:\Users\Windows 10\.gradle\caches\transforms-3\e375de9e77ba2908e568ef73f461621b\transformed\material-1.1.0-alpha04\AndroidManifest.xml:20:5-44
+MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\056da069e02bdb04e73aebb0009f3ee1\transformed\jetified-library-material-1.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.weiwangcn.betterspinner:library-material:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\056da069e02bdb04e73aebb0009f3ee1\transformed\jetified-library-material-1.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\Windows 10\.gradle\caches\transforms-3\101088732eff050022d1bf6e0a40e43d\transformed\jetified-library-2.1.4\AndroidManifest.xml:6:5-8:41
+MERGED from [com.rengwuxian.materialedittext:library:2.1.4] C:\Users\Windows 10\.gradle\caches\transforms-3\101088732eff050022d1bf6e0a40e43d\transformed\jetified-library-2.1.4\AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Windows 10\.gradle\caches\transforms-3\3c9be549a48b342277e2b30ac73eddd1\transformed\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Windows 10\.gradle\caches\transforms-3\3c9be549a48b342277e2b30ac73eddd1\transformed\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.jakewharton:butterknife:8.7.0] C:\Users\Windows 10\.gradle\caches\transforms-3\b23fcaf6516d2179a45aeaf562687fd6\transformed\jetified-butterknife-8.7.0\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.7.0] C:\Users\Windows 10\.gradle\caches\transforms-3\b23fcaf6516d2179a45aeaf562687fd6\transformed\jetified-butterknife-8.7.0\AndroidManifest.xml:5:5-43
+MERGED from [androidx.databinding:viewbinding:7.2.1] C:\Users\Windows 10\.gradle\caches\transforms-3\91064bfcf3d834d346489b916c2e9ee8\transformed\jetified-viewbinding-7.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:viewbinding:7.2.1] C:\Users\Windows 10\.gradle\caches\transforms-3\91064bfcf3d834d346489b916c2e9ee8\transformed\jetified-viewbinding-7.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Windows 10\.gradle\caches\transforms-3\ed17b228528a4ae462a20d34a093e396\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Windows 10\.gradle\caches\transforms-3\ed17b228528a4ae462a20d34a093e396\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.navigation:navigation-fragment:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\95f0fc62687e2c255a14d25716a64615\transformed\navigation-fragment-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\95f0fc62687e2c255a14d25716a64615\transformed\navigation-fragment-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\a0f487a4babc02e94edd80c903b84cb8\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\a0f487a4babc02e94edd80c903b84cb8\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\8a6303413022a75475e0d43fea7dc5ec\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\8a6303413022a75475e0d43fea7dc5ec\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\8b7f4841b0744a21f7ca71455108b61c\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\8b7f4841b0744a21f7ca71455108b61c\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c55ea1888249d2ba07b4574ab6321824\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c55ea1888249d2ba07b4574ab6321824\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\28987daf94618d12a626039a1bcb819f\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\28987daf94618d12a626039a1bcb819f\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\ca79818c4a605ca76bfc8806cb420868\transformed\navigation-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\ca79818c4a605ca76bfc8806cb420868\transformed\navigation-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9b680f4524c73cf4651435f7b7ab96a9\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\9b680f4524c73cf4651435f7b7ab96a9\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-alpha01] C:\Users\Windows 10\.gradle\caches\transforms-3\477c128fe18792c1e1990fd595d5cf61\transformed\recyclerview-1.1.0-alpha01\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-alpha01] C:\Users\Windows 10\.gradle\caches\transforms-3\477c128fe18792c1e1990fd595d5cf61\transformed\recyclerview-1.1.0-alpha01\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.1] C:\Users\Windows 10\.gradle\caches\transforms-3\19f412f19628a4127006eb16191d3b99\transformed\transition-1.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.1] C:\Users\Windows 10\.gradle\caches\transforms-3\19f412f19628a4127006eb16191d3b99\transformed\transition-1.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e1b23a5846fa69c62ae6c2763eaeb253\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\e1b23a5846fa69c62ae6c2763eaeb253\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\672c698f430ef3053188faf174992e0a\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\672c698f430ef3053188faf174992e0a\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\167a7615f5c326be626c34db5c113190\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\167a7615f5c326be626c34db5c113190\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\a9f454f90017dca7389400a6976be6d0\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\a9f454f90017dca7389400a6976be6d0\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\93521ba5430a710ae5aacd1d479aaa8d\transformed\jetified-activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\93521ba5430a710ae5aacd1d479aaa8d\transformed\jetified-activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\22af41d6efc01e2b1f6684642bfbf4e6\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\22af41d6efc01e2b1f6684642bfbf4e6\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\2ffd33c42ee9142780d270ad93a06b80\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\2ffd33c42ee9142780d270ad93a06b80\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5dc7619c10ef7678503baa0c7d18529c\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\5dc7619c10ef7678503baa0c7d18529c\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7f38362bc79cae2826970a4e78d0cb43\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7f38362bc79cae2826970a4e78d0cb43\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\2ff6a81a94f2952e44433816270575ac\transformed\navigation-common-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\2ff6a81a94f2952e44433816270575ac\transformed\navigation-common-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.3.0] C:\Users\Windows 10\.gradle\caches\transforms-3\896b25fe84370671285b593d57833c78\transformed\core-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.0] C:\Users\Windows 10\.gradle\caches\transforms-3\896b25fe84370671285b593d57833c78\transformed\core-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\b62f021449e53cd8f85a380c2a59df94\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\b62f021449e53cd8f85a380c2a59df94\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7c7a8c29ecce42e20d903e3a51f8df85\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7c7a8c29ecce42e20d903e3a51f8df85\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7a9302cdc738d5878422b7f9a3256788\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\7a9302cdc738d5878422b7f9a3256788\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\f11a2796b54455e05ab8603854e4e469\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\f11a2796b54455e05ab8603854e4e469\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c91ee04b2e3e2b4e3408d247f58d785c\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\c91ee04b2e3e2b4e3408d247f58d785c\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\daafd13ed6472e5d90ee94a442cae491\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\daafd13ed6472e5d90ee94a442cae491\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bd2b858bc6569916fd0b165974e7ef03\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bd2b858bc6569916fd0b165974e7ef03\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\b4e3184513846956a105ce73ffb96443\transformed\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\b4e3184513846956a105ce73ffb96443\transformed\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bb55fbb59653e49ebc5c4e77d7473543\transformed\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Windows 10\.gradle\caches\transforms-3\bb55fbb59653e49ebc5c4e77d7473543\transformed\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\eb53156be058313a9e646f5fe2f81b63\transformed\jetified-savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\eb53156be058313a9e646f5fe2f81b63\transformed\jetified-savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\50d1210be62fa0ff51eb398d1f0c84bc\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\50d1210be62fa0ff51eb398d1f0c84bc\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\be65a5e1808a5e2d45730c2d80164a89\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\be65a5e1808a5e2d45730c2d80164a89\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\81f39f6b10eaffbd9990198b840796f5\transformed\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Windows 10\.gradle\caches\transforms-3\81f39f6b10eaffbd9990198b840796f5\transformed\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml
 INJECTED from D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion

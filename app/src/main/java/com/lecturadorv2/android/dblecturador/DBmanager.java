@@ -9,8 +9,8 @@ import android.util.Log;
 
 import java.util.List;
 
-//import androidx.appcompat.app.AppCompatActivity;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 
 public class DBmanager {
 

@@ -4,7 +4,7 @@
             "outputFile": "com.lecturadorv2.android.applecturador.app-mergeDebugResources-18:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\f3fb8e121effd5569417956c58bf8b53\\transformed\\appcompat-v7-28.0.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\3c9be549a48b342277e2b30ac73eddd1\\transformed\\appcompat-1.2.0\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",
