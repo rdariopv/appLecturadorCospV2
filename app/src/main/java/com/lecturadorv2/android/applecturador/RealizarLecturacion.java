@@ -132,7 +132,7 @@ public class RealizarLecturacion extends AppCompatActivity {
         AdpObw adpObw = new AdpObw(this, listObw);
         spObs = (Spinner) findViewById(R.id.spObs);
         spObs.setAdapter(adpObw);
-        spObs.setSelection(0);
+        this.spObs.setSelection(adpObw.getIndexbyId(1));
         // reprint = false;
         loitemLecturacion = (BsLec) getIntent().getExtras().getSerializable("item");
         // if (getIntent().getExtras().containsKey("reprint")) {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.lecturadorv2.android.applecturador.app-mergeDebugResources-18:/values-sr/values-sr.xml",
+            "outputFile": "com.lecturadorv2.android.applecturador.app-mergeDebugResources-19:/values-sr/values-sr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\5809b92547b674bddc34b6f14249c76c\\transformed\\navigation-ui-2.0.0\\res\\values-sr\\values-sr.xml",

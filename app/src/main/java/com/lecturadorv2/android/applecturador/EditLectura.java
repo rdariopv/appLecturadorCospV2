@@ -147,13 +147,14 @@ public class EditLectura extends AppCompatActivity {
 
         this.spObsE = (Spinner) findViewById(R.id.spObsE);
        int indexCobs= adpObw.getIndexbyId(this.loitemLecturacion.getCobs());
+
         this.spObsE.setAdapter(adpObw);
         if(indexCobs<0){
             this.spObsE.setSelection(0);
         }else{
             this.spObsE.setSelection(indexCobs);
         }
-
+        this.spObsE.setSelection(adpObw.getIndexbyId(this.loitemLecturacion.getCobs()));
 
 
 

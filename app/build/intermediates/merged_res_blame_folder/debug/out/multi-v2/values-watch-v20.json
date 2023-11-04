@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.lecturadorv2.android.applecturador.app-mergeDebugResources-18:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.lecturadorv2.android.applecturador.app-mergeDebugResources-19:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\3c9be549a48b342277e2b30ac73eddd1\\transformed\\appcompat-1.2.0\\res\\values-watch-v20\\values-watch-v20.xml",

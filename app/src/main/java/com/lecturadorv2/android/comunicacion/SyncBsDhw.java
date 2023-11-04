@@ -39,7 +39,7 @@ public class SyncBsDhw {
                 pregunta.addProperty(pMes);
 
                 PropertyInfo pNcnt = new PropertyInfo();
-                pNcnt.setName("liZona");
+                pNcnt.setName("liNcnt");
                 pNcnt.setType(int.class);
                 pNcnt.setValue(liNcnt);
                 pregunta.addProperty(pNcnt);

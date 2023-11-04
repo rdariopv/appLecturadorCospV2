@@ -118,6 +118,7 @@ public class SyncActivity extends AppCompatActivity {
                 }
                 mViewPager.setCurrentItem(tab.getPosition());
 
+
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
