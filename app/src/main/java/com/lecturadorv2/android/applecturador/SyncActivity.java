@@ -37,6 +37,7 @@ import com.lecturadorv2.android.dblecturador.BsDhw;
 import com.lecturadorv2.android.dblecturador.BsDpw;
 import com.lecturadorv2.android.dblecturador.BsEnw;
 import com.lecturadorv2.android.dblecturador.BsHpw;
+import com.lecturadorv2.android.dblecturador.BsLec;
 import com.lecturadorv2.android.dblecturador.BsObw;
 import com.lecturadorv2.android.dblecturador.BsTaw;
 import com.lecturadorv2.android.dblecturador.DBhelper;
@@ -746,7 +747,26 @@ public class SyncActivity extends AppCompatActivity {
 
             }
         }
+        public void confirmDataLectura(){
 
+            final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity().getWindow().getContext());
+            builder.setTitle("Datos Descargados");
+            BsLec lec = new BsLec();
+
+            String pmt= lec.countRegister() +" Registros de Asociados a lecturar. ";
+
+            builder.setMessage(pmt);
+            builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            });
+
+            builder.create();
+            builder.show();
+
+        }
         public class SyncDetallesAvisos extends AsyncTask<String, Integer, Boolean> {
 
             ProgressDialog pd = new ProgressDialog(getActivity().getWindow().getContext());
@@ -796,6 +816,7 @@ public class SyncActivity extends AppCompatActivity {
                 //   super.onPostExecute(aBoolean);
                 pd.dismiss();
                 // new SyncHeaderAvisos().execute(parametros);
+                confirmDataLectura();
 
             }
 

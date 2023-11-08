@@ -54,14 +54,10 @@ import java.util.Set;
 
 
 public class RealizarLecturacion extends AppCompatActivity {
-
-
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -190,7 +186,6 @@ public class RealizarLecturacion extends AppCompatActivity {
         if(this.consumoNegativo && poscision==0){
             Toast.makeText(getApplicationContext(), "Seleccione otra observación", Toast.LENGTH_LONG).show();
         }
-
         if(!lsLectura.isEmpty()){
                 loitemLecturacion.setLact(Integer.parseInt( etLectura.getText().toString())) ;
                 loitemLecturacion.guardarLact();
@@ -213,7 +208,7 @@ public class RealizarLecturacion extends AppCompatActivity {
        //         //Toast.makeText(getApplicationContext(),"Verifique la impresora o dispositivos vinculados", Toast.LENGTH_LONG).show();
        //         Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_LONG).show();
        //     }
-//
+       //
        // }
 
     }
@@ -669,7 +664,6 @@ public class RealizarLecturacion extends AppCompatActivity {
 //            super.onPostExecute(aBoolean);
                 this.pd.dismiss();
                 new sincronizarHistoricoAviso().execute();
-
             }
 
             @Override
