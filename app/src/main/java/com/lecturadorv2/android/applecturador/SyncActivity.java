@@ -661,92 +661,14 @@ public class SyncActivity extends AppCompatActivity {
             this.parametros[2] = zona;
             this.parametros[3] = rango;
 
-            int liVcsHist = Math.round(zonaActual.getCrhi() / zonaActual.getRngo());
-            for (int i = 0; i <= liVcsHist; i++) {
-                //  aqui descargar los historicos
-                Log.e("SyncActivity", "anio=" + anio + "mes=" + mes + "zona=" + zona);
-              //  new SyncHistoricoAvisos().execute(parametros);
-            }
-
             int nVecesDtl = Math.round(zonaActual.getCreD() / zonaActual.getRngo());
             for (int i = 0; i <= nVecesDtl; i++) {
                 new SyncDetallesAvisos().execute(parametros);
             }
-            int liVecesHdr = Math.round(zonaActual.getCreh() / zonaActual.getRngo());
-            for (int i = 0; i <= liVecesHdr; i++) {
-              //  new SyncHeaderAvisos().execute(parametros);
-            }
-
 
         }
 
-        public class SyncHeaderAvisos extends AsyncTask<String, Integer, Boolean> {
-            ProgressDialog pd = new ProgressDialog(getActivity().getWindow().getContext());
 
-            @Override
-            protected void onPreExecute() {
-                //pd = new ProgressDialog(getBaseContext());
-                // pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                pd.setTitle("Sincronizando");
-                pd.setMessage("Header Aviso de Cobranza");
-                // pd.setProgress(0);
-                pd.setIndeterminate(false);
-                pd.setCanceledOnTouchOutside(false);
-                pd.show();
-
-                // super.onPreExecute();
-            }
-
-            @Override
-            protected Boolean doInBackground(String... params) {
-                int anio = Integer.valueOf(params[0]);
-                int mes = Integer.valueOf(params[1]);
-                int zona = Integer.valueOf(params[2]);
-                int rango = Integer.valueOf(params[3]);
-                SyncBsHpw syncHpw = new SyncBsHpw();
-
-              //  syncHpw.SyncObtenerHeaderAvisos(anio, mes, zona, rango);
-
-                return true;
-            }
-
-            @Override
-            protected void onPostExecute(Boolean aBoolean) {
-                pd.dismiss();
-                // super.onPostExecute(aBoolean);
-                confirmDataLectura();
-            }
-
-            @Override
-            protected void onCancelled() {
-                //  super.onCancelled();
-                //  pd.dismiss();
-            }
-
-            public void confirmDataLectura(){
-
-                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity().getWindow().getContext());
-                builder.setTitle("Datos Descargados");
-                BsHpw hpw= new BsHpw();
-                BsDpw dpw = new BsDpw();
-                BsDhw dhw= new BsDhw();
-                String pmt= hpw.countRegister()+" Registros de header Avs. cobranza." +System.getProperty("line.separator")+
-                        ""+dpw.countRegister()+" Registros de Detalle Avs. cobranza. " +System.getProperty("line.separator")+
-                        ""+dhw.countRegister()+" Registros de Historico Avs. cobranza. " ;
-
-                builder.setMessage(pmt);
-                builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-
-                builder.create();
-                builder.show();
-
-            }
-        }
         public void confirmDataLectura(){
 
             final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity().getWindow().getContext());
@@ -823,55 +745,6 @@ public class SyncActivity extends AppCompatActivity {
 
         }
 
-        public class SyncHistoricoAvisos extends AsyncTask<String, Integer, Boolean> {
-
-            ProgressDialog pd = new ProgressDialog(getActivity().getWindow().getContext());
-
-            @Override
-            protected void onPreExecute() {
-                // pd = new ProgressDialog(getBaseContext());
-                // pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-
-                pd.setTitle("Sincronizando");
-                pd.setMessage("Historico Aviso de Cobranza");
-                // pd.setProgress(0);
-                pd.setIndeterminate(false);
-                pd.show();
-                // cambiarMensajePD("Sincronizando","Detalles Aviso de Cobranza");
-                // mostrarProgresDialog();
-                // super.onPreExecute();
-            }
-
-            @Override
-            protected Boolean doInBackground(String... params) {
-                int anio = Integer.valueOf(params[0]);
-                int mes = Integer.valueOf(params[1]);
-                int zona = Integer.valueOf(params[2]);
-                int rango = Integer.valueOf(params[3]);
-                SyncBsDhw syncDhw = new SyncBsDhw();
-
-               // syncDhw.SyncObtenerHistoricoAvisos(anio, mes, zona, rango);
-
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                return true;
-            }
-
-            @Override
-            protected void onPostExecute(Boolean aBoolean) {
-                //   super.onPostExecute(aBoolean);
-                pd.dismiss();
-
-
-
-            }
-
-
-
-        }
 
         // </editor-fold>
 
