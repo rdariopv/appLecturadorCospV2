@@ -210,7 +210,7 @@ public class BsDpw {
             dpw.setNhpf(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNHPF))));
             dpw.setOrde(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWORDE))));
             dpw.setNhpc(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWNHPC))));
-            dpw.setDesc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCANT)));
+            dpw.setDesc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDESC)));
             dpw.setCant(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWCANT))));
             dpw.setPuni(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWPUNI))));
             dpw.setImpt(Double.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWIMPT))));

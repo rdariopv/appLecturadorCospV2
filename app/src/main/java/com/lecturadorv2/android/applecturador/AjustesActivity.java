@@ -44,7 +44,7 @@ public class AjustesActivity extends AppCompatActivity {
         etIDprinter=(EditText)findViewById(R.id.etIdPrinter);
 
 
-        String[] test=new String[]{"Horizontal ZQ520"};
+        String[] test=new String[]{"Horizontal ZQ520", "Horizontal ZQ520 SW"};
         ArrayAdapter<String> adpPrinter= new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,test);
         spPrinter.setAdapter(adpPrinter);
         LtCnf cnf = new LtCnf();
@@ -56,8 +56,6 @@ public class AjustesActivity extends AppCompatActivity {
             swGpsA.setChecked(cnf.isCnfGpsA());
             spPrinter.setSelection(cnf.getCnfNpri());
             etIDprinter.setText(cnf.getCnfIdpr().toString());
-
-
         }
 
        swGpsA.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

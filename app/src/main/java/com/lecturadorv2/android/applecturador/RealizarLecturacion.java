@@ -249,7 +249,7 @@ public class RealizarLecturacion extends AppCompatActivity {
     public void escribirAviso() {
         StringBuilder sb = new StringBuilder();
         MyZebra myZebra = new MyZebra();
-        sb.append(myZebra.printZPLHorizontalZQ520_Cospail(loitemLecturacion));
+        sb.append(myZebra.printZPLHorizontalZQ520_SinWebService(loitemLecturacion));
         try {
             String url = Environment.getExternalStorageDirectory().getAbsolutePath();
             File myFile = new File(url + "/avsCobranza" + loitemLecturacion.getNlec() + ".txt");
@@ -494,11 +494,11 @@ public class RealizarLecturacion extends AppCompatActivity {
                         StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail(loitemLecturacion);
                         configLabel = sb.toString().getBytes();
                     }
-                   // if (cnf.getCnfNpri() == 2) {
-                   //     MyZebra myZebra = new MyZebra();
-                   //     StringBuilder sb = myZebra.printZPLHorizontalZQ520(loitemLect);
-                   //     configLabel = sb.toString().getBytes();
-                   // }
+                    if (cnf.getCnfNpri() == 1) {
+                        MyZebra myZebra = new MyZebra();
+                        StringBuilder sb = myZebra.printZPLHorizontalZQ520_SinWebService(loitemLecturacion);
+                        configLabel = sb.toString().getBytes();
+                    }
                    // if (cnf.getCnfNpri() == 3) {
                    //     MyZebra myZebra = new MyZebra();
                    //     StringBuilder sb = myZebra.printZPLVertical2(loitemLect);

@@ -60,20 +60,31 @@ public class SyncBsDhw {
                     for (int i = 0; i < newDataset.getPropertyCount(); i++) {
                         SoapObject objHpw = (SoapObject) newDataset.getProperty(i);
 
-                        BsDhw hpw = new BsDhw();
-                        hpw.setNhpf(Integer.valueOf(objHpw.getProperty(00).toString()));
-                        hpw.setOrde(Integer.valueOf(objHpw.getProperty(01).toString()));
-                        hpw.setPeri(objHpw.getProperty(02).toString());
-                        hpw.setCons(Integer.valueOf(objHpw.getProperty(03).toString()));
-                        hpw.setImpt(Double.valueOf(objHpw.getProperty(04).toString()));
-                        hpw.setStad(objHpw.getProperty(05).toString());
+                        BsDhw dhw = new BsDhw();
+                        dhw.setNcnt(Integer.valueOf(objHpw.getProperty(0).toString()).intValue());
+                        dhw.setPeri(objHpw.getProperty(1).toString());
+                        dhw.setCons(Integer.valueOf(objHpw.getProperty(2).toString()).intValue());
+                        dhw.setImpt(Double.valueOf(objHpw.getProperty(3).toString()).doubleValue());
+                        dhw.setStad(objHpw.getProperty(4).toString());
+                        dhw.setCobs(Integer.parseInt(objHpw.getProperty(5).toString()));
+                        Log.e("SyncBsDhw", "hasta aqui se convirtio a obj local");
+                        dhw.insertarBsDhw();
+
+                      // dhw.setNhpf(Integer.valueOf(objHpw.getProperty(00).toString()));
+                      // dhw.setOrde(Integer.valueOf(objHpw.getProperty(01).toString()));
+                      // dhw.setPeri(objHpw.getProperty(02).toString());
+                      // dhw.setCons(Integer.valueOf(objHpw.getProperty(03).toString()));
+                      // dhw.setImpt(Double.valueOf(objHpw.getProperty(04).toString()));
+                      // dhw.setStad(objHpw.getProperty(05).toString());
+
+
 
                         Log.e("SyncBsDhw", "hasta aqui se convirtio a obj local");
-                        hpw.insertarBsDhw();
+                      //  dhw.insertarBsDhw();
                         // listHpw.add(hpw);
                         Log.e("SyncBsDhw", "se adiciono el objDhw a la lista");
                         //  SyncActualizarAviso(hpw.getNhpf(), 2); // estado = 2 indica bajado correcto
-                        SyncActualizaHistoricoAviso(hpw.getNhpf(), 2);// estado = 2 indica bajado correcto
+                        SyncActualizaHistoricoAviso(dhw.getNhpf(), 2);// estado = 2 indica bajado correcto
                     }
                 }
                 //   Log.e("SyncBsHpw", "Cantidad de obj Objtenidos via WEb Service=" + listHpw.size());
