@@ -1,5 +1,6 @@
 package com.lecturadorv2.android.zebra;
 
+import android.os.Environment;
 import android.util.Log;
 
 
@@ -10,6 +11,9 @@ import com.lecturadorv2.android.dblecturador.BsEnw;
 import com.lecturadorv2.android.dblecturador.BsHpw;
 import com.lecturadorv2.android.dblecturador.BsLec;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -581,6 +585,23 @@ public class MyZebra {
         return sb;
     }*/
 
+    public void escribirAviso(BsLec loitemLecturacion) {
+        StringBuilder sb = new StringBuilder();
+        MyZebra myZebra = new MyZebra();
+        sb.append(myZebra.printZPLHorizontalZQ520_SinWebService(loitemLecturacion));
+        try {
+            String url = Environment.getExternalStorageDirectory().getAbsolutePath();
+            File myFile = new File(url + "/avsCobranza" + loitemLecturacion.getNlec() + ".txt");
+            myFile.createNewFile();
+            FileOutputStream fOut = new FileOutputStream(myFile);
+            OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
+            myOutWriter.append(sb.toString());
+            myOutWriter.close();
+            fOut.close();
+        } catch (Exception e) {
+            Log.e("ERRR", "Could not create file", e);
+        }
+    }
 
     public StringBuilder printZPLHorizontalZQ520_Cospail(BsLec lec){
 
@@ -876,7 +897,13 @@ public class MyZebra {
             sb.append("^FO"+xlon+",940^A0R,0,25^FD "+String.valueOf(imor)+"^FS ");
             sb.append("^FO"+xlon+",1180^A0R,0,25^FD "+String.valueOf(hpw.getNmor())+"^FS ");
 
+
+        if(!lsFcor.equals("01/01/1900"))
+        {
             sb.append("^FO"+xlon+",1470^A0R,0,25^FD "+lsFcor+"^FS ");
+        }
+
+
 
             int x=310;
             int cont=0;
@@ -935,11 +962,11 @@ public class MyZebra {
 
             int x1,y;
             x1=310;
-            sb.append("^FO"+x1+",80^A0R,0,20^FD "+enw.getAnio()+"-"+enw.getMesf()+" ^FS ");
-            sb.append("^FO"+x1+",230^A0R,0,20^FD "+hpw.getCons()+" ^FS ");
-            sb.append("^FO"+x1+",430^A0R,0,20^FD "+impt+" ^FS ");
-            sb.append("^FO"+x1+",570^A0R,0,20^FD IMPAGA ^FS ");
-            x1=x1-30;
+            //sb.append("^FO"+x1+",80^A0R,0,20^FD "+enw.getAnio()+"-"+enw.getMesf()+" ^FS ");
+            //sb.append("^FO"+x1+",230^A0R,0,20^FD "+hpw.getCons()+" ^FS ");
+            //sb.append("^FO"+x1+",430^A0R,0,20^FD "+impt+" ^FS ");
+            //sb.append("^FO"+x1+",570^A0R,0,20^FD IMPAGA ^FS ");
+            //x1=x1-30;
             y=0;
 
             for (BsDhw h:lldhw) {

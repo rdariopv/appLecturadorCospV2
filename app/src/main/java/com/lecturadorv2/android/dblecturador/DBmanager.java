@@ -146,7 +146,32 @@ public class DBmanager {
 		return cursor;
 		// return null;
 	}
+	public static int buscarTuplaMax(String nombreTabla,String nombreCol,
+									  String Condiciones,String orderby) {
 
+		// String lsSql="Select * from "+nombreTabla+" where "+Condiciones;
+         int result=0;
+		String lsSql = "select MAX(" + nombreCol + ") from "
+				+ nombreTabla+" where "+Condiciones;
+		AbrirBD();
+		Cursor cursor = manager.rawQuery(lsSql, null);
+
+		try{
+			if (cursor.moveToNext()) {
+				result = Integer.valueOf(cursor.getString(0));
+			}
+		} catch (Exception e) {
+				e.printStackTrace();
+				Log.e("DBmanager", "ERROR por obtenerRegistro e= " + e.toString());
+		} finally {
+			cursor.close();
+			CerrarBD();
+		}
+
+
+		return result;
+		// return null;
+	}
 	public static Boolean existe(String nombreTabla, String[] columnas,
 			String condicion) {
 		boolean b = false;

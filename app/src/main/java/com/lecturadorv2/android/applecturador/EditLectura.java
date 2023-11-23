@@ -167,9 +167,9 @@ public class EditLectura extends AppCompatActivity {
             this.tvNume.setText(this.loitemLecturacion.getNume().trim());
         }
         this.swNmed.setEnabled(false);
-        BsHpw bsHpw = new BsHpw();
-        this.loitemLect = bsHpw;
-        bsHpw.obtenerBsHpw(this.loitemLecturacion.getNcnt());
+        this.loitemLect = new BsHpw();
+        this.loitemLect.obtenerBsHpwbyNcnt(this.loitemLecturacion.getNcnt());
+
         this.tvNombreS.setText(this.loitemLecturacion.getdNom());
         this.tvAlert.setText("");
 
@@ -196,8 +196,8 @@ public class EditLectura extends AppCompatActivity {
         });
         this.btnSendReprint.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                EditLectura.this.registrarLecturacion();
-                EditLectura.this.imprimirLecturacion();
+                registrarLecturacion();
+               // EditLectura.this.imprimirLecturacion();
                 //if (EditLectura.this.loitemLecturacion.getCobs() != 0) {} else {}
             }
         });
@@ -252,7 +252,7 @@ public class EditLectura extends AppCompatActivity {
             this.loitemLecturacion.guardarLact();
             if (this.config.isCnfOnly()) {
                 try {
-                    new sincronizarConsumo().execute(new String[0]);
+                    new sincronizarConsumo().execute();
                 } catch (Exception e) {
                 }
             }
@@ -272,27 +272,30 @@ public class EditLectura extends AppCompatActivity {
 
         /* access modifiers changed from: protected */
         public void onPreExecute() {
-            this.pd.setTitle("Enviando Datos");
-            this.pd.setMessage("enviando datos de lectura");
-            this.pd.setIndeterminate(false);
-            this.pd.show();
+            pd.setTitle("Enviando Datos");
+            pd.setMessage("enviando datos de lectura");
+            pd.setIndeterminate(false);
+            pd.show();
         }
 
         /* access modifiers changed from: protected */
         public Boolean doInBackground(String... strings) {
             try {
                 new SyncBsLec().SyncEnviarLecturacion(EditLectura.this.loitemLecturacion.getNlec(), EditLectura.this.loitemLecturacion.getLact(), EditLectura.this.loitemLecturacion.getCobs(), new Date(), MenuPrincipal.gps.Latitud, MenuPrincipal.gps.Longitud.doubleValue(), 1, "appMovil");
-                return null;
+               // return null;
             } catch (Exception e) {
-                EditLectura.this.displayToast(e.getMessage());
-                return null;
+              displayToast(e.getMessage());
+
             }
+            return null;
         }
 
         /* access modifiers changed from: protected */
         public void onPostExecute(Boolean aBoolean) {
-            new sincronizarHeaderAviso().execute(new String[0]);
-            this.pd.dismiss();
+
+            new sincronizarHeaderAviso().execute();
+            pd.dismiss();
+
         }
 
 
@@ -308,10 +311,10 @@ public class EditLectura extends AppCompatActivity {
 
         /* access modifiers changed from: protected */
         public void onPreExecute() {
-            this.pd.setTitle("Enviando Datos");
-            this.pd.setMessage("Descargando Header lectura");
-            this.pd.setIndeterminate(false);
-            this.pd.show();
+            pd.setTitle("Enviando Datos");
+            pd.setMessage("Descargando Header lectura");
+            pd.setIndeterminate(false);
+            pd.show();
         }
 
         /* access modifiers changed from: protected */
@@ -322,17 +325,18 @@ public class EditLectura extends AppCompatActivity {
             loitemLecturacion.obtenerBsLec(loitemLecturacion.getNlec());
             if(loitemLecturacion.getRspO()==1){
                 shpw.SyncObtenerHeaderAvisos(enw.getAnio(),enw.getMesf(),loitemLecturacion.getNcnt());
-
+               int newNhpf= loitemLect.getMaxBshpw(loitemLecturacion.getNcnt());
+                loitemLect.obtenerBsHpw(newNhpf);
             }else{
-                this.pd.setMessage("sin Datos de impresion");
+                pd.setMessage("sin Datos de impresion");
             }
             return null;
         }
 
         /* access modifiers changed from: protected */
         public void onPostExecute(Boolean aBoolean) {
-            this.pd.dismiss();
-            EditLectura.this.loitemLect.obtenerBsHpwbyNcnt(EditLectura.this.loitemLecturacion.getNcnt());
+            pd.dismiss();
+            //EditLectura.this.loitemLect.obtenerBsHpwbyNcnt(EditLectura.this.loitemLecturacion.getNcnt());
             BsDpw dpw = new BsDpw();
 
             this.pd.dismiss();
@@ -417,7 +421,7 @@ public class EditLectura extends AppCompatActivity {
 
 
         } catch (Exception e) {
-            displayToast("ERROR: Unable to connect to Printer");
+           // displayToast("ERROR: Unable to connect to Printer");
             e.printStackTrace();
             //  stopSearching(null);
         }
@@ -437,11 +441,21 @@ public class EditLectura extends AppCompatActivity {
             SGD.SET("device.languages", "zpl", conn);
             LtCnf cnf= new LtCnf();
             boolean existe=  cnf.obtenerCnf(1);
-            if (cnf.obtenerCnf(1) && printerLanguage == PrinterLanguage.ZPL && cnf.getCnfNpri() == 0) {
-                MyZebra myZebra = new MyZebra();
-                StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail(this.loitemLecturacion);
-                configLabel = sb.toString().getBytes();
-               // return new MyZebra().printZPLHorizontalZQ520_Cospail(this.loitemLecturacion).toString().getBytes();
+
+            if(existe){
+                if(printerLanguage == PrinterLanguage.ZPL){
+                    if (cnf.getCnfNpri() == 0) {
+                        MyZebra myZebra = new MyZebra();
+                        StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail(loitemLecturacion);
+                        configLabel = sb.toString().getBytes();
+                    }
+                    if (cnf.getCnfNpri() == 1) {
+                        MyZebra myZebra = new MyZebra();
+                        StringBuilder sb = myZebra.printZPLHorizontalZQ520_SinWebService(loitemLecturacion);
+                        configLabel = sb.toString().getBytes();
+                    }
+                }
+
             }
 
         } catch (ConnectionException e) {
@@ -499,7 +513,16 @@ public class EditLectura extends AppCompatActivity {
         public Boolean doInBackground(String... strings) {
             BsEnw enw = new BsEnw();
             enw.ObtenerBsEnw();
-            new SyncBsDpw().SyncObtenerDetalleAvisos(enw.getAnio(), enw.getMesf(), EditLectura.this.loitemLecturacion.getNcnt());
+            BsDpw dpw= new BsDpw();
+            SyncBsDpw sDpw=new SyncBsDpw();
+
+            if(loitemLecturacion.getRspO()==1){
+                dpw.eliminarDetalle(loitemLect.getNhpf());
+                sDpw.SyncObtenerDetalleAvisos(enw.getAnio(), enw.getMesf(),loitemLecturacion.getNcnt());
+                return null;
+            }
+           // dpw.eliminarDetalle(loitemLect.getNhpf());
+            //new SyncBsDpw().SyncObtenerDetalleAvisos(enw.getAnio(), enw.getMesf(), EditLectura.this.loitemLecturacion.getNcnt());
             return null;
         }
 
@@ -541,14 +564,17 @@ public class EditLectura extends AppCompatActivity {
             SyncBsDhw sdhw = new SyncBsDhw();
             BsEnw enw = new BsEnw();
             enw.ObtenerBsEnw();
-            new BsDhw().eliminarHistorico(EditLectura.this.loitemLecturacion.getNcnt());
-            sdhw.SyncObtenerHistoricoAvisos(enw.getAnio(), enw.getMesf(), EditLectura.this.loitemLecturacion.getNcnt());
+
+            new BsDhw().eliminarHistorico(loitemLecturacion.getNcnt());
+            sdhw.SyncObtenerHistoricoAvisos(enw.getAnio(), enw.getMesf(), loitemLecturacion.getNcnt());
             return null;
         }
 
         /* access modifiers changed from: protected */
         public void onPostExecute(Boolean aBoolean) {
             this.pd.dismiss();
+            MyZebra mizebra= new MyZebra();
+            mizebra.escribirAviso(loitemLecturacion);
             if (EditLectura.this.config.isPrintOnline()) {
                 try {
                     Toast.makeText(EditLectura.this.getApplicationContext(), "EN PROCESO DE IMPRESION", Toast.LENGTH_LONG).show();

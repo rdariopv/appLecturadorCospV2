@@ -238,8 +238,9 @@ private int Anio;
     }
 
     public void obtenerBsHpwbyNcnt(int liNcnt) {
+        int newNhpf= getMaxBshpw(liNcnt);
         DBmanager.AbrirBD();
-        Cursor cursor = DBmanager.buscarTuplas(DBhelper.NOMTAHPW, DBhelper.COLSBSHPW, DBhelper.COLBSHPWNCNT + " = " + liNcnt, (String) null);
+        Cursor cursor = DBmanager.buscarTuplas(DBhelper.NOMTAHPW, DBhelper.COLSBSHPW, DBhelper.COLBSHPWNHPF + " = " + newNhpf, (String) null);
         new BsHpw();
         if (cursor.moveToNext()) {
             setNhpf(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSHPWNHPF))).intValue());
@@ -311,6 +312,12 @@ private int Anio;
         setDias(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSHPWDIAS))).intValue());
         Log.e("BSHPW", "obtenerBsHpw se obtiene el Header con el Ncnt= " + liNcnt);
         return true;
+    }
+
+    public int getMaxBshpw(int liNcnt){
+
+        int newNhpf = DBmanager.buscarTuplaMax(DBhelper.NOMTAHPW,DBhelper.COLBSHPWNHPF,DBhelper.COLBSHPWNCNT + " = " + liNcnt,null);
+        return newNhpf;
     }
 
     public int countRegister() {

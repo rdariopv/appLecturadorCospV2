@@ -262,8 +262,6 @@ public class RealizarLecturacion extends AppCompatActivity {
         } catch (Exception e) {
             Log.e("ERRR", "Could not create file", e);
         }
-
-
     }
 
     public void listarMedidores() {
