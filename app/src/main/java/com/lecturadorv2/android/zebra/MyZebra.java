@@ -624,15 +624,18 @@ public class MyZebra {
         String [] laFini= hpw.getFini().split("T");
         String [] laFin= hpw.getFfin().split("T");
         String [] laFcor = hpw.getFcor().split("T");
+        String [] laFvto = hpw.getFvto().split("T");
 
 
 
         String lsfini = laFini[0];
         String lsFin = (new Date().toString());
         String lsFcor = laFcor[0];
+        String lsFvto = laFvto[0];
         Date fini = new Date();
         Date ffin = new Date();
         Date fcor = new Date();
+        Date fvto = new Date();
         Calendar today= Calendar.getInstance();
         Calendar finicio= Calendar.getInstance();
         long dias=1;
@@ -648,6 +651,8 @@ public class MyZebra {
             lsfini = dl.format(fini);
             lsFin = dl.format(ffin);
             lsFcor= dl.format(fcor);
+            fvto= df.parse(lsFvto.trim());
+            lsFvto= dl.format(fvto);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -670,23 +675,37 @@ public class MyZebra {
         sb.append("^FO625,"+ylon+"^A0R,0,25^FD "+ lec.getdNom().trim()+" ^FS ");
         sb.append("^FO550,"+ylon+"^A0R,0,25^FD "+hpw.getDire().trim()+"; UV:" + hpw.getDuve().trim() + "; Mza:" + hpw.getDmza().trim() + "; lote:" + hpw.getDlot().trim() + "^FS ");
         //sb.append("^FO530,290^A0R,0,25^FD Nro. Distrito^FS ");
+        sb.append("^FO510,350^A0R,0,25^FD "+lec.getCodf()+"^FS ");
         ylon=1235;
-        sb.append("^FO625,"+ylon+"^A0R,0,25^FD "+lec.getCodf()+"^FS ");
+        sb.append("^FO625,"+ylon+"^A0R,0,25^FD "+hpw.getDcat().trim()+"^FS ");
+      //  sb.append("^FO625,"+ylon+"^A0R,0,25^FD codf:"+lec.getCodf()+"^FS ");
         //   sb.append("^FO630,900^A0R,38,20^FD Fecha Emision^FS ");
-        sb.append("^FO550,"+ylon+"^A0R,0,25^FD "+dpw.getNhpc()+"^FS ");
+       // sb.append("^FO550,"+ylon+"^A0R,0,25^FD Nhpc:"+dpw.getNhpc()+"^FS ");
+        sb.append("^FO550,"+ylon+"^A0R,0,25^FD "+enw.getMesf()+"/"+enw.getAnio()+"^FS ");
         // sb.append("^FO550,900^A0R,36,20^FD F.Venc^FS ");
         ylon=1475;
-        sb.append("^FO625,"+ylon+"^A0R,0,25^FD "+hpw.getDcat().trim()+"^FS ");
-        sb.append("^FO550,"+ylon+"^A0R,0,25^FD "+enw.getMesf()+"/"+enw.getAnio()+"^FS ");
+        // categoria
+       // sb.append("^FO625,"+ylon+"^A0R,0,25^FD "+hpw.getDcat().trim()+"^FS ");
+
+        sb.append("^FO625,"+ylon+"^A0R,0,25^FD "+lsFin+"^FS ");
+
+        sb.append("^FO550,"+ylon+"^A0R,0,25^FD "+ lsFvto+"^FS ");
 
         int xlon=705;
         sb.append("^FO"+xlon+","+ylon+"^A0R,0,25^FD "+hpw.getNcnt()+"^FS ");
         sb.append(" ");
         xlon=440;
-        sb.append("^FO"+xlon+",90^A0R,0,25^FD "+lsFin+" ^FS ");
-        sb.append("^FO"+xlon+",320^A0R,0,25^FD "+hpw.getLant()+"^FS ");
-        sb.append("^FO"+xlon+",530^A0R,0,25^FD "+hpw.getLact()+"^FS ");
-        sb.append("^FO"+xlon+",700^A0R,0,25^FD "+hpw.getCons()+"^FS ");
+
+        sb.append("^FO"+xlon+",90^A0R,0,25^FD "+lsFin+" ^FS ");  // fecha actual
+      // sb.append("^FO"+xlon+",530^A0R,0,25^FD "+hpw.getLact()+"^FS "); // lectura actual
+        sb.append("^FO"+xlon+",320^A0R,0,25^FD "+hpw.getLact()+"^FS "); // lectura actual
+       // sb.append("^FO"+xlon+",700^A0R,0,25^FD "+hpw.getCons()+"^FS "); // consumo
+        sb.append("^FO"+xlon+",530^A0R,0,25^FD "+hpw.getCons()+"^FS "); // consumo
+        xlon=xlon-35;
+        sb.append("^FO"+xlon+",90^A0R,0,25^FD "+lsfini+" ^FS "); // fecha anterior
+        sb.append("^FO"+xlon+",320^A0R,0,25^FD "+hpw.getLant()+"^FS "); // lectura anterior
+
+
         // sb.append("^FO410,110^A0R,0,25FD "+lsfini+"^FS ");
         // sb.append("^FO410,420^A0R,0,25FD "+hpw.getLant()+"^FS ");
         // sb.append("^FO410,560^A0R,0,25^FD  ^FS ");

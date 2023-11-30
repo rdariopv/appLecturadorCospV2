@@ -12,6 +12,9 @@ import android.os.Environment;
 import com.google.android.material.snackbar.Snackbar;
 //import android.support.v7.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -353,9 +356,11 @@ public class RealizarLecturacion extends AppCompatActivity {
         return pairedDevicesList;
     }
 
-    private void connectAndPrint(Connection conn) {
+    private boolean connectAndPrint(Connection conn) {
+        boolean result = true;
         try {
-           // if(conn.isConnected()){
+
+            //if(conn.isConnected()){
                 conn.open();
                 String printerName = SGD.GET("device.unique_id", conn);
                 if (findPrinterStatus(conn)) {
@@ -371,15 +376,20 @@ public class RealizarLecturacion extends AppCompatActivity {
                 conn.close();
            // }
            // else{
+           //     result=false;
+           //     displayToast("No es posible conectarse con la impresora");
            //     Snackbar.make(this.getWindow().getDecorView(),"No es posible conectarse con la impresora", Snackbar.LENGTH_LONG).show();
            // }
 
 
         } catch (Exception e) {
-            displayToast("ERROR: Unable to connect to Printer");
-            e.printStackTrace();
+            result=false;
+            displayToast("ERROR: deshabilitado para conectar a la impresora");
+            Log.e(this.getClass().getName(), "connectAndPrint:" + e.getMessage());
+           //e.printStackTrace();
             //  stopSearching(null);
         }
+        return result;
     }
 
     private boolean findPrinterStatus(final Connection conn) {
@@ -399,15 +409,14 @@ public class RealizarLecturacion extends AppCompatActivity {
 
     public void displayToast(final String message) {
 
-        new Thread(new Runnable() {
-            @Override
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
             public void run() {
                 Toast toast;
-                toast = Toast.makeText(getApplication(), message, Toast.LENGTH_LONG);
+                toast = Toast.makeText(RealizarLecturacion.this, message, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);
                 toast.show();
             }
-        }).start();
+        });
     }
 
     @Override
@@ -446,22 +455,25 @@ public class RealizarLecturacion extends AppCompatActivity {
           //  bluetoothAddress = getPairedPrinters().get(0).getAddress();
            // BluetoothDevice bt= getPairedPrinters().get(0);
             bluetoothAddress= config.getCnfIdpr();
+            boolean result= false;
 
           try{
               BluetoothConnection conn = new BluetoothConnection(bluetoothAddress);
-              connectAndPrint(conn);
+              result=connectAndPrint(conn);
           }catch (Exception e){
+              result= false;
               pd.setMessage(e.getMessage());
           }
 
-            return true;
+            return result;
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void onPostExecute(Boolean result) {
             pd.dismiss();
-            lanzarNuevoItem();
-            // super.onPostExecute(aBoolean);
+           if(result){
+               lanzarNuevoItem();
+           }
         }
     }
 

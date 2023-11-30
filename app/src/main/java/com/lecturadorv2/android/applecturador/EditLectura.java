@@ -10,6 +10,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 //import android.support.v7.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -382,8 +385,9 @@ public class EditLectura extends AppCompatActivity {
             EditLectura editLectura = EditLectura.this;
             String unused = editLectura.bluetoothAddress = editLectura.config.getCnfIdpr();
             try {
-                EditLectura.this.connectAndPrint(new BluetoothConnection(EditLectura.this.bluetoothAddress));
+                connectAndPrint(new BluetoothConnection(EditLectura.this.bluetoothAddress));
             } catch (Exception e) {
+                displayToast(e.getMessage());
                 this.pd.setMessage(e.getMessage());
             }
             return true;
@@ -399,7 +403,8 @@ public class EditLectura extends AppCompatActivity {
                 || bluetoothDevice.getBluetoothClass().getMajorDeviceClass() == BluetoothClass.Device.Major.UNCATEGORIZED;
     }
 
-    private void connectAndPrint(Connection conn) {
+    private boolean connectAndPrint(Connection conn) {
+        boolean result = true;
         try {
             // if(conn.isConnected()){
             conn.open();
@@ -421,10 +426,12 @@ public class EditLectura extends AppCompatActivity {
 
 
         } catch (Exception e) {
-           // displayToast("ERROR: Unable to connect to Printer");
-            e.printStackTrace();
+            result=false;
+            displayToast("ERROR: deshabilitado para conectar a la impresora");
+            Log.e(this.getClass().getName(), "connectAndPrint:" + e.getMessage());
             //  stopSearching(null);
         }
+        return  result;
     }
 
     private byte[] getConfigLabel(Connection conn) {
@@ -467,15 +474,14 @@ public class EditLectura extends AppCompatActivity {
 
     public void displayToast(final String message) {
 
-        new Thread(new Runnable() {
-            @Override
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
             public void run() {
                 Toast toast;
                 toast = Toast.makeText(EditLectura.this, message, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);
                 toast.show();
             }
-        }).start();
+        });
     }
     private boolean findPrinterStatus(Connection conn) {
         try {
