@@ -1,4 +1,4 @@
-#Thu Nov 30 01:28:35 BOT 2023
+#Fri Dec 08 22:04:01 BOT 2023
 base.0=D\:\\AndroidProjects\\appLecCospail\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
