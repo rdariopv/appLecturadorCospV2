@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.lecturadorv2.android.applecturador.app-mergeDebugResources-19:/values-small-v4/values-small-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\e375de9e77ba2908e568ef73f461621b\\transformed\\material-1.1.0-alpha04\\res\\values-small-v4\\values-small-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,128,198,270",
+                        "endColumns": "72,69,71,69",
+                        "endOffsets": "123,193,265,335"
+                    }
+                }
+            ]
+        }
+    ]
+}
