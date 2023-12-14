@@ -34,7 +34,6 @@ public class AjustesActivity extends AppCompatActivity {
     private EditText etIDprinter;
     public void inicializarVariables() {
 
-
         etUrlFU = (EditText) findViewById(R.id.etUrlFU);
         btnAceptarFU = (Button) findViewById(R.id.btnAceptarFU);
         swOnlineFU= (Switch) findViewById(R.id.swOnlineFU);
