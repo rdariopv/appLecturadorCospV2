@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Windows 10\\.gradle\\daemon\\7.3.3\\com.lecturadorv2.android.applecturador.app-main-23:\\mipmap-xxxhdpi\\ic_button_next.png"
     },
     {
-        "merged": "C:\\Users\\Windows 10\\.gradle\\daemon\\7.3.3\\com.lecturadorv2.android.applecturador.app-merged_res-21:\\drawable-anydpi-v21_ic_button_next_f.xml.flat",
-        "source": "C:\\Users\\Windows 10\\.gradle\\daemon\\7.3.3\\com.lecturadorv2.android.applecturador.app-pngs-16:\\drawable-anydpi-v21\\ic_button_next_f.xml"
-    },
-    {
         "merged": "C:\\Users\\Windows 10\\.gradle\\daemon\\7.3.3\\com.lecturadorv2.android.applecturador.app-merged_res-21:\\mipmap-xhdpi_ic_button_next_round.png.flat",
         "source": "C:\\Users\\Windows 10\\.gradle\\daemon\\7.3.3\\com.lecturadorv2.android.applecturador.app-main-23:\\mipmap-xhdpi\\ic_button_next_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Windows 10\\.gradle\\daemon\\7.3.3\\com.lecturadorv2.android.applecturador.app-merged_res-21:\\drawable-anydpi-v21_ic_button_next_f.xml.flat",
+        "source": "C:\\Users\\Windows 10\\.gradle\\daemon\\7.3.3\\com.lecturadorv2.android.applecturador.app-pngs-16:\\drawable-anydpi-v21\\ic_button_next_f.xml"
     },
     {
         "merged": "C:\\Users\\Windows 10\\.gradle\\daemon\\7.3.3\\com.lecturadorv2.android.applecturador.app-merged_res-21:\\drawable_button_default_bg.xml.flat",
