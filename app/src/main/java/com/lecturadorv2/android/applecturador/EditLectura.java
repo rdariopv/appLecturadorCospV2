@@ -181,8 +181,8 @@ public class EditLectura extends AppCompatActivity {
         this.etLectura.setEnabled(true);
         this.tvDataConsumo.setText((this.loitemLecturacion.getLact() - this.loitemLecturacion.getLant()) + "");
         if (this.loitemLecturacion.getCobs() != 0) {
-            this.etLectura.setEnabled(false);
-            this.spObsE.setEnabled(false);
+           // this.etLectura.setEnabled(false);
+           // this.spObsE.setEnabled(false);  // se comenta a pedido de la ingeniera fecha 15/mayo/2024
         }
         this.etLectura.addTextChangedListener(new TextWatcher() {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

@@ -194,7 +194,6 @@ public class RealizarLecturacion extends AppCompatActivity {
                 loitemLecturacion.guardarLact();
                 if (config.isCnfOnly()) {
                     try{
-
                         new sincronizarConsumo().execute();
                     }catch (Exception e){
                     }
@@ -211,7 +210,7 @@ public class RealizarLecturacion extends AppCompatActivity {
        //         //Toast.makeText(getApplicationContext(),"Verifique la impresora o dispositivos vinculados", Toast.LENGTH_LONG).show();
        //         Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_LONG).show();
        //     }
-       //
+//
        // }
 
     }
@@ -441,9 +440,9 @@ public class RealizarLecturacion extends AppCompatActivity {
         protected void onPreExecute() {
             pd.setTitle("Imprimiendo");
             pd.setMessage("Enviando datos para imprimir");
-            // pd.setProgress(0);
+           //  pd.setProgress(0);
 
-            escribirAviso();
+          // escribirAviso();
             pd.setIndeterminate(false);
             pd.show();
             // super.onPreExecute();

@@ -3751,23 +3751,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\e682083e04cef85346188787d9e13f3f\\transformed\\jetified-library-2.1.4\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "5,6,7,8,9,10,11,12,2",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1904,1957,2005,2058,2108,2164,2219,2268,55",
-                        "endColumns": "52,47,52,49,55,54,48,49,1722",
-                        "endOffsets": "1952,2000,2053,2103,2159,2214,2263,2313,1773"
-                    },
-                    "to": {
-                        "startLines": "417,418,429,430,482,490,491,492,5457",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "24356,24409,25115,25168,28496,29163,29218,29267,308983",
-                        "endColumns": "52,47,52,49,55,54,48,49,1722",
-                        "endOffsets": "24404,24452,25163,25213,28547,29213,29262,29312,310701"
-                    }
-                },
-                {
                     "source": "D:\\AndroidProjects\\appLecCospail\\app\\src\\main\\res\\values\\ic_button_next2_background.xml",
                     "from": {
                         "startLines": "2",
@@ -3985,6 +3968,23 @@
                         "endLines": "479,480,481,493,494,495,650,5723",
                         "endColumns": "58,47,55,74,75,71,65,24",
                         "endOffsets": "28387,28435,28491,29387,29463,29535,39076,319863"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Windows 10\\.gradle\\caches\\transforms-3\\6673de669b706bb68aa671d2a2d4aadb\\transformed\\jetified-library-2.1.4\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "5,6,7,8,9,10,11,12,2",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1904,1957,2005,2058,2108,2164,2219,2268,55",
+                        "endColumns": "52,47,52,49,55,54,48,49,1722",
+                        "endOffsets": "1952,2000,2053,2103,2159,2214,2263,2313,1773"
+                    },
+                    "to": {
+                        "startLines": "417,418,429,430,482,490,491,492,5457",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "24356,24409,25115,25168,28496,29163,29218,29267,308983",
+                        "endColumns": "52,47,52,49,55,54,48,49,1722",
+                        "endOffsets": "24404,24452,25163,25213,28547,29213,29262,29312,310701"
                     }
                 }
             ]
