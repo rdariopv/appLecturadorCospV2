@@ -683,7 +683,7 @@ public class MyZebra {
       //  sb.append("^FO625,"+ylon+"^A0R,0,25^FD codf:"+lec.getCodf()+"^FS ");
         //   sb.append("^FO630,900^A0R,38,20^FD Fecha Emision^FS ");
        // sb.append("^FO550,"+ylon+"^A0R,0,25^FD Nhpc:"+dpw.getNhpc()+"^FS ");
-        sb.append("^FO550,"+ylon+"^A0R,0,25^FD "+enw.getMesf()+"/"+enw.getAnio()+"^FS ");
+        sb.append("^FO550,"+ylon+"^A0R,0,25^FD "+enw.getDmes()+"/"+enw.getAnio()+"^FS ");
         // sb.append("^FO550,900^A0R,36,20^FD F.Venc^FS ");
         ylon=1475;
         // categoria
@@ -895,7 +895,7 @@ public class MyZebra {
             // sb.append("^FO550,900^A0R,36,20^FD F.Venc^FS ");
             ylon=1475;
             sb.append("^FO625,"+ylon+"^A0R,0,25^FD "+hpw.getDcat().trim()+"^FS ");
-            sb.append("^FO550,"+ylon+"^A0R,0,25^FD "+enw.getMesf()+"/"+enw.getAnio()+"^FS ");
+            sb.append("^FO550,"+ylon+"^A0R,0,25^FD "+enw.getDmes()+"/"+enw.getAnio()+"^FS ");
 
             int xlon=705;
             sb.append("^FO"+xlon+","+ylon+"^A0R,0,35^FD "+hpw.getNcnt()+"^FS ");
