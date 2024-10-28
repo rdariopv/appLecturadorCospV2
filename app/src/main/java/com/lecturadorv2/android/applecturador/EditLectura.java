@@ -157,7 +157,7 @@ public class EditLectura extends AppCompatActivity {
         }else{
             this.spObsE.setSelection(indexCobs);
         }
-        this.spObsE.setSelection(adpObw.getIndexbyId(this.loitemLecturacion.getCobs()));
+
 
 
 
@@ -453,7 +453,7 @@ public class EditLectura extends AppCompatActivity {
                 if(printerLanguage == PrinterLanguage.ZPL){
                     if (cnf.getCnfNpri() == 0) {
                         MyZebra myZebra = new MyZebra();
-                        StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail(loitemLecturacion);
+                        StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail_QR(loitemLecturacion);
                         configLabel = sb.toString().getBytes();
                     }
                     if (cnf.getCnfNpri() == 1) {

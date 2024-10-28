@@ -18,6 +18,15 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/70e1e0efa51d1837c1a09d82b593ab09/transformed/jetified-butterknife-8.7.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/70e1e0efa51d1837c1a09d82b593ab09/transformed/jetified-butterknife-8.7.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/70e1e0efa51d1837c1a09d82b593ab09/transformed/jetified-butterknife-8.7.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4c14e63fbec9555917617920692378d2/transformed/jetified-butterknife-8.7.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4c14e63fbec9555917617920692378d2/transformed/jetified-butterknife-8.7.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4c14e63fbec9555917617920692378d2/transformed/jetified-butterknife-8.7.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/714ef575d7ec644c642911845b305baf/transformed/jetified-butterknife-8.7.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/714ef575d7ec644c642911845b305baf/transformed/jetified-butterknife-8.7.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/714ef575d7ec644c642911845b305baf/transformed/jetified-butterknife-8.7.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/12fcf2240ef0527e8b050376b7da7efd/transformed/jetified-butterknife-8.7.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/12fcf2240ef0527e8b050376b7da7efd/transformed/jetified-butterknife-8.7.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/12fcf2240ef0527e8b050376b7da7efd/transformed/jetified-butterknife-8.7.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/8.7.0/b42823e93914dd5ba6e1aef1d346ddb179f05601/butterknife-8.7.0-javadoc.jar!/" />

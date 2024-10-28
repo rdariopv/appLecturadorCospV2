@@ -28,6 +28,15 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/169ea64dd5eebd08d5004516a6e2718f/transformed/jetified-library-material-1.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/169ea64dd5eebd08d5004516a6e2718f/transformed/jetified-library-material-1.1.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/169ea64dd5eebd08d5004516a6e2718f/transformed/jetified-library-material-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ded1bdd432af7886837b769aa139a288/transformed/jetified-library-material-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ded1bdd432af7886837b769aa139a288/transformed/jetified-library-material-1.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ded1bdd432af7886837b769aa139a288/transformed/jetified-library-material-1.1.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3d2c0956de29a564bd9b4956bb7ed414/transformed/jetified-library-material-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3d2c0956de29a564bd9b4956bb7ed414/transformed/jetified-library-material-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3d2c0956de29a564bd9b4956bb7ed414/transformed/jetified-library-material-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ecd8653e683354d4d01a0a40cd610d2a/transformed/jetified-library-material-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ecd8653e683354d4d01a0a40cd610d2a/transformed/jetified-library-material-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ecd8653e683354d4d01a0a40cd610d2a/transformed/jetified-library-material-1.1.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.weiwangcn.betterspinner/library-material/1.1.0/678bb48e253bdd94a9f4136e49f958c19eeeed44/library-material-1.1.0-javadoc.jar!/" />
