@@ -146,6 +146,17 @@ public class DBmanager {
 		return cursor;
 		// return null;
 	}
+
+	public static Cursor buscarTuplas(String nombreTabla,
+									  String[] columnas, String Condiciones,String groupby,String orderby) {
+
+		// String lsSql="Select * from "+nombreTabla+" where "+Condiciones;
+		Cursor cursor = manager.query(true,nombreTabla, columnas,
+				Condiciones , null, groupby, null, orderby, null);
+
+		return cursor;
+		// return null;
+	}
 	public static int buscarTuplaMax(String nombreTabla,String nombreCol,
 									  String Condiciones,String orderby) {
 

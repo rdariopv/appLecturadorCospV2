@@ -1119,8 +1119,8 @@ public class MyZebra {
         LinkedList<BsDhw> lldhw= dhw.listarBsDhw(hpw.getNcnt());
 
         BsCcw ccobranza= new BsCcw();
-        LinkedList<BsCcw> llcc=ccobranza.listarBsCcw();
-
+       // LinkedList<BsCcw> llcc=ccobranza.listarBsCcw();
+        LinkedList<BsCcw> llcc=ccobranza.listarBsCcw_groupby();
         int ylon=100;
         //"+xlon+","+yLon+"
         sb.append("^XA ");
@@ -1260,14 +1260,14 @@ public class MyZebra {
                 while(desc!="" && x2>=30)
                 {
                     int nCant=desc.length();
-                    if(nCant>0 && nCant>43){
-                        result= desc.substring(0,43);
-                        sb.append("^FO"+x2+",1200^A0R,0,20^FD "+result+" ^FS ");
-                        desc=desc.substring(43,nCant);
+                    if(nCant>0 && nCant>35){
+                        result= desc.substring(0,35);
+                        sb.append("^FO"+x2+",1250^A0R,0,20^FD "+result+" ^FS ");
+                        desc=desc.substring(35,nCant);
                         x2=x2-30;
                     }else{
                         result=desc.substring(0,nCant);
-                        sb.append("^FO"+x2+",1200^A0R,0,20^FD "+result+" ^FS ");
+                        sb.append("^FO"+x2+",1250^A0R,0,20^FD "+result+" ^FS ");
                         desc="";
                         x2=x2-30;
                     }
