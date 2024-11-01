@@ -33,6 +33,7 @@ import com.lecturadorv2.android.comunicacion.SyncBsccw;
 import com.lecturadorv2.android.comunicacion.SyncLtZon;
 import com.lecturadorv2.android.comunicacion.TestConexionHttp;
 import com.lecturadorv2.android.dblecturador.BsCcw;
+import com.lecturadorv2.android.dblecturador.BsCon;
 import com.lecturadorv2.android.dblecturador.BsDhw;
 import com.lecturadorv2.android.dblecturador.BsDpw;
 import com.lecturadorv2.android.dblecturador.BsEnw;
@@ -499,7 +500,8 @@ public class SyncActivity extends AppCompatActivity {
             protected void onPostExecute(Boolean aBoolean) {
 
                 pd.dismiss();
-                confirmPmt();
+                new DownloadConceptos().execute();
+                //confirmPmt();
                 // super.onPostExecute(aBoolean);
             }
 
@@ -507,6 +509,42 @@ public class SyncActivity extends AppCompatActivity {
             protected void onCancelled() {
                 //  super.onCancelled();
                // confirmPmt();
+            }
+        }
+
+        public class DownloadConceptos extends AsyncTask<Boolean, Integer, Boolean> {
+
+            ProgressDialog pd = new ProgressDialog(getActivity().getWindow().getContext());
+
+            @Override
+            protected void onPreExecute() {
+                pd.setTitle("Sincronizando");
+                pd.setMessage("Conceptos");
+                pd.setIndeterminate(false);
+                pd.show();
+
+                // super.onPreExecute();
+            }
+
+            @Override
+            protected Boolean doInBackground(Boolean... val) {
+                SyncBsObw syncBsObw = new SyncBsObw();
+                syncBsObw.SyncObtenerLinkQR();
+                return true;
+            }
+
+            @Override
+            protected void onPostExecute(Boolean aBoolean) {
+
+                pd.dismiss();
+                confirmPmt();
+                // super.onPostExecute(aBoolean);
+            }
+
+            @Override
+            protected void onCancelled() {
+                //  super.onCancelled();
+                // confirmPmt();
             }
         }
 
@@ -523,11 +561,13 @@ public class SyncActivity extends AppCompatActivity {
             BsTaw tar= new BsTaw();
             BsObw obw= new BsObw();
             BsCcw ccw= new BsCcw();
+            BsCon con= new BsCon();
             String pmt= enw.countRegister()+" Registros de Empresa." +System.getProperty("line.separator")+
                     ""+zon.countRegister()+" Registros de Zona. " +System.getProperty("line.separator")+
                     ""+tar.countRegister()+" Registros de Tarifas. " +System.getProperty("line.separator")+
                     ""+obw.countRegister()+" Registros de Observaciones. " +System.getProperty("line.separator")+
-                    ""+ccw.countRegister()+" Registros de Centros de cobranzas.";
+                    ""+con.countRegister()+" Registros de Conceptos. " +System.getProperty("line.separator")+
+                    ""+ccw.countRegister()+" Registros de Centros de cobranzas." ;
             builder.setMessage(pmt);
             builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                 @Override

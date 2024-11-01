@@ -401,6 +401,17 @@ public static String COLBSHPWANIO = "bshpwAnio";
             " bslecrspo int not null); " ;
 
 
+
+    // TABLA 10 : CONCEPTOS PARA: LINK QR, ETC.
+    public static  String NOMTABSCON="bscon";
+    public static String COLBSCONPREF = "bsconPref";
+    public static String COLBSCONCODO = "bsconCodo";
+    public static String COLBSCONDESC = "bsconDesc";
+    public static  String [] COLSBSCON ={COLBSCONPREF,COLBSCONCODO,COLBSCONDESC};
+    public static String CTBSCON=" create table bscon (  " +
+            " bsconPref int not null , " +
+            " bsconCodo int not null , " +
+            " bsconDesc text not null); " ;
     /*
     private static String openOrCreateDatabase(){
         //Quitar comentario para guardar la db externa
@@ -444,8 +455,7 @@ public static String COLBSHPWANIO = "bshpwAnio";
         db.execSQL(CTBSCCW);
         db.execSQL(CTBSDHW);
         db.execSQL(CTBSLEC);
-
-
+        db.execSQL(CTBSCON);
     }
 
     @Override
@@ -466,6 +476,7 @@ public static String COLBSHPWANIO = "bshpwAnio";
         db.execSQL("DROP TABLE IF EXISTS " + CTBSCCW);
         db.execSQL("DROP TABLE IF EXISTS " + CTBSDHW);
         db.execSQL("DROP TABLE IF EXISTS " + CTBSLEC);
+        db.execSQL("DROP TABLE IF EXISTS " + CTBSCON);
         onCreate(db);
     }
 

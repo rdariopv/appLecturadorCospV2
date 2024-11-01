@@ -5,6 +5,7 @@ import android.util.Log;
 
 
 import com.lecturadorv2.android.dblecturador.BsCcw;
+import com.lecturadorv2.android.dblecturador.BsCon;
 import com.lecturadorv2.android.dblecturador.BsDhw;
 import com.lecturadorv2.android.dblecturador.BsDpw;
 import com.lecturadorv2.android.dblecturador.BsEnw;
@@ -896,6 +897,9 @@ public class MyZebra {
         BsCcw ccobranza= new BsCcw();
         LinkedList<BsCcw> llcc=ccobranza.listarBsCcw();
 
+        BsCon conceptos = new BsCon();
+         conceptos.obtenerBsCon(1,1);
+
         int ylon=100;
         //"+xlon+","+yLon+"
         sb.append("^XA ");
@@ -1121,6 +1125,10 @@ public class MyZebra {
         BsCcw ccobranza= new BsCcw();
        // LinkedList<BsCcw> llcc=ccobranza.listarBsCcw();
         LinkedList<BsCcw> llcc=ccobranza.listarBsCcw_groupby();
+
+        BsCon conceptos = new BsCon();
+        conceptos.obtenerBsCon(1,1);
+
         int ylon=100;
         //"+xlon+","+yLon+"
         sb.append("^XA ");
@@ -1246,9 +1254,10 @@ public class MyZebra {
         // sb.append("^FO27,600^A0R,0,20^FD "+String.format("%.2f", ttlDeuda)+" ^FS ");
         Log.e("MyZebra","tamanho de la lista de centros de cobranza="+llcc.size());
         int x2=350;
+      String url=   conceptos.getDesc().trim()+ "&"+ hpw.getNcnt();
         sb.append(" ^FO185,1060 ");
         sb.append(" ^BQN,2,7 ");
-        sb.append(" ^FDLA,https://github.com/rdariopv^FS ");
+        sb.append(" ^FDLA,"+url+"^FS ");
 
         if(llcc.size()>0){
             for (int i = 0; i < llcc.size() ; i++) {
