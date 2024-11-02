@@ -361,6 +361,7 @@ public class RealizarLecturacion extends AppCompatActivity {
 
             //if(conn.isConnected()){
                 conn.open();
+
                 String printerName = SGD.GET("device.unique_id", conn);
                 if (findPrinterStatus(conn)) {
                     byte[] configLabel = getConfigLabel(conn);
@@ -373,7 +374,7 @@ public class RealizarLecturacion extends AppCompatActivity {
                 }
                 // Thread.sleep(500);
                 conn.close();
-           // }
+           //}
            // else{
            //     result=false;
            //     displayToast("No es posible conectarse con la impresora");
@@ -432,6 +433,7 @@ public class RealizarLecturacion extends AppCompatActivity {
         super.onStop();
     }
 
+    BluetoothConnection conn;
     public class enviarImprimir extends AsyncTask<String, Integer, Boolean> {
         ProgressDialog pd = new ProgressDialog(RealizarLecturacion.this);
         private ZebraPrinter printer;
@@ -457,7 +459,7 @@ public class RealizarLecturacion extends AppCompatActivity {
             boolean result= false;
 
           try{
-              BluetoothConnection conn = new BluetoothConnection(bluetoothAddress);
+                conn = new BluetoothConnection(bluetoothAddress);
               result=connectAndPrint(conn);
           }catch (Exception e){
               result= false;

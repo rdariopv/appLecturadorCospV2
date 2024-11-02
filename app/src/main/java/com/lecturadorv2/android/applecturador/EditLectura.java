@@ -28,6 +28,7 @@ import android.widget.Toast;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.lecturadorv2.android.applecturador.databinding.ActivityEditlecturaBinding;
+import com.lecturadorv2.android.comunicacion.SyncBsObw;
 import com.lecturadorv2.android.dblecturador.BsDhw;
 
 import com.lecturadorv2.android.comunicacion.SyncBsDhw;
@@ -256,6 +257,7 @@ public class EditLectura extends AppCompatActivity {
             if (this.config.isCnfOnly()) {
                 try {
                     new sincronizarConsumo().execute();
+                   // new DownloadConceptos().execute();
                 } catch (Exception e) {
                 }
             }
@@ -295,10 +297,8 @@ public class EditLectura extends AppCompatActivity {
 
         /* access modifiers changed from: protected */
         public void onPostExecute(Boolean aBoolean) {
-
             new sincronizarHeaderAviso().execute();
             pd.dismiss();
-
         }
 
 
@@ -398,6 +398,46 @@ public class EditLectura extends AppCompatActivity {
             this.pd.dismiss();
         }
     }
+
+
+    public class DownloadConceptos extends AsyncTask<Boolean, Integer, Boolean> {
+
+        ProgressDialog pd = new ProgressDialog(EditLectura.this);
+
+        @Override
+        protected void onPreExecute() {
+            pd.setTitle("Sincronizando");
+            pd.setMessage("Conceptos");
+            pd.setIndeterminate(false);
+            pd.show();
+
+            // super.onPreExecute();
+        }
+
+        @Override
+        protected Boolean doInBackground(Boolean... val) {
+            SyncBsObw syncBsObw = new SyncBsObw();
+            syncBsObw.SyncObtenerLinkQR();
+            return true;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+
+            pd.dismiss();
+            new sincronizarConsumo().execute();
+         //   confirmPmt();
+            // super.onPostExecute(aBoolean);
+        }
+
+        @Override
+        protected void onCancelled() {
+            //  super.onCancelled();
+            // confirmPmt();
+        }
+    }
+
+
     private boolean isBluetoothPrinter(BluetoothDevice bluetoothDevice) {
         return bluetoothDevice.getBluetoothClass().getMajorDeviceClass() == BluetoothClass.Device.Major.IMAGING
                 || bluetoothDevice.getBluetoothClass().getMajorDeviceClass() == BluetoothClass.Device.Major.UNCATEGORIZED;

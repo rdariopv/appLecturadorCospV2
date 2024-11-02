@@ -64,161 +64,160 @@
 33-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:26:9-41
 34        android:label="@string/app_name"
 34-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:27:9-41
-35        android:testOnly="true"
-36        android:theme="@style/AppTheme" >
-36-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:28:9-40
-37        <activity
-37-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:31:9-35:59
-38            android:name="com.lecturadorv2.android.applecturador.EditLectura"
-38-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:32:13-40
-39            android:exported="false"
-39-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:33:13-37
-40            android:label="@string/title_activity_edit_lectura"
-40-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:34:13-64
-41            android:theme="@style/AppTheme.NoActionBar" />
-41-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:35:13-56
-42        <activity
-42-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:36:9-45:20
-43            android:name="com.lecturadorv2.android.applecturador.MenuPrincipal"
-43-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:37:13-42
-44            android:label="@string/app_name"
-44-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:39:13-45
-45            android:theme="@style/AppTheme" >
-45-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:38:13-44
-46            <intent-filter>
-46-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:40:13-44:29
-47                <action android:name="android.intent.action.MAIN" />
-47-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:41:17-69
-47-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:41:25-66
-48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:43:17-77
-49-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:43:27-74
-50            </intent-filter>
-51        </activity>
-52        <activity
-52-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:46:9-53:20
-53            android:name="com.lecturadorv2.android.applecturador.ListaMedidores"
-53-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:47:13-43
-54            android:label="@string/title_activity_lista_medidores"
-54-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:48:13-67
-55            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal" >
-55-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:49:13-56
-56            <meta-data
-56-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
-57                android:name="android.support.PARENT_ACTIVITY"
-57-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
-58                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
-58-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
-59        </activity>
-60        <activity
-60-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:54:9-61:20
-61            android:name="com.lecturadorv2.android.applecturador.RealizarLecturacion"
-61-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:55:13-48
-62            android:label="@string/title_activity_realizar_lecturacion"
-62-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:56:13-72
-63            android:parentActivityName="com.lecturadorv2.android.applecturador.ListaMedidores" >
-63-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:57:13-57
-64            <meta-data
-64-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
-65                android:name="android.support.PARENT_ACTIVITY"
-65-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
-66                android:value="com.lecturadorv2.android.applecturador.ListaMedidores" />
-66-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
-67        </activity>
-68        <activity
-68-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:62:9-64:76
-69            android:name="com.lecturadorv2.android.applecturador.LecturacionBluetooth"
-69-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:63:13-49
-70            android:label="@string/title_activity_lecturacion_bluetooth" />
-70-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:64:13-73
-71        <activity
-71-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:65:9-73:20
-72            android:name="com.lecturadorv2.android.applecturador.AjustsActivity"
-72-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:66:13-43
-73            android:label="@string/title_activity_ajusts"
-73-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:67:13-58
-74            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal"
-74-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:68:13-56
-75            android:theme="@style/AppTheme.NoActionBar" >
-75-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:69:13-56
-76            <meta-data
-76-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
-77                android:name="android.support.PARENT_ACTIVITY"
-77-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
-78                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
-78-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
-79        </activity>
-80        <activity
-80-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:74:9-81:20
-81            android:name="com.lecturadorv2.android.applecturador.DownloadActivity"
-81-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:75:13-45
-82            android:label="@string/title_activity_download"
-82-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:76:13-60
-83            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal" >
-83-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:77:13-56
-84            <meta-data
-84-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
-85                android:name="android.support.PARENT_ACTIVITY"
-85-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
-86                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
-86-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
-87        </activity>
-88        <!--
-89 ATTENTION: This was auto-generated to add Google Play services to your project for
-90     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
-91
-92        <meta-data
-93            android:name="com.google.android.gms.version"
-94            android:value="@integer/google_play_services_version" />
-95        -->
-96        <activity
-96-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:90:9-98:20
-97            android:name="com.lecturadorv2.android.applecturador.SyncActivity"
-97-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:91:13-41
-98            android:label="@string/title_activity_sync"
-98-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:92:13-56
-99            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal"
-99-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:93:13-56
-100            android:theme="@style/AppTheme.NoActionBar" >
-100-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:94:13-56
-101            <meta-data
-101-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
-102                android:name="android.support.PARENT_ACTIVITY"
-102-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
-103                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
-103-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
-104        </activity>
-105        <activity
-105-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:99:9-106:20
-106            android:name="com.lecturadorv2.android.applecturador.AjustesActivity"
-106-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:100:13-44
-107            android:label="@string/title_activity_ajustes"
-107-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:101:13-59
-108            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal" >
-108-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:102:13-56
-109            <meta-data
-109-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
-110                android:name="android.support.PARENT_ACTIVITY"
-110-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
-111                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
-111-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
-112        </activity>
-113        <activity
-113-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:107:9-114:20
-114            android:name="com.lecturadorv2.android.applecturador.ReImprimir"
-114-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:108:13-39
-115            android:label="@string/title_activity_reprint"
-115-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:109:13-59
-116            android:parentActivityName="com.lecturadorv2.android.applecturador.ListaMedidores" >
-116-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:110:13-57
-117            <meta-data
-117-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
-118                android:name="android.support.PARENT_ACTIVITY"
-118-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
-119                android:value="com.lecturadorv2.android.applecturador.ListaMedidores" />
-119-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
-120        </activity>
-121    </application>
-122
-123</manifest>
+35        android:theme="@style/AppTheme" >
+35-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:28:9-40
+36        <activity
+36-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:31:9-35:59
+37            android:name="com.lecturadorv2.android.applecturador.EditLectura"
+37-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:32:13-40
+38            android:exported="false"
+38-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:33:13-37
+39            android:label="@string/title_activity_edit_lectura"
+39-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:34:13-64
+40            android:theme="@style/AppTheme.NoActionBar" />
+40-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:35:13-56
+41        <activity
+41-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:36:9-45:20
+42            android:name="com.lecturadorv2.android.applecturador.MenuPrincipal"
+42-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:37:13-42
+43            android:label="@string/app_name"
+43-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:39:13-45
+44            android:theme="@style/AppTheme" >
+44-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:38:13-44
+45            <intent-filter>
+45-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:40:13-44:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:41:17-69
+46-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:41:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:43:17-77
+48-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:43:27-74
+49            </intent-filter>
+50        </activity>
+51        <activity
+51-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:46:9-53:20
+52            android:name="com.lecturadorv2.android.applecturador.ListaMedidores"
+52-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:47:13-43
+53            android:label="@string/title_activity_lista_medidores"
+53-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:48:13-67
+54            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal" >
+54-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:49:13-56
+55            <meta-data
+55-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
+56                android:name="android.support.PARENT_ACTIVITY"
+56-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
+57                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
+57-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
+58        </activity>
+59        <activity
+59-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:54:9-61:20
+60            android:name="com.lecturadorv2.android.applecturador.RealizarLecturacion"
+60-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:55:13-48
+61            android:label="@string/title_activity_realizar_lecturacion"
+61-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:56:13-72
+62            android:parentActivityName="com.lecturadorv2.android.applecturador.ListaMedidores" >
+62-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:57:13-57
+63            <meta-data
+63-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
+64                android:name="android.support.PARENT_ACTIVITY"
+64-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
+65                android:value="com.lecturadorv2.android.applecturador.ListaMedidores" />
+65-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
+66        </activity>
+67        <activity
+67-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:62:9-64:76
+68            android:name="com.lecturadorv2.android.applecturador.LecturacionBluetooth"
+68-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:63:13-49
+69            android:label="@string/title_activity_lecturacion_bluetooth" />
+69-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:64:13-73
+70        <activity
+70-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:65:9-73:20
+71            android:name="com.lecturadorv2.android.applecturador.AjustsActivity"
+71-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:66:13-43
+72            android:label="@string/title_activity_ajusts"
+72-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:67:13-58
+73            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal"
+73-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:68:13-56
+74            android:theme="@style/AppTheme.NoActionBar" >
+74-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:69:13-56
+75            <meta-data
+75-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
+76                android:name="android.support.PARENT_ACTIVITY"
+76-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
+77                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
+77-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
+78        </activity>
+79        <activity
+79-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:74:9-81:20
+80            android:name="com.lecturadorv2.android.applecturador.DownloadActivity"
+80-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:75:13-45
+81            android:label="@string/title_activity_download"
+81-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:76:13-60
+82            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal" >
+82-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:77:13-56
+83            <meta-data
+83-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
+84                android:name="android.support.PARENT_ACTIVITY"
+84-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
+85                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
+85-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
+86        </activity>
+87        <!--
+88 ATTENTION: This was auto-generated to add Google Play services to your project for
+89     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+90
+91        <meta-data
+92            android:name="com.google.android.gms.version"
+93            android:value="@integer/google_play_services_version" />
+94        -->
+95        <activity
+95-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:90:9-98:20
+96            android:name="com.lecturadorv2.android.applecturador.SyncActivity"
+96-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:91:13-41
+97            android:label="@string/title_activity_sync"
+97-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:92:13-56
+98            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal"
+98-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:93:13-56
+99            android:theme="@style/AppTheme.NoActionBar" >
+99-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:94:13-56
+100            <meta-data
+100-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
+101                android:name="android.support.PARENT_ACTIVITY"
+101-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
+102                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
+102-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
+103        </activity>
+104        <activity
+104-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:99:9-106:20
+105            android:name="com.lecturadorv2.android.applecturador.AjustesActivity"
+105-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:100:13-44
+106            android:label="@string/title_activity_ajustes"
+106-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:101:13-59
+107            android:parentActivityName="com.lecturadorv2.android.applecturador.MenuPrincipal" >
+107-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:102:13-56
+108            <meta-data
+108-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
+109                android:name="android.support.PARENT_ACTIVITY"
+109-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
+110                android:value="com.lecturadorv2.android.applecturador.MenuPrincipal" />
+110-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
+111        </activity>
+112        <activity
+112-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:107:9-114:20
+113            android:name="com.lecturadorv2.android.applecturador.ReImprimir"
+113-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:108:13-39
+114            android:label="@string/title_activity_reprint"
+114-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:109:13-59
+115            android:parentActivityName="com.lecturadorv2.android.applecturador.ListaMedidores" >
+115-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:110:13-57
+116            <meta-data
+116-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:50:13-52:88
+117                android:name="android.support.PARENT_ACTIVITY"
+117-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:51:17-63
+118                android:value="com.lecturadorv2.android.applecturador.ListaMedidores" />
+118-->D:\AndroidProjects\appLecCospail\app\src\main\AndroidManifest.xml:52:17-85
+119        </activity>
+120    </application>
+121
+122</manifest>

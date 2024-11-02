@@ -1127,7 +1127,7 @@ public class MyZebra {
         LinkedList<BsCcw> llcc=ccobranza.listarBsCcw_groupby();
 
         BsCon conceptos = new BsCon();
-        conceptos.obtenerBsCon(1,1);
+        conceptos.obtenerBsCon(1,2);
 
         int ylon=100;
         //"+xlon+","+yLon+"
