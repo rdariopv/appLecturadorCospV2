@@ -1,6 +1,7 @@
 package com.lecturadorv2.android.zebra;
 
 import android.os.Environment;
+import android.util.Base64;
 import android.util.Log;
 
 
@@ -829,6 +830,18 @@ public class MyZebra {
         return sb;
     }
 
+    public  String encodeToBase64(String text) {
+        // Convierte el texto en bytes y luego en Base64
+        byte[] data = text.getBytes();
+        return Base64.encodeToString(data, Base64.DEFAULT);
+    }
+
+    public  String decodeFromBase64(String base64Text) {
+        // Convierte el texto Base64 en bytes y luego a texto normal
+        byte[] data = Base64.decode(base64Text, Base64.DEFAULT);
+        return new String(data);
+    }
+
     // formateado el 28 octubre 2024 para coschal
     public StringBuilder printZPLHorizontalZQ520_Cospail_formateado(BsLec lec){
 
@@ -1254,8 +1267,9 @@ public class MyZebra {
         // sb.append("^FO27,600^A0R,0,20^FD "+String.format("%.2f", ttlDeuda)+" ^FS ");
         Log.e("MyZebra","tamanho de la lista de centros de cobranza="+llcc.size());
         int x2=350;
-      String url=   conceptos.getDesc().trim()+ "&"+ hpw.getNcnt();
-        sb.append(" ^FO185,1060 ");
+        String code= encodeToBase64(hpw.getNcnt()+"");
+        String url=   conceptos.getDesc().trim()+ "&"+ code;
+        sb.append(" ^FO185,106  0 ");
         sb.append(" ^BQN,2,7 ");
         sb.append(" ^FDLA,"+url+"^FS ");
 

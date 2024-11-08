@@ -65,7 +65,7 @@ public class BsCon {
             BsCon obs = new BsCon();
             obs.setPref(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSCONPREF))));
             obs.setCodo(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSCONCODO))));
-            obs.setDesc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSDPWDESC)));
+            obs.setDesc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSCONDESC)));
 
             listObservaciones.add(obs);
             Log.e("BSCON","listConceptos se anhadio un concepto a la lista ="+listObservaciones.size());
