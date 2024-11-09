@@ -1271,13 +1271,25 @@ public class MyZebra {
         String url= "";
         if(conceptos.obtenerBsCon(1,2)){
             String code= encodeToBase64(hpw.getNcnt()+"");
-             url=   conceptos.getDesc().trim()+ "&"+ code;
-        } else if (conceptos.obtenerBsCon(1,1)){
             url=   conceptos.getDesc().trim();
+            if (url!="" && url !="0"){
+                url=   conceptos.getDesc().trim()+ "&"+ code;
+            }else{
+                url= "";
+            }
+        } else if (conceptos.obtenerBsCon(1,1)){
+            if (url!="" && url !="0"){
+                url=   conceptos.getDesc().trim();
+            }else{
+                url= "";
+            }
         }
-        sb.append(" ^FO185,106  0 ");
-        sb.append(" ^BQN,2,7 ");
-        sb.append(" ^FDLA,"+url+"^FS ");
+        if( url!= ""){
+            sb.append(" ^FO185,106  0 ");
+            sb.append(" ^BQN,2,7 ");
+            sb.append(" ^FDLA,"+url+"^FS ");
+        }
+
 
         if(llcc.size()>0){
             for (int i = 0; i < llcc.size() ; i++) {
