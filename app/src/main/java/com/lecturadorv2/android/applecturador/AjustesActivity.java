@@ -43,7 +43,7 @@ public class AjustesActivity extends AppCompatActivity {
         etIDprinter=(EditText)findViewById(R.id.etIdPrinter);
 
 
-        String[] test=new String[]{"Horizontal ZQ520", "Horizontal ZQ520 SW" , "Horizontal ZQ520 QRCODE"};
+        String[] test=new String[]{"Horizontal ZQ520", "Horizontal ZQ520 SW" };
         ArrayAdapter<String> adpPrinter= new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,test);
         spPrinter.setAdapter(adpPrinter);
         LtCnf cnf = new LtCnf();

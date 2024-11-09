@@ -1139,8 +1139,7 @@ public class MyZebra {
        // LinkedList<BsCcw> llcc=ccobranza.listarBsCcw();
         LinkedList<BsCcw> llcc=ccobranza.listarBsCcw_groupby();
 
-        BsCon conceptos = new BsCon();
-        conceptos.obtenerBsCon(1,2);
+
 
         int ylon=100;
         //"+xlon+","+yLon+"
@@ -1267,8 +1266,15 @@ public class MyZebra {
         // sb.append("^FO27,600^A0R,0,20^FD "+String.format("%.2f", ttlDeuda)+" ^FS ");
         Log.e("MyZebra","tamanho de la lista de centros de cobranza="+llcc.size());
         int x2=350;
-        String code= encodeToBase64(hpw.getNcnt()+"");
-        String url=   conceptos.getDesc().trim()+ "&"+ code;
+
+        BsCon conceptos = new BsCon();
+        String url= "";
+        if(conceptos.obtenerBsCon(1,2)){
+            String code= encodeToBase64(hpw.getNcnt()+"");
+             url=   conceptos.getDesc().trim()+ "&"+ code;
+        } else if (conceptos.obtenerBsCon(1,1)){
+            url=   conceptos.getDesc().trim();
+        }
         sb.append(" ^FO185,106  0 ");
         sb.append(" ^BQN,2,7 ");
         sb.append(" ^FDLA,"+url+"^FS ");

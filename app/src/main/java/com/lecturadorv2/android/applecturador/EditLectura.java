@@ -493,17 +493,12 @@ public class EditLectura extends AppCompatActivity {
                 if(printerLanguage == PrinterLanguage.ZPL){
                     if (cnf.getCnfNpri() == 0) {
                         MyZebra myZebra = new MyZebra();
-                        StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail_formateado(loitemLecturacion);
+                        StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail_QR(loitemLecturacion);
                         configLabel = sb.toString().getBytes();
                     }
                     if (cnf.getCnfNpri() == 1) {
                         MyZebra myZebra = new MyZebra();
                         StringBuilder sb = myZebra.printZPLHorizontalZQ520_SinWebService(loitemLecturacion);
-                        configLabel = sb.toString().getBytes();
-                    }
-                    if (cnf.getCnfNpri() == 2) {
-                        MyZebra myZebra = new MyZebra();
-                        StringBuilder sb = myZebra.printZPLHorizontalZQ520_Cospail_QR(loitemLecturacion);
                         configLabel = sb.toString().getBytes();
                     }
                 }

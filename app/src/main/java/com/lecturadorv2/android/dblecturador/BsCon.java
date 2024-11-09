@@ -76,8 +76,9 @@ public class BsCon {
     }
 
 
-    public void obtenerBsCon(int npref, int codo) {
+    public boolean obtenerBsCon(int npref, int codo) {
         DBmanager.AbrirBD();
+        boolean result = false;
         Cursor cursor = DBmanager.buscarTuplas(DBhelper.NOMTABSCON, DBhelper.COLSBSCON, DBhelper.COLBSCONPREF + " = " + npref +
                 " and "+DBhelper.COLBSCONCODO +"="+codo, DBhelper.COLBSCONPREF+ ", "+DBhelper.COLBSCONCODO);
         new BsCon();
@@ -85,9 +86,10 @@ public class BsCon {
             setPref(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSCONPREF))).intValue());
             setCodo(Integer.valueOf(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSCONCODO))).intValue());
             setDesc(cursor.getString(cursor.getColumnIndex(DBhelper.COLBSCONDESC)));
-
+            result= true;
             Log.e("BSCON", "obtenerBsCon se obtiene el Header con el codo= " + codo);
         }
+        return result;
     }
 
 
