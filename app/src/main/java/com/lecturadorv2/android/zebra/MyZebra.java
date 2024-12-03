@@ -1285,8 +1285,9 @@ public class MyZebra {
             }
         }
         if( url!= ""){
-            sb.append(" ^FO185,106  0 ");
-            sb.append(" ^BQN,2,7 ");
+          //  sb.append("^FO460,1440^A0R,0,25^FD "+lsFcor+"^FS ");
+            sb.append(" ^FO200,1060");
+            sb.append(" ^BQN,2,5 ");
             sb.append(" ^FDLA,"+url+"^FS ");
         }
 
